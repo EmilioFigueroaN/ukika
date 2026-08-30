@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sala Cuna y Jardín Infantil Ukika, Vitacura. Educación parvularia desde 1988, con una propuesta centrada en el bienestar, el desarrollo integral y el aprendizaje significativo.">
-  <meta name="theme-color" content="#F6F1E8">
+  <meta name="theme-color" content="#ffffff">
   <title>Ukika — Sala Cuna & Jardín Infantil</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,27 +13,34 @@
 
   <style>
     :root{
-      --bg:#fffdf8;
+      --bg:#ffffff;
       --paper:#ffffff;
-      --ink:#35454d;
-      --muted:#687980;
+      --ink:#34454d;
+      --muted:#6d7b82;
 
-      /* Identidad Ukika: paleta infantil multicolor, llevada a una interfaz actual */
-      --forest:#3796c8;       /* celeste / azul principal */
-      --sage:#79bc61;         /* verde */
-      --sage-soft:#eaf6e6;    /* verde muy claro */
-      --gold:#f4d54e;         /* amarillo */
-      --terracotta:#ee7d57;   /* naranjo coral */
-      --red:#e85d63;
-      --blue-soft:#e7f4fb;
-      --yellow-soft:#fff7d9;
-      --orange-soft:#fff0e8;
-      --red-soft:#fdebed;
+      /* Paleta original Ukika */
+      --blue:#0066ff;
+      --red:#ff0000;
+      --green:#00cc33;
+      --yellow:#ffd300;
+      --orange:#ff7b00;
 
-      --line:rgba(55,150,200,.15);
+      --blue-soft:#f2f7ff;
+      --green-soft:#f3fff6;
+      --yellow-soft:#fffbea;
+      --orange-soft:#fff7f0;
+      --red-soft:#fff3f3;
+
+      --forest:var(--blue);
+      --sage:var(--green);
+      --sage-soft:var(--green-soft);
+      --gold:var(--yellow);
+      --terracotta:var(--orange);
+
+      --line:rgba(0,102,255,.12);
       --white:#fff;
-      --shadow:0 30px 90px rgba(54,100,125,.12);
-      --shadow-sm:0 14px 40px rgba(54,100,125,.09);
+      --shadow:0 28px 80px rgba(38,70,91,.11);
+      --shadow-sm:0 12px 38px rgba(38,70,91,.08);
       --radius:28px;
       --max:1240px;
     }
@@ -42,7 +49,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:var(--bg);
+      background:#fff;
       color:var(--ink);
       font-family:"DM Sans",sans-serif;
       line-height:1.55;
@@ -58,20 +65,20 @@
 
     .container{width:min(calc(100% - 42px),var(--max));margin-inline:auto}
     .section{padding:112px 0}
-    .section--paper{background:var(--paper)}
-    .section--forest{background:#2f86b5;color:var(--white)}
+    .section--paper{background:#fff}
+    .section--forest{background:var(--blue-soft);color:var(--ink)}
     .kicker{
       display:inline-flex;align-items:center;gap:10px;
       font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)
     }
     .kicker::before{content:"";width:28px;height:1px;background:currentColor}
-    .section--forest .kicker{color:#c6dccb}
+    .section--forest .kicker{color:var(--blue)}
     h1,h2,h3,h4{font-family:"Manrope",sans-serif;margin:0;line-height:1.05;letter-spacing:-.04em}
     h1{font-size:clamp(3.25rem,7vw,6.6rem);font-weight:700}
     h2{font-size:clamp(2.35rem,4.7vw,4.2rem);font-weight:700}
     h3{font-size:1.35rem;font-weight:700}
     p{margin:0;color:var(--muted)}
-    .section--forest p{color:#b9ccc6}
+    .section--forest p{color:var(--muted)}
 
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -80,8 +87,8 @@
     }
     .btn:hover{transform:translateY(-2px)}
     .btn svg{width:18px;height:18px;flex:0 0 auto}
-    .btn-dark{background:var(--ink);color:var(--white);box-shadow:0 10px 28px rgba(24,54,47,.16)}
-    .btn-dark:hover{background:#287da9}
+    .btn-dark{background:var(--blue);color:var(--white);box-shadow:0 10px 28px rgba(24,54,47,.16)}
+    .btn-dark:hover{background:#0056d6}
     .btn-outline{border-color:var(--line);background:rgba(255,255,255,.64);backdrop-filter:blur(12px)}
     .btn-outline:hover{background:#fff}
     .btn-white{background:#fff;color:var(--ink)}
@@ -89,24 +96,29 @@
 
     /* Announcement */
     .topbar{
-      background:var(--ink);color:#dfeae6;
+      background:#fff;color:var(--ink);
       font-size:.76rem;font-weight:600;
     }
     .topbar .container{
       min-height:36px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;
     }
-    .topbar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .topbar a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 
 
     .ukika-color-line{
       height:4px;
-      background:linear-gradient(90deg,#59afe0 0 25%,#79bc61 25% 50%,#f4d54e 50% 75%,#ee7d57 75% 100%);
+      background:linear-gradient(90deg,
+        var(--red) 0 20%,
+        var(--green) 20% 40%,
+        var(--blue) 40% 60%,
+        var(--yellow) 60% 80%,
+        var(--orange) 80% 100%);
     }
 
     /* Header */
     header{
       position:sticky;top:0;z-index:60;
-      background:rgba(255,253,248,.92);
+      background:rgba(255,255,255,.94);
       backdrop-filter:blur(18px);
       border-bottom:1px solid transparent;
       transition:.2s ease;
@@ -115,22 +127,16 @@
     .nav{
       height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px;
     }
-    .brand{display:flex;align-items:center;gap:13px;position:relative;z-index:70}
-    .brand-mark{
-      width:45px;height:45px;border-radius:50%;
-      background:conic-gradient(from 25deg,var(--gold) 0 25%,var(--terracotta) 25% 50%,var(--sage) 50% 75%,var(--forest) 75% 100%);
-      display:grid;place-items:center;position:relative;overflow:hidden;
-      box-shadow:0 6px 16px rgba(55,150,200,.18);
+    .brand{
+      display:flex;align-items:center;position:relative;z-index:70;
     }
-    .brand-mark::before{
-      content:"";position:absolute;width:21px;height:21px;background:#fff;border-radius:50%;
+    .brand-logo{
+      width:238px;
+      max-width:min(238px,48vw);
+      height:auto;
+      object-fit:contain;
+      display:block;
     }
-    .brand-mark::after{
-      content:"U";position:absolute;color:var(--forest);font-family:"Manrope",sans-serif;
-      font-size:12px;font-weight:800;line-height:1;
-    }
-    .brand-name{font-family:"Manrope";font-size:1.22rem;font-weight:800;letter-spacing:.12em}
-    .brand-sub{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:1px}
     nav{display:flex;align-items:center;gap:28px}
     nav>a:not(.btn){font-size:.85rem;font-weight:700;color:#435b55}
     nav>a:not(.btn):hover{color:var(--forest)}
@@ -154,8 +160,8 @@
     .hero-shell::after{
       content:"";position:absolute;inset:0;
       background:
-        linear-gradient(90deg,rgba(28,74,101,.86) 0%,rgba(35,104,140,.66) 39%,rgba(38,118,157,.16) 72%,rgba(38,118,157,.04) 100%),
-        linear-gradient(0deg,rgba(27,78,105,.26),transparent 45%);
+        linear-gradient(90deg,rgba(0,76,190,.84) 0%,rgba(0,102,255,.58) 39%,rgba(0,102,255,.15) 72%,rgba(0,102,255,.03) 100%),
+        linear-gradient(0deg,rgba(0,80,190,.20),transparent 45%);
     }
     .hero-content{
       position:relative;z-index:2;min-height:680px;padding:82px 72px;display:flex;flex-direction:column;justify-content:flex-end;
@@ -167,7 +173,7 @@
     .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
     .hero-badge{
       position:absolute;z-index:3;right:38px;top:38px;width:160px;height:160px;border-radius:50%;
-      background:rgba(255,242,154,.96);color:#3c4a50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:rgba(255,211,0,.96);color:#34454d;display:flex;flex-direction:column;align-items:center;justify-content:center;
       text-align:center;transform:rotate(7deg);box-shadow:0 15px 45px rgba(41,103,136,.18)
     }
     .hero-badge strong{font-family:"Manrope";font-size:2rem;line-height:1;font-weight:800}
@@ -178,10 +184,11 @@
       position:absolute;z-index:3;left:30px;top:30px;display:flex;gap:7px;
     }
     .hero-color-dots i{display:block;width:11px;height:11px;border-radius:50%}
-    .hero-color-dots i:nth-child(1){background:#59afe0}
-    .hero-color-dots i:nth-child(2){background:#79bc61}
-    .hero-color-dots i:nth-child(3){background:#f4d54e}
-    .hero-color-dots i:nth-child(4){background:#ee7d57}
+    .hero-color-dots i:nth-child(1){background:var(--red)}
+    .hero-color-dots i:nth-child(2){background:var(--green)}
+    .hero-color-dots i:nth-child(3){background:var(--blue)}
+    .hero-color-dots i:nth-child(4){background:var(--yellow)}
+    .hero-color-dots i:nth-child(5){background:var(--orange)}
 
     /* proof */
     .proof{padding:34px 0 0}
@@ -205,12 +212,12 @@
     .story-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
     .story-visual{position:relative;min-height:650px}
     .story-photo-main{
-      position:absolute;inset:0 12% 65px 0;border-radius:30px;overflow:hidden;box-shadow:var(--shadow-sm);background:#e3f2f8
+      position:absolute;inset:0 12% 65px 0;border-radius:30px;overflow:hidden;box-shadow:var(--shadow-sm);background:var(--blue-soft)
     }
     .story-photo-main img{width:100%;height:100%;object-fit:cover}
     .story-photo-small{
       position:absolute;right:0;bottom:0;width:48%;height:305px;border:8px solid var(--bg);border-radius:28px;overflow:hidden;
-      box-shadow:var(--shadow-sm);background:#fff0cd
+      box-shadow:var(--shadow-sm);background:var(--yellow-soft)
     }
     .story-photo-small img{width:100%;height:100%;object-fit:cover}
     .story-number{
@@ -232,6 +239,16 @@
     }
     .principle p{font-size:.86rem;margin-top:4px}
 
+
+    .proof-item:nth-child(1) strong{color:var(--red)}
+    .proof-item:nth-child(2) strong{color:var(--green)}
+    .proof-item:nth-child(3) strong{color:var(--orange)}
+    .proof-item:nth-child(4) strong{color:var(--blue)}
+
+    .principle:nth-child(1) .principle-num{background:var(--blue-soft);color:var(--blue)}
+    .principle:nth-child(2) .principle-num{background:var(--yellow-soft);color:#9c7900}
+    .principle:nth-child(3) .principle-num{background:var(--green-soft);color:#008e24}
+
     /* Levels */
     .levels{
       display:grid;grid-template-columns:repeat(5,1fr);gap:12px;
@@ -239,13 +256,13 @@
     .level{
       min-height:335px;border:1px solid var(--line);border-radius:24px;padding:24px 21px;
       display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;
-      background:#faf8f2;transition:.25s ease;
+      background:#fff;transition:.25s ease;
     }
     .level:hover{transform:translateY(-7px);box-shadow:var(--shadow-sm)}
     .level::after{
       content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;top:-55px;background:var(--blue-soft)
     }
-    .level:nth-child(2)::after{background:var(--sage-soft)}
+    .level:nth-child(2)::after{background:var(--green-soft)}
     .level:nth-child(3)::after{background:var(--yellow-soft)}
     .level:nth-child(4)::after{background:var(--orange-soft)}
     .level:nth-child(5)::after{background:var(--red-soft)}
@@ -257,6 +274,13 @@
     .level p{font-size:.84rem}
     .level-age{display:inline-block;margin-top:17px;font-size:.72rem;font-weight:800;color:var(--forest)}
 
+
+    .level:nth-child(1){border-top:4px solid var(--blue)}
+    .level:nth-child(2){border-top:4px solid var(--green)}
+    .level:nth-child(3){border-top:4px solid var(--yellow)}
+    .level:nth-child(4){border-top:4px solid var(--orange)}
+    .level:nth-child(5){border-top:4px solid var(--red)}
+
     /* Experience */
     .experience-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:80px;align-items:start}
     .experience-intro{position:sticky;top:125px}
@@ -264,12 +288,12 @@
     .experience-intro p{font-size:1.02rem;max-width:500px}
     .experience-list{display:grid}
     .experience-item{
-      display:grid;grid-template-columns:68px 1fr;gap:22px;padding:27px 0;border-bottom:1px solid rgba(255,255,255,.12)
+      display:grid;grid-template-columns:68px 1fr;gap:22px;padding:27px 0;border-bottom:1px solid var(--line)
     }
     .experience-item:first-child{padding-top:0}
     .experience-item:last-child{border-bottom:0}
     .exp-icon{
-      width:58px;height:58px;border:1px solid rgba(255,255,255,.22);border-radius:18px;display:grid;place-items:center;color:#ffe681
+      width:58px;height:58px;border:1px solid var(--line);border-radius:18px;display:grid;place-items:center;color:var(--blue)
     }
     .exp-icon svg{width:23px;height:23px}
     .experience-item p{font-size:.9rem;margin-top:7px}
@@ -311,16 +335,16 @@
       display:grid;grid-template-columns:.85fr 1.15fr;border-radius:32px;overflow:hidden;background:#e4e9df;
       box-shadow:var(--shadow-sm)
     }
-    .contact-info{background:#358fbe;color:#fff;padding:55px}
+    .contact-info{background:var(--blue);color:#fff;padding:55px}
     .contact-info .kicker{color:#d4e5d8}
     .contact-info h2{margin:14px 0 22px}
     .contact-info>p{color:#c8d9d4;font-size:.96rem}
     .contact-links{display:grid;margin-top:38px}
     .contact-link{
-      display:grid;grid-template-columns:40px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.12)
+      display:grid;grid-template-columns:40px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)
     }
     .contact-link:last-child{border-bottom:0}
-    .contact-link svg{width:20px;height:20px;margin-top:2px;color:#ffe36f}
+    .contact-link svg{width:20px;height:20px;margin-top:2px;color:var(--yellow)}
     .contact-link small{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:#9eb9b2;font-weight:700}
     .contact-link strong{display:block;font-size:.91rem;margin-top:2px}
 
@@ -343,21 +367,24 @@
     }
 
     /* Footer */
-    footer{padding:54px 0 24px;background:#286f96;color:#fff}
+    footer{padding:54px 0 24px;background:#fff;color:var(--ink);border-top:4px solid var(--blue)}
     .footer-top{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:52px;padding-bottom:42px}
-    .footer-brand-copy{font-size:.83rem;max-width:390px;color:#d4e8f2;margin-top:14px}
+    .footer-brand-copy{font-size:.83rem;max-width:390px;color:var(--muted);margin-top:14px}
     footer h4{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
-    footer a{display:block;font-size:.83rem;color:#d8ebf4;margin:8px 0}
-    footer a:hover{color:#fff}
+    footer a{display:block;font-size:.83rem;color:var(--muted);margin:8px 0}
+    footer a:hover{color:var(--blue)}
     .footer-bottom{
-      padding-top:22px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:20px;
-      color:#b9d9e8;font-size:.7rem
+      padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;
+      color:#87949a;font-size:.7rem
     }
+
+
+    footer .brand-logo{width:250px}
 
     /* floating cta */
     .floating-cta{
-      position:fixed;right:22px;bottom:22px;z-index:55;background:#358fbe;color:#fff;border-radius:999px;
-      padding:13px 18px;box-shadow:0 14px 38px rgba(48,129,173,.28);display:flex;align-items:center;gap:9px;
+      position:fixed;right:22px;bottom:22px;z-index:55;background:var(--blue);color:#fff;border-radius:999px;
+      padding:13px 18px;box-shadow:0 14px 38px rgba(0,102,255,.23);display:flex;align-items:center;gap:9px;
       font-size:.78rem;font-weight:800;transition:.2s
     }
     .floating-cta:hover{transform:translateY(-2px)}
@@ -369,7 +396,7 @@
 
     @media(max-width:1020px){
       nav{
-        position:fixed;inset:36px 0 0;background:var(--bg);z-index:65;flex-direction:column;justify-content:center;gap:26px;
+        position:fixed;inset:36px 0 0;background:#fff;z-index:65;flex-direction:column;justify-content:center;gap:26px;
         opacity:0;visibility:hidden;transform:translateY(-10px);transition:.22s
       }
       nav.open{opacity:1;visibility:visible;transform:none}
@@ -397,7 +424,10 @@
     @media(max-width:680px){
       .container{width:min(calc(100% - 28px),var(--max))}
       .section{padding:78px 0}
-      .brand-sub{display:none}
+
+      .brand-logo{width:205px;max-width:62vw}
+      footer .brand-logo{width:215px}
+
       .nav{height:70px}
       .topbar .container{min-height:34px;font-size:.68rem}
       .hero{padding:18px 0 26px}
@@ -456,11 +486,7 @@
   <header id="header">
     <div class="container nav">
       <a href="#inicio" class="brand" aria-label="Ukika inicio">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div>
-          <div class="brand-name">UKIKA</div>
-          <div class="brand-sub">Sala Cuna & Jardín Infantil</div>
-        </div>
+        <img class="brand-logo" src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
       </a>
 
       <nav id="nav">
@@ -482,7 +508,7 @@
     <section class="hero" id="inicio">
       <div class="container">
         <div class="hero-shell reveal">
-          <div class="hero-color-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="hero-color-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
           <img class="hero-bg" src="https://www.ukika.cl/pics/jardin_patio4.jpg" alt="Patio del Jardín Infantil Ukika">
           <div class="hero-content">
             <div class="kicker">Educación parvularia en Vitacura</div>
@@ -858,12 +884,8 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <a href="#inicio" class="brand" style="color:white">
-            <div class="brand-mark"></div>
-            <div>
-              <div class="brand-name">UKIKA</div>
-              <div class="brand-sub" style="color:#8fa8a1">Sala Cuna & Jardín Infantil</div>
-            </div>
+          <a href="#inicio" class="brand" aria-label="Ukika inicio">
+            <img class="brand-logo" src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
           </a>
           <p class="footer-brand-copy">
             Educación parvularia en Vitacura, con una propuesta orientada al bienestar,
