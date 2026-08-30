@@ -208,6 +208,112 @@
     .heading-grid p{font-size:1.04rem;max-width:620px;justify-self:end}
     .heading-grid h2{margin-top:14px}
 
+
+    /* Ilustración institucional Ukika */
+    .heritage{
+      padding:42px 0 20px;
+      background:#fff;
+    }
+    .heritage-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+    .heritage-card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:5px;
+      background:linear-gradient(90deg,
+        var(--red) 0 20%,
+        var(--green) 20% 40%,
+        var(--blue) 40% 60%,
+        var(--yellow) 60% 80%,
+        var(--orange) 80% 100%);
+      z-index:2;
+    }
+    .heritage-layout{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      align-items:center;
+      min-height:430px;
+    }
+    .heritage-copy{
+      padding:52px 24px 52px 52px;
+      position:relative;
+      z-index:2;
+    }
+    .heritage-copy h2{
+      margin-top:14px;
+      font-size:clamp(2rem,3.5vw,3.35rem);
+    }
+    .heritage-copy p{
+      margin-top:18px;
+      font-size:.96rem;
+      max-width:430px;
+    }
+    .heritage-credentials{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:24px;
+    }
+    .credential{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:36px;
+      padding:0 13px;
+      border-radius:999px;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-size:.72rem;
+      font-weight:800;
+    }
+    .credential:nth-child(2){
+      background:var(--yellow-soft);
+      color:#8c7100;
+    }
+    .credential-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:currentColor;
+    }
+    .heritage-art{
+      padding:28px 34px 28px 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+    }
+    .heritage-art img{
+      width:100%;
+      max-height:390px;
+      object-fit:contain;
+      object-position:center;
+    }
+
+    @media(max-width:1020px){
+      .heritage-layout{grid-template-columns:1fr}
+      .heritage-copy{padding:42px 42px 12px}
+      .heritage-copy p{max-width:650px}
+      .heritage-art{padding:10px 30px 34px}
+      .heritage-art img{max-height:430px}
+    }
+
+    @media(max-width:680px){
+      .heritage{padding-top:26px}
+      .heritage-card{border-radius:22px}
+      .heritage-copy{padding:34px 22px 8px}
+      .heritage-copy h2{font-size:2rem}
+      .heritage-art{padding:12px 10px 26px}
+      .heritage-art img{max-height:none}
+    }
+
     /* Story */
     .story-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
     .story-visual{position:relative;min-height:650px}
@@ -635,6 +741,31 @@
             <div class="proof-item"><strong>Sala Cuna</strong><span>Desde los 84 días</span></div>
             <div class="proof-item"><strong>Hasta 19:00</strong><span>Jornada completa</span></div>
             <div class="proof-item"><strong>Vitacura</strong><span>Los Dragones 9932</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="heritage" aria-labelledby="identidad-ukika">
+      <div class="container">
+        <div class="heritage-card reveal">
+          <div class="heritage-layout">
+            <div class="heritage-copy">
+              <div class="kicker">Identidad Ukika</div>
+              <h2 id="identidad-ukika">Crecer, hacer amigos y aprender con el corazón.</h2>
+              <p>
+                Una identidad construida en torno a la infancia, la cercanía y el desarrollo integral,
+                acompañando a las familias desde los primeros años.
+              </p>
+              <div class="heritage-credentials">
+                <span class="credential"><span class="credential-dot"></span>Desde 1988</span>
+                <span class="credential"><span class="credential-dot"></span>Autorización normativa JUNJI</span>
+              </div>
+            </div>
+            <div class="heritage-art">
+              <img src="assets/ilustracion_ukika.gif" alt="Ilustración institucional de Ukika con su lema y autorización normativa JUNJI" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
