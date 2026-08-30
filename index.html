@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sala Cuna y Jardín Infantil Ukika, Vitacura. Educación parvularia desde 1988, con una propuesta centrada en el bienestar, el desarrollo integral y el aprendizaje significativo.">
+  <meta name="theme-color" content="#F6F1E8">
+  <title>Ukika — Sala Cuna & Jardín Infantil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fffdf8;
+      --paper:#ffffff;
+      --ink:#35454d;
+      --muted:#687980;
+
+      /* Identidad Ukika: paleta infantil multicolor, llevada a una interfaz actual */
+      --forest:#3796c8;       /* celeste / azul principal */
+      --sage:#79bc61;         /* verde */
+      --sage-soft:#eaf6e6;    /* verde muy claro */
+      --gold:#f4d54e;         /* amarillo */
+      --terracotta:#ee7d57;   /* naranjo coral */
+      --red:#e85d63;
+      --blue-soft:#e7f4fb;
+      --yellow-soft:#fff7d9;
+      --orange-soft:#fff0e8;
+      --red-soft:#fdebed;
+
+      --line:rgba(55,150,200,.15);
+      --white:#fff;
+      --shadow:0 30px 90px rgba(54,100,125,.12);
+      --shadow-sm:0 14px 40px rgba(54,100,125,.09);
+      --radius:28px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body.menu-open{overflow:hidden}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+    button,input,textarea,select{font:inherit}
+    button{color:inherit}
+    ::selection{background:#fff0a8;color:#35454d}
+
+    .container{width:min(calc(100% - 42px),var(--max));margin-inline:auto}
+    .section{padding:112px 0}
+    .section--paper{background:var(--paper)}
+    .section--forest{background:#2f86b5;color:var(--white)}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)
+    }
+    .kicker::before{content:"";width:28px;height:1px;background:currentColor}
+    .section--forest .kicker{color:#c6dccb}
+    h1,h2,h3,h4{font-family:"Manrope",sans-serif;margin:0;line-height:1.05;letter-spacing:-.04em}
+    h1{font-size:clamp(3.25rem,7vw,6.6rem);font-weight:700}
+    h2{font-size:clamp(2.35rem,4.7vw,4.2rem);font-weight:700}
+    h3{font-size:1.35rem;font-weight:700}
+    p{margin:0;color:var(--muted)}
+    .section--forest p{color:#b9ccc6}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 22px;border-radius:999px;border:1px solid transparent;
+      font-weight:700;font-size:.91rem;cursor:pointer;transition:.22s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn svg{width:18px;height:18px;flex:0 0 auto}
+    .btn-dark{background:var(--ink);color:var(--white);box-shadow:0 10px 28px rgba(24,54,47,.16)}
+    .btn-dark:hover{background:#287da9}
+    .btn-outline{border-color:var(--line);background:rgba(255,255,255,.64);backdrop-filter:blur(12px)}
+    .btn-outline:hover{background:#fff}
+    .btn-white{background:#fff;color:var(--ink)}
+    .btn-ghost-white{border-color:rgba(255,255,255,.22);color:#fff}
+
+    /* Announcement */
+    .topbar{
+      background:var(--ink);color:#dfeae6;
+      font-size:.76rem;font-weight:600;
+    }
+    .topbar .container{
+      min-height:36px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center;
+    }
+    .topbar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+
+    .ukika-color-line{
+      height:4px;
+      background:linear-gradient(90deg,#59afe0 0 25%,#79bc61 25% 50%,#f4d54e 50% 75%,#ee7d57 75% 100%);
+    }
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:60;
+      background:rgba(255,253,248,.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid transparent;
+      transition:.2s ease;
+    }
+    header.scrolled{border-bottom-color:var(--line)}
+    .nav{
+      height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px;
+    }
+    .brand{display:flex;align-items:center;gap:13px;position:relative;z-index:70}
+    .brand-mark{
+      width:45px;height:45px;border-radius:50%;
+      background:conic-gradient(from 25deg,var(--gold) 0 25%,var(--terracotta) 25% 50%,var(--sage) 50% 75%,var(--forest) 75% 100%);
+      display:grid;place-items:center;position:relative;overflow:hidden;
+      box-shadow:0 6px 16px rgba(55,150,200,.18);
+    }
+    .brand-mark::before{
+      content:"";position:absolute;width:21px;height:21px;background:#fff;border-radius:50%;
+    }
+    .brand-mark::after{
+      content:"U";position:absolute;color:var(--forest);font-family:"Manrope",sans-serif;
+      font-size:12px;font-weight:800;line-height:1;
+    }
+    .brand-name{font-family:"Manrope";font-size:1.22rem;font-weight:800;letter-spacing:.12em}
+    .brand-sub{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:1px}
+    nav{display:flex;align-items:center;gap:28px}
+    nav>a:not(.btn){font-size:.85rem;font-weight:700;color:#435b55}
+    nav>a:not(.btn):hover{color:var(--forest)}
+    .menu-btn{
+      display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:#fff;
+      z-index:70;position:relative;
+    }
+    .menu-btn span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;border-radius:4px;transition:.2s}
+
+    /* Hero */
+    .hero{padding:52px 0 42px;position:relative}
+    .hero-shell{
+      border-radius:34px;overflow:hidden;min-height:680px;position:relative;background:#8dad91;
+      box-shadow:var(--shadow);
+    }
+    .hero-bg{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      filter:saturate(.72) contrast(.9) brightness(.76);
+      transform:scale(1.015);
+    }
+    .hero-shell::after{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(28,74,101,.86) 0%,rgba(35,104,140,.66) 39%,rgba(38,118,157,.16) 72%,rgba(38,118,157,.04) 100%),
+        linear-gradient(0deg,rgba(27,78,105,.26),transparent 45%);
+    }
+    .hero-content{
+      position:relative;z-index:2;min-height:680px;padding:82px 72px;display:flex;flex-direction:column;justify-content:flex-end;
+      color:#fff;max-width:800px;
+    }
+    .hero-content .kicker{color:#dde9df}
+    .hero h1{max-width:720px;margin-top:17px}
+    .hero-lead{font-size:1.07rem;color:#e2ebe8;max-width:600px;margin:24px 0 30px}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .hero-badge{
+      position:absolute;z-index:3;right:38px;top:38px;width:160px;height:160px;border-radius:50%;
+      background:rgba(255,242,154,.96);color:#3c4a50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;transform:rotate(7deg);box-shadow:0 15px 45px rgba(41,103,136,.18)
+    }
+    .hero-badge strong{font-family:"Manrope";font-size:2rem;line-height:1;font-weight:800}
+    .hero-badge span{font-size:.69rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-top:7px}
+
+
+    .hero-color-dots{
+      position:absolute;z-index:3;left:30px;top:30px;display:flex;gap:7px;
+    }
+    .hero-color-dots i{display:block;width:11px;height:11px;border-radius:50%}
+    .hero-color-dots i:nth-child(1){background:#59afe0}
+    .hero-color-dots i:nth-child(2){background:#79bc61}
+    .hero-color-dots i:nth-child(3){background:#f4d54e}
+    .hero-color-dots i:nth-child(4){background:#ee7d57}
+
+    /* proof */
+    .proof{padding:34px 0 0}
+    .proof-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .proof-item{padding:25px 26px;border-right:1px solid var(--line)}
+    .proof-item:first-child{padding-left:0}
+    .proof-item:last-child{border-right:0}
+    .proof-item strong{font-family:"Manrope";font-size:1.08rem;font-weight:800;display:block}
+    .proof-item span{font-size:.78rem;color:var(--muted)}
+
+    /* Header sections */
+    .heading-grid{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:end;margin-bottom:58px;
+    }
+    .heading-grid p{font-size:1.04rem;max-width:620px;justify-self:end}
+    .heading-grid h2{margin-top:14px}
+
+    /* Story */
+    .story-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
+    .story-visual{position:relative;min-height:650px}
+    .story-photo-main{
+      position:absolute;inset:0 12% 65px 0;border-radius:30px;overflow:hidden;box-shadow:var(--shadow-sm);background:#e3f2f8
+    }
+    .story-photo-main img{width:100%;height:100%;object-fit:cover}
+    .story-photo-small{
+      position:absolute;right:0;bottom:0;width:48%;height:305px;border:8px solid var(--bg);border-radius:28px;overflow:hidden;
+      box-shadow:var(--shadow-sm);background:#fff0cd
+    }
+    .story-photo-small img{width:100%;height:100%;object-fit:cover}
+    .story-number{
+      position:absolute;left:28px;bottom:28px;width:138px;height:138px;border-radius:50%;background:#fff;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:var(--shadow-sm)
+    }
+    .story-number strong{font-family:"Manrope";font-size:1.75rem;font-weight:800}
+    .story-number span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-top:4px}
+    .story-copy h2{margin:14px 0 24px}
+    .story-copy>p{font-size:1.03rem}
+    .principles{margin-top:34px}
+    .principle{
+      display:grid;grid-template-columns:40px 1fr;gap:15px;padding:17px 0;border-bottom:1px solid var(--line)
+    }
+    .principle:last-child{border-bottom:0}
+    .principle-num{
+      width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+      background:var(--sage-soft);font-family:"Manrope";font-size:.76rem;font-weight:800;color:var(--forest)
+    }
+    .principle p{font-size:.86rem;margin-top:4px}
+
+    /* Levels */
+    .levels{
+      display:grid;grid-template-columns:repeat(5,1fr);gap:12px;
+    }
+    .level{
+      min-height:335px;border:1px solid var(--line);border-radius:24px;padding:24px 21px;
+      display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;
+      background:#faf8f2;transition:.25s ease;
+    }
+    .level:hover{transform:translateY(-7px);box-shadow:var(--shadow-sm)}
+    .level::after{
+      content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;top:-55px;background:var(--blue-soft)
+    }
+    .level:nth-child(2)::after{background:var(--sage-soft)}
+    .level:nth-child(3)::after{background:var(--yellow-soft)}
+    .level:nth-child(4)::after{background:var(--orange-soft)}
+    .level:nth-child(5)::after{background:var(--red-soft)}
+    .level-top{display:flex;justify-content:space-between;align-items:start;position:relative;z-index:2}
+    .level-index{font-family:"Manrope";font-size:.74rem;font-weight:800;color:var(--muted)}
+    .level-icon{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.75);display:grid;place-items:center}
+    .level-icon svg{width:18px;height:18px}
+    .level h3{margin-bottom:10px}
+    .level p{font-size:.84rem}
+    .level-age{display:inline-block;margin-top:17px;font-size:.72rem;font-weight:800;color:var(--forest)}
+
+    /* Experience */
+    .experience-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:80px;align-items:start}
+    .experience-intro{position:sticky;top:125px}
+    .experience-intro h2{margin:14px 0 22px}
+    .experience-intro p{font-size:1.02rem;max-width:500px}
+    .experience-list{display:grid}
+    .experience-item{
+      display:grid;grid-template-columns:68px 1fr;gap:22px;padding:27px 0;border-bottom:1px solid rgba(255,255,255,.12)
+    }
+    .experience-item:first-child{padding-top:0}
+    .experience-item:last-child{border-bottom:0}
+    .exp-icon{
+      width:58px;height:58px;border:1px solid rgba(255,255,255,.22);border-radius:18px;display:grid;place-items:center;color:#ffe681
+    }
+    .exp-icon svg{width:23px;height:23px}
+    .experience-item p{font-size:.9rem;margin-top:7px}
+
+    /* Quote / full image */
+    .visual-quote{padding:26px 0 112px}
+    .visual-quote-card{
+      min-height:560px;border-radius:32px;overflow:hidden;position:relative;background:#8db9cd;
+    }
+    .visual-quote-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.74) brightness(.72)}
+    .visual-quote-card::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,91,122,.78),rgba(36,91,122,.10))}
+    .quote{
+      position:relative;z-index:2;color:#fff;max-width:780px;padding:72px;min-height:560px;display:flex;flex-direction:column;justify-content:center
+    }
+    .quote-mark{font-family:Georgia,serif;font-size:6rem;line-height:.6;color:var(--gold)}
+    .quote h2{font-size:clamp(2.3rem,4vw,4rem);margin-top:24px}
+    .quote p{color:#dce8e3;margin-top:24px;max-width:550px}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .faq-intro h2{margin-top:14px}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-q{
+      width:100%;border:0;background:none;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;
+      text-align:left;font-weight:700;cursor:pointer
+    }
+    .faq-q span:last-child{
+      width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:0 0 auto;
+      transition:.2s
+    }
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+    .faq-a p{padding:0 50px 24px 0;font-size:.9rem}
+    .faq-item.open .faq-a{max-height:240px}
+    .faq-item.open .faq-q span:last-child{transform:rotate(45deg);background:var(--sage-soft)}
+
+    /* Contact */
+    .contact-shell{
+      display:grid;grid-template-columns:.85fr 1.15fr;border-radius:32px;overflow:hidden;background:#e4e9df;
+      box-shadow:var(--shadow-sm)
+    }
+    .contact-info{background:#358fbe;color:#fff;padding:55px}
+    .contact-info .kicker{color:#d4e5d8}
+    .contact-info h2{margin:14px 0 22px}
+    .contact-info>p{color:#c8d9d4;font-size:.96rem}
+    .contact-links{display:grid;margin-top:38px}
+    .contact-link{
+      display:grid;grid-template-columns:40px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.12)
+    }
+    .contact-link:last-child{border-bottom:0}
+    .contact-link svg{width:20px;height:20px;margin-top:2px;color:#ffe36f}
+    .contact-link small{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:#9eb9b2;font-weight:700}
+    .contact-link strong{display:block;font-size:.91rem;margin-top:2px}
+
+    .contact-form{background:#fff;padding:55px}
+    .form-head{margin-bottom:28px}
+    .form-head h3{font-size:1.65rem}
+    .form-head p{font-size:.85rem;margin-top:8px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.72rem;font-weight:800;color:#52665f}
+    input,textarea,select{
+      width:100%;border:1px solid var(--line);background:#fbfaf6;border-radius:13px;padding:13px 14px;outline:none;color:var(--ink)
+    }
+    textarea{min-height:120px;resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color:#83a78e;box-shadow:0 0 0 3px rgba(40,92,76,.08)}
+    .form-note{font-size:.68rem;margin:12px 0 18px}
+    .success{
+      display:none;margin-top:14px;padding:12px 14px;border-radius:12px;background:#e7f1e9;color:#285c4c;font-size:.8rem;font-weight:700
+    }
+
+    /* Footer */
+    footer{padding:54px 0 24px;background:#286f96;color:#fff}
+    .footer-top{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:52px;padding-bottom:42px}
+    .footer-brand-copy{font-size:.83rem;max-width:390px;color:#d4e8f2;margin-top:14px}
+    footer h4{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+    footer a{display:block;font-size:.83rem;color:#d8ebf4;margin:8px 0}
+    footer a:hover{color:#fff}
+    .footer-bottom{
+      padding-top:22px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:20px;
+      color:#b9d9e8;font-size:.7rem
+    }
+
+    /* floating cta */
+    .floating-cta{
+      position:fixed;right:22px;bottom:22px;z-index:55;background:#358fbe;color:#fff;border-radius:999px;
+      padding:13px 18px;box-shadow:0 14px 38px rgba(48,129,173,.28);display:flex;align-items:center;gap:9px;
+      font-size:.78rem;font-weight:800;transition:.2s
+    }
+    .floating-cta:hover{transform:translateY(-2px)}
+    .floating-cta svg{width:17px;height:17px}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:1020px){
+      nav{
+        position:fixed;inset:36px 0 0;background:var(--bg);z-index:65;flex-direction:column;justify-content:center;gap:26px;
+        opacity:0;visibility:hidden;transform:translateY(-10px);transition:.22s
+      }
+      nav.open{opacity:1;visibility:visible;transform:none}
+      nav>a:not(.btn){font-family:"Manrope";font-size:1.55rem}
+      .menu-btn{display:block}
+      .menu-btn.open span:first-child{transform:translateY(3px) rotate(45deg)}
+      .menu-btn.open span:last-child{transform:translateY(-3px) rotate(-45deg)}
+
+      .hero-shell,.hero-content{min-height:620px}
+      .hero-content{padding:62px 46px;max-width:720px}
+      .hero-badge{width:130px;height:130px}
+      .heading-grid,.story-grid,.experience-grid,.faq-grid,.contact-shell{grid-template-columns:1fr}
+      .heading-grid{gap:18px}
+      .heading-grid p{justify-self:start}
+      .story-grid{gap:45px}
+      .story-visual{min-height:570px}
+      .levels{grid-template-columns:repeat(2,1fr)}
+      .levels .level:last-child{grid-column:1/-1}
+      .experience-intro{position:static}
+      .contact-shell{border-radius:28px}
+      .footer-top{grid-template-columns:1fr 1fr}
+      .footer-top>div:first-child{grid-column:1/-1}
+    }
+
+    @media(max-width:680px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      .section{padding:78px 0}
+      .brand-sub{display:none}
+      .nav{height:70px}
+      .topbar .container{min-height:34px;font-size:.68rem}
+      .hero{padding:18px 0 26px}
+      .hero-shell,.hero-content{min-height:640px}
+      .hero-shell{border-radius:24px}
+      .hero-content{padding:42px 24px}
+      .hero-content h1{font-size:clamp(2.9rem,15vw,4.3rem)}
+      .hero-lead{font-size:.94rem}
+      .hero-badge{right:18px;top:18px;width:105px;height:105px}
+      .hero-badge strong{font-size:1.5rem}
+      .hero-badge span{font-size:.54rem}
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .proof-item{padding:18px 12px}
+      .proof-item:nth-child(2){border-right:0}
+      .proof-item:nth-child(3),.proof-item:nth-child(4){border-top:1px solid var(--line)}
+      .story-visual{min-height:470px}
+      .story-photo-main{inset:0 7% 55px 0}
+      .story-photo-small{width:55%;height:220px}
+      .story-number{width:110px;height:110px;left:17px;bottom:20px}
+      .levels{grid-template-columns:1fr}
+      .levels .level:last-child{grid-column:auto}
+      .level{min-height:260px}
+      .experience-grid{gap:44px}
+      .experience-item{grid-template-columns:54px 1fr;gap:15px}
+      .exp-icon{width:50px;height:50px}
+      .visual-quote{padding-bottom:78px}
+      .visual-quote-card,.quote{min-height:520px}
+      .visual-quote-card{border-radius:24px}
+      .quote{padding:40px 24px}
+      .contact-info,.contact-form{padding:34px 24px}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .footer-top{grid-template-columns:1fr;gap:28px}
+      .footer-top>div:first-child{grid-column:auto}
+      .footer-bottom{flex-direction:column}
+      .floating-cta{right:14px;bottom:14px;padding:12px 15px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>¿Buscas Sala Cuna o Jardín Infantil en Vitacura?</span>
+      <a href="#contacto">Consultar disponibilidad</a>
+    </div>
+  </div>
+  <div class="ukika-color-line" aria-hidden="true"></div>
+
+  <header id="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Ukika inicio">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">UKIKA</div>
+          <div class="brand-sub">Sala Cuna & Jardín Infantil</div>
+        </div>
+      </a>
+
+      <nav id="nav">
+        <a href="#proyecto">Proyecto</a>
+        <a href="#niveles">Niveles</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn-dark">Consultar matrícula</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-shell reveal">
+          <div class="hero-color-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <img class="hero-bg" src="https://www.ukika.cl/pics/jardin_patio4.jpg" alt="Patio del Jardín Infantil Ukika">
+          <div class="hero-content">
+            <div class="kicker">Educación parvularia en Vitacura</div>
+            <h1>Crecer con confianza.<br>Aprender con curiosidad.</h1>
+            <p class="hero-lead">
+              Acompañamos los primeros años de niños y niñas en un entorno afectivo, estimulante y seguro,
+              donde el juego, la autonomía y los aprendizajes significativos son parte de cada día.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-white" href="#contacto">
+                Conocer proceso de matrícula
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <a class="btn btn-ghost-white" href="#proyecto">Conocer Ukika</a>
+            </div>
+          </div>
+          <div class="hero-badge">
+            <strong>1988</strong>
+            <span>acompañando<br>infancias</span>
+          </div>
+        </div>
+
+        <div class="proof">
+          <div class="proof-grid">
+            <div class="proof-item"><strong>Desde 1988</strong><span>Trayectoria educativa</span></div>
+            <div class="proof-item"><strong>Sala Cuna</strong><span>Desde los 84 días</span></div>
+            <div class="proof-item"><strong>Hasta 19:00</strong><span>Jornada completa</span></div>
+            <div class="proof-item"><strong>Vitacura</strong><span>Los Dragones 9932</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyecto">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-visual reveal">
+            <div class="story-photo-main">
+              <img src="https://www.ukika.cl/pics/jardin_sala1b.jpg" alt="Niños participando en una actividad en Ukika" loading="lazy">
+            </div>
+            <div class="story-photo-small">
+              <img src="https://www.ukika.cl/pics/jardin_patio.jpg" alt="Patio de Jardín Infantil Ukika" loading="lazy">
+            </div>
+            <div class="story-number">
+              <strong>38+</strong>
+              <span>años de<br>experiencia</span>
+            </div>
+          </div>
+
+          <div class="story-copy reveal">
+            <div class="kicker">Nuestro proyecto</div>
+            <h2>Una educación que respeta la forma única de crecer de cada niño.</h2>
+            <p>
+              El proyecto educativo de Ukika busca favorecer aprendizajes relevantes y significativos,
+              resguardando el bienestar y el desarrollo integral de cada niño y niña, en estrecha colaboración con su familia.
+            </p>
+
+            <div class="principles">
+              <div class="principle">
+                <div class="principle-num">01</div>
+                <div>
+                  <h3>Bienestar primero</h3>
+                  <p>Ambientes afectivos, estimulantes y seguros que permiten explorar con confianza.</p>
+                </div>
+              </div>
+              <div class="principle">
+                <div class="principle-num">02</div>
+                <div>
+                  <h3>Aprender haciendo</h3>
+                  <p>Experiencias concretas donde niños y niñas actúan, sienten, piensan y descubren.</p>
+                </div>
+              </div>
+              <div class="principle">
+                <div class="principle-num">03</div>
+                <div>
+                  <h3>Familia y jardín</h3>
+                  <p>La educación se construye en complemento con la familia, compartiendo avances y necesidades.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="niveles">
+      <div class="container">
+        <div class="heading-grid reveal">
+          <div>
+            <div class="kicker">Niveles</div>
+            <h2>Cada etapa necesita una forma distinta de acompañar.</h2>
+          </div>
+          <p>
+            Desde Sala Cuna Menor hasta Transición, la propuesta se adapta al momento de desarrollo,
+            autonomía, intereses y necesidades de cada grupo.
+          </p>
+        </div>
+
+        <div class="levels">
+          <article class="level reveal">
+            <div class="level-top">
+              <span class="level-index">01</span>
+              <span class="level-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1 .9 2 1.3 3 1.3s2-.4 3-1.3"/></svg>
+              </span>
+            </div>
+            <div>
+              <h3>Sala Cuna<br>Menor</h3>
+              <p>Vínculo, seguridad, estimulación y primeras experiencias de exploración.</p>
+              <span class="level-age">84 días — 12 meses</span>
+            </div>
+          </article>
+
+          <article class="level reveal">
+            <div class="level-top">
+              <span class="level-index">02</span>
+              <span class="level-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 18c2-5 4-8 7-12 3 4 5 7 7 12"/><path d="M8 14h8"/></svg>
+              </span>
+            </div>
+            <div>
+              <h3>Sala Cuna<br>Mayor</h3>
+              <p>Movimiento, lenguaje inicial, autonomía y descubrimiento del entorno.</p>
+              <span class="level-age">12 — 18 meses</span>
+            </div>
+          </article>
+
+          <article class="level reveal">
+            <div class="level-top">
+              <span class="level-index">03</span>
+              <span class="level-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18 9 8l3 5 3-7 5 12"/><path d="M4 18h16"/></svg>
+              </span>
+            </div>
+            <div>
+              <h3>Medio<br>Menor</h3>
+              <p>Juego, comunicación, experiencias sensoriales y autonomía progresiva.</p>
+              <span class="level-age">1 año 6 meses — 2 años 6 meses</span>
+            </div>
+          </article>
+
+          <article class="level reveal">
+            <div class="level-top">
+              <span class="level-index">04</span>
+              <span class="level-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+              </span>
+            </div>
+            <div>
+              <h3>Medio<br>Mayor</h3>
+              <p>Curiosidad, expresión, convivencia y participación en experiencias guiadas.</p>
+              <span class="level-age">2 años 6 meses — 3 años 6 meses</span>
+            </div>
+          </article>
+
+          <article class="level reveal">
+            <div class="level-top">
+              <span class="level-index">05</span>
+              <span class="level-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 18 12 4l7 14"/><path d="M8 14h8"/></svg>
+              </span>
+            </div>
+            <div>
+              <h3>Nivel<br>Transición</h3>
+              <p>Habilidades, confianza y autonomía para enfrentar con seguridad nuevas etapas.</p>
+              <span class="level-age">Desde 3 años 6 meses</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--forest" id="experiencia">
+      <div class="container">
+        <div class="experience-grid">
+          <div class="experience-intro reveal">
+            <div class="kicker">Experiencia Ukika</div>
+            <h2>Mucho más que una sala de clases.</h2>
+            <p>
+              La propuesta complementa el trabajo pedagógico con experiencias que fortalecen
+              el lenguaje, el movimiento, la autoestima, la convivencia y el vínculo con el entorno.
+            </p>
+          </div>
+
+          <div class="experience-list">
+            <div class="experience-item reveal">
+              <div class="exp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+              </div>
+              <div>
+                <h3>Inglés integrado a la rutina</h3>
+                <p>Familiarización con el idioma mediante canciones, vocabulario, instrucciones y experiencias semanales.</p>
+              </div>
+            </div>
+
+            <div class="experience-item reveal">
+              <div class="exp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19c2-4 4-8 7-14 3 6 5 10 7 14"/><path d="M8 15h8"/></svg>
+              </div>
+              <div>
+                <h3>Psicomotricidad</h3>
+                <p>Experiencias para conocer el propio cuerpo, potenciar habilidades motrices y ganar seguridad en el movimiento.</p>
+              </div>
+            </div>
+
+            <div class="experience-item reveal">
+              <div class="exp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V8l8-5 8 5v11"/><path d="M8 19v-6h8v6"/></svg>
+              </div>
+              <div>
+                <h3>Infraestructura pensada para la infancia</h3>
+                <p>Espacios interiores y exteriores organizados para favorecer el funcionamiento educativo, la seguridad y el juego.</p>
+              </div>
+            </div>
+
+            <div class="experience-item reveal">
+              <div class="exp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21a6 6 0 0 1 12 0M12 21a5 5 0 0 1 10 0"/></svg>
+              </div>
+              <div>
+                <h3>Equipo multiprofesional</h3>
+                <p>Educadoras de párvulos, técnicos, nutricionista y profesionales de apoyo trabajando de manera coordinada.</p>
+              </div>
+            </div>
+
+            <div class="experience-item reveal">
+              <div class="exp-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 5.5a5 5 0 0 0-7.1 0L12 6.9l-1.4-1.4a5 5 0 1 0-7.1 7.1L12 21l8.5-8.4a5 5 0 0 0 0-7.1Z"/></svg>
+              </div>
+              <div>
+                <h3>Acompañamiento a las familias</h3>
+                <p>Entrevistas, reuniones e información periódica sobre los avances y necesidades de cada niño o niña.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="visual-quote section--paper">
+      <div class="container">
+        <div class="visual-quote-card reveal">
+          <img src="https://www.ukika.cl/pics/jardin_bano.jpg" alt="Niños desarrollando autonomía en dependencias de Ukika" loading="lazy">
+          <div class="quote">
+            <div class="quote-mark">“</div>
+            <h2>Los primeros años no se repiten. La forma de acompañarlos importa.</h2>
+            <p>
+              La propuesta de Ukika pone el foco en experiencias adecuadas a cada etapa,
+              con apoyos pedagógicos y una relación cercana entre jardín, niños y familias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="preguntas">
+      <div class="container">
+        <div class="faq-grid">
+          <div class="faq-intro reveal">
+            <div class="kicker">Información práctica</div>
+            <h2>Lo esencial, sin tener que buscarlo.</h2>
+          </div>
+
+          <div class="faq-list reveal">
+            <div class="faq-item open">
+              <button class="faq-q" type="button">
+                <span>¿Cuál es el horario de funcionamiento?</span><span>+</span>
+              </button>
+              <div class="faq-a"><p>La jornada de mañana funciona de 07:30 a 12:30 y la jornada completa de 07:30 a 19:00 horas.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>¿Desde qué edad reciben niños?</span><span>+</span>
+              </button>
+              <div class="faq-a"><p>Sala Cuna Menor recibe niños y niñas desde los 84 días. Los niveles continúan hasta Transición.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>¿Dónde está ubicado Ukika?</span><span>+</span>
+              </button>
+              <div class="faq-a"><p>En Los Dragones 9932, comuna de Vitacura, Santiago.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>¿Cómo consulto por matrícula?</span><span>+</span>
+              </button>
+              <div class="faq-a"><p>Puedes llamar al jardín, escribir a info@ukika.cl o completar el formulario que aparece más abajo.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button">
+                <span>¿Qué profesionales forman parte del equipo?</span><span>+</span>
+              </button>
+              <div class="faq-a"><p>El sitio institucional informa educadoras de párvulos, técnicos en párvulos, nutricionista y manipuladora de alimentos, además de profesionales asociados a actividades específicas.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="contacto">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div class="contact-info">
+            <div class="kicker">Contacto</div>
+            <h2>Conversemos sobre la etapa que viene.</h2>
+            <p>Consulta por niveles, disponibilidad, matrícula y funcionamiento del jardín.</p>
+
+            <div class="contact-links">
+              <a class="contact-link" href="https://www.google.com/maps/search/?api=1&query=Los+Dragones+9932+Vitacura+Chile" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-4.8 7-11a7 7 0 1 0-14 0c0 6.2 7 11 7 11Z"/><circle cx="12" cy="10" r="2"/></svg>
+                <span><small>Dirección</small><strong>Los Dragones 9932, Vitacura</strong></span>
+              </a>
+              <a class="contact-link" href="tel:+56222241129">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.8v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19.2 19.2 0 0 1-6-6 19.5 19.5 0 0 1-3-8.5A2 2 0 0 1 4.3 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.2 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.8 2.2Z"/></svg>
+                <span><small>Teléfono</small><strong>+56 2 2224 1129</strong></span>
+              </a>
+              <a class="contact-link" href="mailto:info@ukika.cl">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span><small>Correo</small><strong>info@ukika.cl</strong></span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-head">
+              <h3>Solicitar información</h3>
+              <p>Completa tus datos y prepararemos el correo de consulta.</p>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" required placeholder="Nombre del apoderado">
+              </div>
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" placeholder="+56 9...">
+              </div>
+              <div class="field">
+                <label for="correo">Correo</label>
+                <input id="correo" name="correo" type="email" required placeholder="nombre@correo.cl">
+              </div>
+              <div class="field">
+                <label for="nivel">Nivel de interés</label>
+                <select id="nivel" name="nivel">
+                  <option value="Aún no lo sé">Aún no lo sé</option>
+                  <option>Sala Cuna Menor</option>
+                  <option>Sala Cuna Mayor</option>
+                  <option>Medio Menor</option>
+                  <option>Medio Mayor</option>
+                  <option>Transición</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas saber..."></textarea>
+              </div>
+            </div>
+
+            <p class="form-note">Esta versión de demostración abre tu aplicación de correo. En la versión publicada se puede conectar a un formulario real, WhatsApp o CRM.</p>
+            <button class="btn btn-dark" type="submit">
+              Preparar consulta
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14-7-5 14-2-5-7-2Z"/></svg>
+            </button>
+            <div class="success" id="success">Consulta preparada. Se abrirá tu aplicación de correo.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#inicio" class="brand" style="color:white">
+            <div class="brand-mark"></div>
+            <div>
+              <div class="brand-name">UKIKA</div>
+              <div class="brand-sub" style="color:#8fa8a1">Sala Cuna & Jardín Infantil</div>
+            </div>
+          </a>
+          <p class="footer-brand-copy">
+            Educación parvularia en Vitacura, con una propuesta orientada al bienestar,
+            desarrollo integral y aprendizaje significativo.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explorar</h4>
+          <a href="#proyecto">Proyecto educativo</a>
+          <a href="#niveles">Niveles</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#preguntas">Preguntas frecuentes</a>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+          <a href="tel:+56222241129">+56 2 2224 1129</a>
+          <a href="mailto:info@ukika.cl">info@ukika.cl</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Los+Dragones+9932+Vitacura+Chile" target="_blank" rel="noopener">Los Dragones 9932, Vitacura</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Sala Cuna Jardín Infantil Ukika.</span>
+        <span>Propuesta de rediseño web — versión de demostración.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-cta" href="#contacto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg>
+    Consultar matrícula
+  </a>
+
+  <script>
+    const header = document.getElementById('header');
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+
+    const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, {passive:true});
+
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('menu-open', open);
+    });
+
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }));
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.faq-item').classList.toggle('open');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.10});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const d = new FormData(e.currentTarget);
+      const subject = encodeURIComponent('Consulta de matrícula — Sitio web Ukika');
+      const body = encodeURIComponent(
+`Nombre: ${d.get('nombre')}
+Teléfono: ${d.get('telefono')}
+Correo: ${d.get('correo')}
+Nivel de interés: ${d.get('nivel')}
+
+Mensaje:
+${d.get('mensaje')}`
+      );
+      document.getElementById('success').style.display = 'block';
+      setTimeout(() => {
+        location.href = `mailto:info@ukika.cl?subject=${subject}&body=${body}`;
+      }, 180);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
