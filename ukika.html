@@ -312,6 +312,101 @@
     .quote h2{font-size:clamp(2.3rem,4vw,4rem);margin-top:24px}
     .quote p{color:#dce8e3;margin-top:24px;max-width:550px}
 
+
+    /* Team */
+    .team-intro{
+      max-width:760px;
+      margin-bottom:52px;
+    }
+    .team-intro h2{margin-top:14px}
+    .team-intro p{margin-top:18px;font-size:1.02rem;max-width:650px}
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+    .team-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      transition:.25s ease;
+    }
+    .team-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-sm);
+    }
+    .team-photo{
+      aspect-ratio:4/4.6;
+      position:relative;
+      overflow:hidden;
+      background:#f7f9fb;
+      display:grid;
+      place-items:center;
+    }
+    .team-photo::before{
+      content:"";
+      position:absolute;
+      inset:auto -20% -32% -20%;
+      height:62%;
+      border-radius:50%;
+      opacity:.8;
+    }
+    .team-card:nth-child(1) .team-photo{background:var(--blue-soft)}
+    .team-card:nth-child(1) .team-photo::before{background:var(--blue)}
+    .team-card:nth-child(2) .team-photo{background:var(--green-soft)}
+    .team-card:nth-child(2) .team-photo::before{background:var(--green)}
+    .team-card:nth-child(3) .team-photo{background:var(--yellow-soft)}
+    .team-card:nth-child(3) .team-photo::before{background:var(--yellow)}
+    .team-card:nth-child(4) .team-photo{background:var(--orange-soft)}
+    .team-card:nth-child(4) .team-photo::before{background:var(--orange)}
+
+    .team-avatar{
+      width:118px;
+      height:118px;
+      border-radius:50%;
+      background:#fff;
+      border:8px solid rgba(255,255,255,.82);
+      position:relative;
+      z-index:2;
+      display:grid;
+      place-items:center;
+      box-shadow:0 12px 32px rgba(45,72,88,.12);
+    }
+    .team-avatar svg{
+      width:68px;
+      height:68px;
+      stroke:#5f7078;
+    }
+    .team-body{
+      padding:22px 22px 24px;
+    }
+    .team-role{
+      display:inline-block;
+      font-size:.66rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+      margin-bottom:9px;
+    }
+    .team-card:nth-child(1) .team-role{color:var(--blue)}
+    .team-card:nth-child(2) .team-role{color:#00a52a}
+    .team-card:nth-child(3) .team-role{color:#9e7d00}
+    .team-card:nth-child(4) .team-role{color:var(--orange)}
+    .team-body h3{font-size:1.2rem}
+    .team-body p{font-size:.82rem;margin-top:8px}
+
+    .team-note{
+      margin-top:28px;
+      border:1px dashed var(--line);
+      background:#fbfdff;
+      border-radius:18px;
+      padding:16px 18px;
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
     /* FAQ */
     .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
     .faq-intro h2{margin-top:14px}
@@ -414,6 +509,7 @@
       .story-grid{gap:45px}
       .story-visual{min-height:570px}
       .levels{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:repeat(2,1fr)}
       .levels .level:last-child{grid-column:1/-1}
       .experience-intro{position:static}
       .contact-shell{border-radius:28px}
@@ -448,6 +544,7 @@
       .story-photo-small{width:55%;height:220px}
       .story-number{width:110px;height:110px;left:17px;bottom:20px}
       .levels{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
       .levels .level:last-child{grid-column:auto}
       .level{min-height:260px}
       .experience-grid{gap:44px}
@@ -493,6 +590,7 @@
         <a href="#proyecto">Proyecto</a>
         <a href="#niveles">Niveles</a>
         <a href="#experiencia">Experiencia</a>
+        <a href="#equipo">Equipo</a>
         <a href="#preguntas">Preguntas</a>
         <a href="#contacto">Contacto</a>
         <a href="#contacto" class="btn btn-dark">Consultar matrícula</a>
@@ -764,6 +862,91 @@
       </div>
     </div>
 
+
+    <section class="section section--paper" id="equipo">
+      <div class="container">
+        <div class="team-intro reveal">
+          <div class="kicker">Nuestro equipo</div>
+          <h2>Personas que acompañan cada etapa con dedicación.</h2>
+          <p>
+            El equipo de Ukika está conformado por profesionales y técnicos de educación parvularia,
+            además de especialistas de apoyo que trabajan de forma coordinada para favorecer el bienestar
+            y desarrollo integral de cada niño y niña.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <div class="team-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 21a8 8 0 0 1 16 0"/>
+                </svg>
+              </div>
+            </div>
+            <div class="team-body">
+              <span class="team-role">Dirección</span>
+              <h3>Equipo Directivo</h3>
+              <p>Responsable de coordinar el proyecto educativo y acompañar a las familias y al equipo pedagógico.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <div class="team-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 21a8 8 0 0 1 16 0"/>
+                </svg>
+              </div>
+            </div>
+            <div class="team-body">
+              <span class="team-role">Pedagogía</span>
+              <h3>Educadoras de Párvulos</h3>
+              <p>Profesionales a cargo de planificar y acompañar las experiencias de aprendizaje de cada nivel.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <div class="team-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 21a8 8 0 0 1 16 0"/>
+                </svg>
+              </div>
+            </div>
+            <div class="team-body">
+              <span class="team-role">Acompañamiento</span>
+              <h3>Técnicos en Párvulos</h3>
+              <p>Apoyan el trabajo diario, las rutinas, el cuidado y las actividades pedagógicas de niños y niñas.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-photo">
+              <div class="team-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 21a8 8 0 0 1 16 0"/>
+                </svg>
+              </div>
+            </div>
+            <div class="team-body">
+              <span class="team-role">Apoyo</span>
+              <h3>Profesionales de Apoyo</h3>
+              <p>Especialistas que complementan el trabajo educativo y apoyan distintas dimensiones del desarrollo infantil.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="team-note reveal">
+          Sección provisional: los nombres, cargos, fotografías y especialidades se pueden reemplazar cuando tengamos la información definitiva del equipo Ukika.
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="preguntas">
       <div class="container">
         <div class="faq-grid">
@@ -898,6 +1081,7 @@
           <a href="#proyecto">Proyecto educativo</a>
           <a href="#niveles">Niveles</a>
           <a href="#experiencia">Experiencia</a>
+          <a href="#equipo">Equipo</a>
           <a href="#preguntas">Preguntas frecuentes</a>
         </div>
 
