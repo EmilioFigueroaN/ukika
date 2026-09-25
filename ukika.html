@@ -284,6 +284,93 @@
       line-height:1.35;
     }
 
+
+    /* identidad */
+    .identity-section{padding:0 0 26px}
+    .identity-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid #dbe6ef;
+      border-radius:38px;
+      background:#fbfcfd;
+      box-shadow:var(--shadow-sm);
+    }
+    .identity-card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:5px;
+      background:linear-gradient(90deg,
+        var(--red) 0 20%,
+        var(--green) 20% 40%,
+        var(--blue) 40% 60%,
+        var(--yellow) 60% 80%,
+        var(--orange) 80% 100%);
+      z-index:2;
+    }
+    .identity-grid{
+      display:grid;
+      grid-template-columns:.86fr 1.14fr;
+      gap:48px;
+      align-items:center;
+      padding:54px 42px 42px 42px;
+    }
+    .identity-copy{
+      padding:8px 0 8px 30px;
+    }
+    .identity-copy h2{
+      margin-top:18px;
+      max-width:560px;
+    }
+    .identity-copy p{
+      margin-top:24px;
+      max-width:520px;
+      font-size:1rem;
+      line-height:1.6;
+    }
+    .identity-badges{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+    .identity-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 18px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:800;
+      color:var(--ink);
+      background:#f3f6fb;
+    }
+    .identity-badge:nth-child(2){
+      background:#faf3d8;
+      color:#9a7b00;
+    }
+    .identity-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--blue);
+      display:inline-block;
+    }
+    .identity-badge:nth-child(2) .identity-dot{background:#b08a00}
+    .identity-art{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+    }
+    .identity-art img{
+      width:100%;
+      max-width:820px;
+      height:auto;
+      object-fit:contain;
+    }
+
     /* proof */
     .proof{
       display:grid;
@@ -796,7 +883,7 @@
       .menu-btn.open span:first-child{transform:translateY(3px) rotate(45deg)}
       .menu-btn.open span:last-child{transform:translateY(-3px) rotate(-45deg)}
 
-      .split,.story-band,.faq-layout,.contact-shell{grid-template-columns:1fr}
+      .split,.story-band,.faq-layout,.contact-shell,.identity-grid{grid-template-columns:1fr}
       .section-head,.experience-head{grid-template-columns:1fr;gap:18px}
       .section-head p,.experience-head p{justify-self:start}
       .levels{grid-template-columns:repeat(2,1fr)}
@@ -837,6 +924,10 @@
 
       .photo-card{min-height:420px}
       .levels,.experience-grid,.team-grid{grid-template-columns:1fr}
+      .identity-copy{padding:0}
+      .identity-grid{padding:42px 22px 24px;gap:20px}
+      .identity-card{border-radius:24px}
+      .identity-art img{max-width:100%}
       .levels .level:last-child{grid-column:auto}
       .level{min-height:240px}
       .experience-wrap{padding:42px 22px;border-radius:26px}
@@ -924,6 +1015,31 @@
           <div class="proof-item"><strong>Sala Cuna</strong><span>Desde los 84 días</span></div>
           <div class="proof-item"><strong>Hasta 19:00</strong><span>Jornada completa</span></div>
           <div class="proof-item"><strong>Vitacura</strong><span>Los Dragones 9932</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="identity-section" id="identidad">
+      <div class="container">
+        <div class="identity-card reveal">
+          <div class="identity-grid">
+            <div class="identity-copy">
+              <div class="kicker">Identidad Ukika</div>
+              <h2>Crecer, hacer amigos y aprender con el corazón.</h2>
+              <p>
+                Una identidad construida en torno a la infancia, la cercanía y el desarrollo integral,
+                acompañando a las familias desde los primeros años.
+              </p>
+              <div class="identity-badges">
+                <span class="identity-badge"><span class="identity-dot"></span>Desde 1988</span>
+                <span class="identity-badge"><span class="identity-dot"></span>Autorización normativa JUNJI</span>
+              </div>
+            </div>
+            <div class="identity-art">
+              <img src="assets/ilustracion_ukika.gif" alt="Ilustración institucional de Ukika">
+            </div>
+          </div>
         </div>
       </div>
     </section>
