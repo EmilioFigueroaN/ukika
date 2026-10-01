@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sala Cuna y Jardín Infantil Ukika en Vitacura. Educación parvularia desde 1988, centrada en el bienestar, el juego, la autonomía y los aprendizajes significativos.">
+  <meta name="description" content="Sala Cuna y Jardín Infantil Ukika en Vitacura. Educación parvularia desde 1988.">
   <meta name="theme-color" content="#ffffff">
   <title>Ukika — Sala Cuna & Jardín Infantil</title>
 
@@ -13,59 +13,63 @@
 
   <style>
     :root{
-      --blue:#0767f7;
-      --red:#ff1717;
-      --green:#11c83f;
-      --yellow:#ffd218;
-      --orange:#ff7a1a;
+      --blue:#0867f6;
+      --red:#ff1616;
+      --green:#0fc83d;
+      --yellow:#ffd31a;
+      --orange:#ff7c1a;
 
-      --ink:#283b44;
-      --muted:#718088;
-      --line:#e7edf1;
-      --soft:#f7f9fb;
-      --blue-soft:#f3f7ff;
-
+      --ink:#263941;
+      --text:#566970;
+      --muted:#7a8a90;
+      --line:#e8edf0;
+      --soft:#f7f9fa;
+      --blue-soft:#f2f7ff;
       --white:#fff;
+
       --max:1240px;
-      --radius:30px;
-      --shadow:0 24px 70px rgba(28,57,74,.10);
-      --shadow-sm:0 14px 36px rgba(28,57,74,.08);
+      --radius-xl:34px;
+      --radius-lg:26px;
+      --radius-md:18px;
+      --shadow:0 30px 80px rgba(31,57,71,.10);
+      --shadow-sm:0 14px 38px rgba(31,57,71,.075);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--ink);
       background:#fff;
-      line-height:1.55;
+      color:var(--ink);
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.58;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
     body.menu-open{overflow:hidden}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
+    button,input,select,textarea{font:inherit}
     button{color:inherit}
-    ::selection{background:#ffe888;color:var(--ink)}
+    ::selection{background:#ffe98b;color:var(--ink)}
 
     .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-    .section{padding:112px 0}
+    .section{padding:118px 0}
     .section-soft{background:var(--soft)}
+    .section-tight{padding:58px 0}
 
     h1,h2,h3,h4{
-      font-family:"Manrope",sans-serif;
       margin:0;
+      font-family:"Manrope",sans-serif;
       letter-spacing:-.045em;
-      line-height:1.05;
+      line-height:1.04;
     }
-    h1{font-size:clamp(3.4rem,6.7vw,6.6rem);font-weight:700}
-    h2{font-size:clamp(2.35rem,4.5vw,4.1rem);font-weight:700}
-    h3{font-size:1.25rem;font-weight:700}
-    p{margin:0;color:var(--muted)}
+    h1{font-size:clamp(3.4rem,6.5vw,6.5rem);font-weight:700}
+    h2{font-size:clamp(2.35rem,4.5vw,4rem);font-weight:700}
+    h3{font-size:1.3rem;font-weight:700}
+    p{margin:0;color:var(--text)}
 
-    .kicker{
+    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -75,11 +79,9 @@
       letter-spacing:.16em;
       text-transform:uppercase;
     }
-    .kicker::before{
+    .eyebrow::before{
       content:"";
-      width:26px;
-      height:2px;
-      border-radius:99px;
+      width:28px;height:2px;border-radius:99px;
       background:currentColor;
     }
 
@@ -87,42 +89,53 @@
       min-height:50px;
       padding:0 22px;
       border-radius:999px;
+      border:1px solid transparent;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:9px;
-      border:1px solid transparent;
       font-size:.9rem;
       font-weight:800;
-      transition:.2s ease;
       cursor:pointer;
+      transition:.2s ease;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
       background:var(--blue);
       color:#fff;
-      box-shadow:0 12px 26px rgba(7,103,247,.20);
+      box-shadow:0 12px 28px rgba(8,103,246,.20);
     }
-    .btn-primary:hover{background:#0058dc}
-    .btn-white{background:#fff;color:var(--ink)}
-    .btn-outline{border-color:var(--line);background:#fff}
+    .btn-primary:hover{background:#0058d9}
+    .btn-light{
+      background:#fff;
+      color:var(--ink);
+      border-color:rgba(255,255,255,.35);
+    }
+    .btn-outline{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--ink);
+    }
 
-    /* top */
+    /* TOP */
     .announcement{
       min-height:34px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px;
-      font-size:.73rem;
+      gap:10px;
+      padding:7px 16px;
+      font-size:.72rem;
       font-weight:700;
-      color:#52636b;
+      color:#52636a;
       background:#fff;
       text-align:center;
-      padding:7px 16px;
     }
-    .announcement a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
-
+    .announcement a{
+      color:var(--blue);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
     .color-line{
       height:4px;
       background:linear-gradient(90deg,
@@ -139,65 +152,74 @@
       z-index:50;
       background:rgba(255,255,255,.94);
       backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(231,237,241,.75);
+      border-bottom:1px solid rgba(232,237,240,.8);
     }
     .nav{
       min-height:88px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:28px;
+      gap:30px;
     }
-    .brand{display:flex;align-items:center;position:relative;z-index:60}
+    .brand{
+      display:flex;
+      align-items:center;
+      position:relative;
+      z-index:60;
+    }
     .brand img{
-      width:200px;
+      width:202px;
       height:auto;
       object-fit:contain;
     }
-    nav{display:flex;align-items:center;gap:28px}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:27px;
+    }
     nav>a:not(.btn){
-      color:#40565e;
-      font-size:.85rem;
+      font-size:.84rem;
       font-weight:700;
+      color:#42585f;
       transition:.18s ease;
     }
     nav>a:not(.btn):hover{color:var(--blue)}
+
     .menu-btn{
       display:none;
-      width:45px;height:45px;
-      border-radius:50%;
+      width:44px;height:44px;
       border:1px solid var(--line);
       background:#fff;
+      border-radius:50%;
       position:relative;
       z-index:60;
     }
     .menu-btn span{
-      width:18px;height:2px;
-      background:var(--ink);
       display:block;
+      width:18px;height:2px;
       margin:4px auto;
-      border-radius:9px;
+      border-radius:99px;
+      background:var(--ink);
       transition:.2s;
     }
 
-    /* hero */
-    .hero{padding:44px 0 34px}
+    /* HERO */
+    .hero{padding:42px 0 32px}
     .hero-card{
-      min-height:670px;
-      border-radius:34px;
+      min-height:690px;
+      border-radius:var(--radius-xl);
       overflow:hidden;
       position:relative;
-      box-shadow:var(--shadow);
-      background:#0e62d7;
       isolation:isolate;
+      box-shadow:var(--shadow);
+      background:#0b61db;
     }
     .hero-card>img{
       position:absolute;
       inset:0;
-      width:100%;
-      height:100%;
+      width:100%;height:100%;
       object-fit:cover;
-      object-position:center;
+      object-position:center center;
       z-index:-3;
     }
     .hero-card::before{
@@ -207,93 +229,102 @@
       z-index:-2;
       background:
         linear-gradient(90deg,
-          rgba(0,82,203,.91) 0%,
-          rgba(0,94,225,.78) 30%,
-          rgba(0,94,225,.47) 50%,
-          rgba(0,94,225,.15) 70%,
-          rgba(0,94,225,0) 100%);
+          rgba(0,77,190,.94) 0%,
+          rgba(0,91,220,.82) 27%,
+          rgba(0,95,224,.58) 48%,
+          rgba(0,95,224,.18) 72%,
+          rgba(0,95,224,0) 100%);
     }
     .hero-card::after{
       content:"";
       position:absolute;
       inset:0;
       z-index:-1;
-      background:linear-gradient(0deg,rgba(14,39,70,.35) 0%,rgba(14,39,70,.05) 42%,transparent 65%);
+      background:
+        linear-gradient(0deg,rgba(16,39,69,.34) 0%,rgba(16,39,69,.06) 45%,transparent 67%);
     }
-    .hero-dots{
-      position:absolute;
-      top:30px;
-      left:34px;
-      display:flex;
-      gap:7px;
-    }
-    .hero-dots i{width:11px;height:11px;border-radius:50%;display:block}
-    .hero-dots i:nth-child(1){background:var(--red)}
-    .hero-dots i:nth-child(2){background:var(--green)}
-    .hero-dots i:nth-child(3){background:var(--blue)}
-    .hero-dots i:nth-child(4){background:var(--yellow)}
-    .hero-dots i:nth-child(5){background:var(--orange)}
-
     .hero-content{
-      min-height:670px;
-      padding:82px 74px 64px;
+      min-height:690px;
+      padding:80px 70px 62px;
+      color:#fff;
       display:flex;
       flex-direction:column;
       justify-content:flex-end;
-      color:#fff;
-      max-width:760px;
+      max-width:770px;
     }
-    .hero .kicker{color:#fff}
-    .hero h1{margin-top:16px;max-width:720px}
+    .hero .eyebrow{color:#fff}
+    .hero h1{margin-top:17px}
     .hero-lead{
-      max-width:610px;
+      max-width:605px;
+      margin:25px 0 31px;
       color:rgba(255,255,255,.88);
       font-size:1.04rem;
-      margin:24px 0 30px;
     }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero .btn-outline{
-      background:rgba(255,255,255,.08);
-      border-color:rgba(255,255,255,.24);
-      color:#fff;
-      backdrop-filter:blur(8px);
-    }
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
     .hero-badge{
       position:absolute;
       right:34px;
       top:34px;
-      width:154px;height:154px;
+      width:150px;height:150px;
       border-radius:50%;
       background:var(--yellow);
       color:var(--ink);
       display:flex;
-      flex-direction:column;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
+      flex-direction:column;
       text-align:center;
+      box-shadow:0 18px 45px rgba(30,46,58,.16);
       transform:rotate(5deg);
-      box-shadow:0 18px 40px rgba(35,43,48,.15);
     }
-    .hero-badge strong{font-family:"Manrope";font-size:2rem;line-height:1;font-weight:800}
+    .hero-badge strong{
+      font-family:"Manrope";
+      font-size:1.95rem;
+      line-height:1;
+      font-weight:800;
+    }
     .hero-badge span{
-      margin-top:8px;
-      font-size:.67rem;
+      margin-top:7px;
+      font-size:.64rem;
+      font-weight:800;
       letter-spacing:.12em;
       text-transform:uppercase;
-      font-weight:800;
       line-height:1.35;
     }
 
+    /* PROOF */
+    .proof{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border-bottom:1px solid var(--line);
+      margin-top:32px;
+    }
+    .proof-item{
+      padding:24px 25px;
+      border-right:1px solid var(--line);
+    }
+    .proof-item:first-child{padding-left:0}
+    .proof-item:last-child{border-right:0}
+    .proof-item strong{
+      display:block;
+      font-family:"Manrope";
+      font-size:1.07rem;
+      font-weight:800;
+    }
+    .proof-item span{font-size:.77rem;color:var(--muted)}
+    .proof-item:nth-child(1) strong{color:var(--red)}
+    .proof-item:nth-child(2) strong{color:var(--green)}
+    .proof-item:nth-child(3) strong{color:var(--orange)}
+    .proof-item:nth-child(4) strong{color:var(--blue)}
 
-    /* identidad */
-    .identity-section{padding:0 0 26px}
+    /* IDENTITY */
     .identity-card{
-      position:relative;
-      overflow:hidden;
-      border:1px solid #dbe6ef;
+      border:1px solid #dfe7ed;
       border-radius:38px;
       background:#fbfcfd;
       box-shadow:var(--shadow-sm);
+      overflow:hidden;
+      position:relative;
     }
     .identity-card::before{
       content:"";
@@ -306,58 +337,48 @@
         var(--blue) 40% 60%,
         var(--yellow) 60% 80%,
         var(--orange) 80% 100%);
-      z-index:2;
     }
     .identity-grid{
       display:grid;
       grid-template-columns:.86fr 1.14fr;
-      gap:48px;
+      gap:45px;
       align-items:center;
-      padding:54px 42px 42px 42px;
+      padding:58px 48px 46px;
     }
-    .identity-copy{
-      padding:8px 0 8px 30px;
-    }
-    .identity-copy h2{
-      margin-top:18px;
-      max-width:560px;
-    }
+    .identity-copy{padding-left:20px}
+    .identity-copy h2{margin-top:17px}
     .identity-copy p{
-      margin-top:24px;
       max-width:520px;
+      margin-top:24px;
       font-size:1rem;
-      line-height:1.6;
     }
     .identity-badges{
       display:flex;
-      gap:14px;
+      gap:11px;
       flex-wrap:wrap;
       margin-top:28px;
     }
     .identity-badge{
+      min-height:43px;
+      padding:0 15px;
+      border-radius:999px;
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      min-height:52px;
-      padding:0 18px;
-      border-radius:999px;
-      font-size:.8rem;
+      gap:8px;
+      font-size:.76rem;
       font-weight:800;
-      color:var(--ink);
-      background:#f3f6fb;
+      background:#f1f6ff;
+      color:var(--blue);
     }
     .identity-badge:nth-child(2){
-      background:#faf3d8;
-      color:#9a7b00;
+      background:#fff8dd;
+      color:#957600;
     }
     .identity-dot{
-      width:10px;
-      height:10px;
+      width:8px;height:8px;
       border-radius:50%;
-      background:var(--blue);
-      display:inline-block;
+      background:currentColor;
     }
-    .identity-badge:nth-child(2) .identity-dot{background:#b08a00}
     .identity-art{
       display:flex;
       align-items:center;
@@ -371,74 +392,63 @@
       object-fit:contain;
     }
 
-    /* proof */
-    .proof{
+    /* GENERIC HEAD */
+    .section-head{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-bottom:1px solid var(--line);
-      margin-top:34px;
+      grid-template-columns:.9fr 1.1fr;
+      gap:72px;
+      align-items:end;
+      margin-bottom:56px;
     }
-    .proof-item{
-      padding:24px 25px;
-      border-right:1px solid var(--line);
+    .section-head h2{margin-top:14px}
+    .section-head p{
+      max-width:620px;
+      justify-self:end;
+      font-size:1.02rem;
     }
-    .proof-item:first-child{padding-left:0}
-    .proof-item:last-child{border-right:0}
-    .proof-item strong{
-      display:block;
-      font-family:"Manrope";
-      font-size:1.08rem;
-      font-weight:800;
-    }
-    .proof-item span{font-size:.78rem;color:var(--muted)}
-    .proof-item:nth-child(1) strong{color:var(--red)}
-    .proof-item:nth-child(2) strong{color:var(--green)}
-    .proof-item:nth-child(3) strong{color:var(--orange)}
-    .proof-item:nth-child(4) strong{color:var(--blue)}
 
-    /* split */
-    .split{
+    /* PROJECT */
+    .project-grid{
       display:grid;
-      grid-template-columns:1.02fr .98fr;
+      grid-template-columns:1.03fr .97fr;
       gap:76px;
       align-items:center;
     }
-    .photo-card{
+    .editorial-photo{
+      min-height:585px;
       position:relative;
       border-radius:30px;
       overflow:hidden;
-      min-height:590px;
+      background:#edf2f4;
       box-shadow:var(--shadow-sm);
-      background:#edf3f6;
     }
-    .photo-card>img{
+    .editorial-photo img{
       position:absolute;
       inset:0;
-      width:100%;
-      height:100%;
+      width:100%;height:100%;
       object-fit:cover;
     }
-    .photo-card::after{
+    .editorial-photo::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(0deg,rgba(15,40,55,.18),transparent 42%);
+      background:linear-gradient(0deg,rgba(23,47,60,.18),transparent 43%);
     }
-    .photo-label{
+    .photo-caption{
       position:absolute;
       z-index:2;
-      left:22px;
-      bottom:22px;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(12px);
+      left:20px;
+      bottom:20px;
+      padding:9px 13px;
       border-radius:999px;
-      padding:10px 14px;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      color:var(--ink);
       font-size:.72rem;
       font-weight:800;
-      box-shadow:0 8px 24px rgba(25,55,70,.10);
     }
-    .split-copy h2{margin:14px 0 24px}
-    .split-copy>p{font-size:1.03rem}
+    .project-copy h2{margin:14px 0 24px}
+    .project-copy>p{font-size:1.02rem}
     .principles{margin-top:34px}
     .principle{
       display:grid;
@@ -448,81 +458,76 @@
       border-bottom:1px solid var(--line);
     }
     .principle:last-child{border-bottom:0}
-    .principle-index{
+    .principle-number{
       width:34px;height:34px;
       border-radius:50%;
-      display:grid;
-      place-items:center;
-      font-size:.72rem;
-      font-weight:800;
+      display:grid;place-items:center;
       background:var(--blue-soft);
       color:var(--blue);
+      font-size:.72rem;
+      font-weight:800;
     }
-    .principle:nth-child(2) .principle-index{background:#fff9d8;color:#917400}
-    .principle:nth-child(3) .principle-index{background:#effcf2;color:#079129}
-    .principle p{font-size:.86rem;margin-top:4px}
+    .principle:nth-child(2) .principle-number{background:#fff9d8;color:#8c7000}
+    .principle:nth-child(3) .principle-number{background:#effcf2;color:#078f29}
+    .principle p{font-size:.85rem;margin-top:4px}
 
-    /* section head */
-    .section-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:70px;
-      align-items:end;
-      margin-bottom:54px;
-    }
-    .section-head h2{margin-top:14px}
-    .section-head p{max-width:610px;justify-self:end;font-size:1.02rem}
-
-    /* levels */
+    /* LEVELS */
     .levels{
       display:grid;
       grid-template-columns:repeat(5,1fr);
       gap:14px;
     }
     .level{
-      min-height:320px;
+      min-height:308px;
+      padding:24px 21px;
       border:1px solid var(--line);
       border-top-width:4px;
       border-radius:24px;
       background:#fff;
-      padding:24px 21px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
       transition:.22s ease;
     }
-    .level:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm)}
+    .level:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
     .level:nth-child(1){border-top-color:var(--blue)}
     .level:nth-child(2){border-top-color:var(--green)}
     .level:nth-child(3){border-top-color:var(--yellow)}
     .level:nth-child(4){border-top-color:var(--orange)}
     .level:nth-child(5){border-top-color:var(--red)}
-    .level-index{
-      width:40px;height:40px;border-radius:50%;
+    .level-number{
+      width:38px;height:38px;
+      border-radius:50%;
       display:grid;place-items:center;
-      font-size:.75rem;font-weight:800;
       background:var(--soft);
+      font-size:.73rem;
+      font-weight:800;
     }
-    .level h3{margin-bottom:10px}
-    .level p{font-size:.84rem}
-    .level-age{display:block;margin-top:16px;color:var(--blue);font-size:.72rem;font-weight:800}
+    .level p{font-size:.83rem;margin-top:9px}
+    .level-age{
+      display:block;
+      margin-top:15px;
+      color:var(--blue);
+      font-size:.7rem;
+      font-weight:800;
+    }
 
-    /* experience */
-    .experience-wrap{
+    /* EXPERIENCE */
+    .experience-shell{
       border-radius:34px;
       background:#0b61e6;
       color:#fff;
       padding:64px;
-      overflow:hidden;
       position:relative;
+      overflow:hidden;
     }
-    .experience-wrap::before{
+    .experience-shell::after{
       content:"";
       position:absolute;
       width:430px;height:430px;
       border-radius:50%;
-      border:65px solid rgba(255,255,255,.05);
-      right:-140px;
+      border:70px solid rgba(255,255,255,.05);
+      right:-170px;
       bottom:-200px;
     }
     .experience-head{
@@ -530,13 +535,17 @@
       grid-template-columns:.85fr 1.15fr;
       gap:60px;
       align-items:end;
-      margin-bottom:46px;
+      margin-bottom:44px;
       position:relative;
       z-index:2;
     }
-    .experience-head .kicker{color:#fff}
+    .experience-head .eyebrow{color:#fff}
     .experience-head h2{margin-top:14px}
-    .experience-head p{color:rgba(255,255,255,.76);max-width:580px;justify-self:end}
+    .experience-head p{
+      color:rgba(255,255,255,.77);
+      max-width:570px;
+      justify-self:end;
+    }
     .experience-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -545,108 +554,133 @@
       z-index:2;
     }
     .experience-card{
-      min-height:250px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.07);
-      border-radius:24px;
+      min-height:248px;
       padding:27px;
+      border:1px solid rgba(255,255,255,.17);
+      border-radius:24px;
+      background:rgba(255,255,255,.065);
       backdrop-filter:blur(8px);
     }
-    .experience-icon{
+    .experience-symbol{
       width:50px;height:50px;
+      display:grid;place-items:center;
       border-radius:16px;
       background:#fff;
       color:var(--blue);
-      display:grid;
-      place-items:center;
-      margin-bottom:44px;
       font-family:"Manrope";
       font-weight:800;
+      margin-bottom:42px;
     }
-    .experience-card p{color:rgba(255,255,255,.73);font-size:.88rem;margin-top:8px}
+    .experience-card p{
+      color:rgba(255,255,255,.74);
+      font-size:.87rem;
+      margin-top:8px;
+    }
 
-    /* spaces */
+    /* SPACES - unique photos only */
     .spaces-grid{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      grid-template-rows:300px 300px;
-      gap:16px;
+      grid-template-columns:1.16fr .84fr;
+      gap:18px;
+      align-items:stretch;
     }
-    .space{
-      border-radius:26px;
-      overflow:hidden;
-      position:relative;
-      background:#edf2f5;
-    }
-    .space:first-child{grid-row:1/3}
-    .space img{width:100%;height:100%;object-fit:cover}
-    .space::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(0deg,rgba(20,43,56,.32),transparent 45%);
-    }
-    .space span{
-      position:absolute;
-      z-index:2;
-      left:18px;
-      bottom:16px;
-      color:#fff;
-      font-weight:800;
-      font-size:.82rem;
-      text-shadow:0 2px 12px rgba(0,0,0,.24);
-    }
-
-    /* story */
-    .story-band{
-      display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:50px;
-      align-items:center;
-    }
-    .story-photo{
-      min-height:490px;
+    .space-main{
+      min-height:575px;
       border-radius:28px;
       overflow:hidden;
       position:relative;
       box-shadow:var(--shadow-sm);
     }
-    .story-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-    .story-photo::after{
+    .space-main img,.space-side img{
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+    .space-side{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:18px;
+    }
+    .space-card{
+      min-height:278px;
+      border-radius:26px;
+      overflow:hidden;
+      position:relative;
+      background:#edf2f5;
+    }
+    .space-main::after,.space-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(0deg,rgba(24,49,62,.18),transparent 50%);
+      background:linear-gradient(0deg,rgba(20,44,58,.34),transparent 45%);
     }
-    .story-copy h2{margin:14px 0 20px}
-    .story-copy p{font-size:1rem}
-    .story-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
-    .story-chip{
+    .space-label{
+      position:absolute;
+      z-index:2;
+      left:18px;
+      bottom:16px;
+      color:#fff;
+      font-size:.8rem;
+      font-weight:800;
+      text-shadow:0 2px 12px rgba(0,0,0,.24);
+    }
+
+    /* COMMUNITY */
+    .community-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:56px;
+      align-items:center;
+    }
+    .community-photo{
+      min-height:500px;
+      border-radius:28px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:var(--shadow-sm);
+      background:#edf2f4;
+    }
+    .community-photo img{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+    }
+    .community-copy h2{margin:14px 0 22px}
+    .community-copy p{font-size:1rem}
+    .community-meta{
+      margin-top:26px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .chip{
       padding:9px 13px;
       border-radius:999px;
-      background:#fff;
       border:1px solid var(--line);
+      background:#fff;
       font-size:.72rem;
       font-weight:800;
     }
 
-    /* timeline gallery */
-    .gallery-grid{
-      margin-top:36px;
+    /* MEMORY STRIP: chronos each exactly once */
+    .memory-grid{
+      margin-top:46px;
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
-    .gallery-item{
+    .memory-card{
       aspect-ratio:4/3;
       border-radius:22px;
       overflow:hidden;
       background:#eef2f4;
       box-shadow:var(--shadow-sm);
     }
-    .gallery-item img{width:100%;height:100%;object-fit:cover}
+    .memory-card img{
+      width:100%;height:100%;
+      object-fit:cover;
+    }
 
-    /* team */
+    /* TEAM */
     .team-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -661,7 +695,7 @@
     }
     .team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
     .team-art{
-      height:210px;
+      height:205px;
       display:grid;
       place-items:center;
       position:relative;
@@ -670,21 +704,20 @@
     .team-card:nth-child(1) .team-art{background:#f2f7ff}
     .team-card:nth-child(2) .team-art{background:#f1fff4}
     .team-card:nth-child(3) .team-art{background:#fffbea}
-    .team-card:nth-child(4) .team-art{background:#fff4ee}
+    .team-card:nth-child(4) .team-art{background:#fff4ed}
     .team-art::after{
       content:"";
+      position:absolute;
       width:210px;height:210px;
       border-radius:50%;
-      position:absolute;
       bottom:-150px;
-      opacity:.9;
     }
     .team-card:nth-child(1) .team-art::after{background:var(--blue)}
     .team-card:nth-child(2) .team-art::after{background:var(--green)}
     .team-card:nth-child(3) .team-art::after{background:var(--yellow)}
     .team-card:nth-child(4) .team-art::after{background:var(--orange)}
     .avatar{
-      width:94px;height:94px;
+      width:92px;height:92px;
       border-radius:50%;
       background:#fff;
       display:grid;
@@ -692,21 +725,21 @@
       z-index:2;
       box-shadow:0 12px 30px rgba(36,61,75,.10);
     }
-    .avatar svg{width:54px;height:54px;stroke:#708088}
+    .avatar svg{width:52px;height:52px;stroke:#718087}
     .team-body{padding:21px}
     .team-role{
       display:block;
-      font-size:.65rem;
+      margin-bottom:8px;
+      font-size:.64rem;
+      font-weight:800;
       letter-spacing:.12em;
       text-transform:uppercase;
-      font-weight:800;
       color:var(--blue);
-      margin-bottom:8px;
     }
-    .team-card:nth-child(2) .team-role{color:#07922a}
-    .team-card:nth-child(3) .team-role{color:#9a7800}
+    .team-card:nth-child(2) .team-role{color:#098f2a}
+    .team-card:nth-child(3) .team-role{color:#957600}
     .team-card:nth-child(4) .team-role{color:var(--orange)}
-    .team-body p{font-size:.82rem;margin-top:8px}
+    .team-body p{font-size:.81rem;margin-top:8px}
 
     /* FAQ */
     .faq-layout{
@@ -723,31 +756,31 @@
       border:0;
       background:none;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:20px;
-      cursor:pointer;
       text-align:left;
       font-weight:800;
+      cursor:pointer;
     }
     .faq-plus{
       width:30px;height:30px;
-      border-radius:50%;
       border:1px solid var(--line);
+      border-radius:50%;
       display:grid;place-items:center;
       flex:0 0 auto;
       transition:.2s;
     }
-    .faq-a{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .28s ease;
-    }
-    .faq-a p{padding:0 44px 22px 0;font-size:.9rem}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
+    .faq-a p{padding:0 44px 22px 0;font-size:.89rem}
     .faq-item.open .faq-a{max-height:190px}
-    .faq-item.open .faq-plus{transform:rotate(45deg);background:var(--blue-soft);color:var(--blue)}
+    .faq-item.open .faq-plus{
+      transform:rotate(45deg);
+      background:var(--blue-soft);
+      color:var(--blue);
+    }
 
-    /* contact */
+    /* CONTACT */
     .contact-shell{
       display:grid;
       grid-template-columns:.86fr 1.14fr;
@@ -757,33 +790,34 @@
       box-shadow:var(--shadow-sm);
     }
     .contact-info{
+      padding:54px;
       background:var(--blue);
       color:#fff;
-      padding:54px;
     }
-    .contact-info .kicker{color:#fff}
+    .contact-info .eyebrow{color:#fff}
     .contact-info h2{margin:14px 0 20px}
     .contact-info>p{color:rgba(255,255,255,.78)}
     .contact-links{margin-top:34px}
     .contact-link{
+      display:block;
       padding:16px 0;
       border-bottom:1px solid rgba(255,255,255,.17);
-      display:block;
     }
     .contact-link:last-child{border-bottom:0}
     .contact-link small{
       display:block;
-      text-transform:uppercase;
-      letter-spacing:.1em;
-      font-size:.62rem;
-      color:rgba(255,255,255,.65);
+      font-size:.61rem;
       font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.62);
     }
     .contact-link strong{display:block;margin-top:3px;font-size:.9rem}
+
     .contact-form{padding:54px;background:#fff}
     .form-head{margin-bottom:25px}
     .form-head h3{font-size:1.6rem}
-    .form-head p{font-size:.84rem;margin-top:7px}
+    .form-head p{margin-top:7px;font-size:.84rem}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .field{display:grid;gap:7px}
     .field.full{grid-column:1/-1}
@@ -797,24 +831,24 @@
       outline:none;
       color:var(--ink);
     }
-    textarea{min-height:120px;resize:vertical}
+    textarea{min-height:118px;resize:vertical}
     input:focus,select:focus,textarea:focus{
-      border-color:#9cbcf6;
-      box-shadow:0 0 0 3px rgba(7,103,247,.07);
+      border-color:#a1bef5;
+      box-shadow:0 0 0 3px rgba(8,103,246,.07);
     }
-    .form-note{font-size:.68rem;margin:12px 0 17px}
+    .form-note{font-size:.67rem;margin:12px 0 17px}
     .success{
       display:none;
       margin-top:14px;
       padding:12px 14px;
       border-radius:12px;
       background:#effaf2;
-      color:#0d862c;
+      color:#11822d;
       font-size:.8rem;
       font-weight:700;
     }
 
-    /* footer */
+    /* FOOTER */
     footer{
       padding:52px 0 24px;
       border-top:4px solid var(--blue);
@@ -827,23 +861,23 @@
       padding-bottom:38px;
     }
     .footer-logo{width:215px}
-    .footer-copy{max-width:380px;font-size:.83rem;margin-top:14px}
+    .footer-copy{max-width:380px;margin-top:14px;font-size:.82rem}
     footer h4{
-      font-size:.75rem;
+      margin:0 0 13px;
+      font-size:.74rem;
       letter-spacing:.08em;
       text-transform:uppercase;
-      margin-bottom:13px;
     }
-    footer a{display:block;color:var(--muted);font-size:.83rem;margin:7px 0}
+    footer a{display:block;margin:7px 0;color:var(--muted);font-size:.82rem}
     footer a:hover{color:var(--blue)}
     .footer-bottom{
-      border-top:1px solid var(--line);
       padding-top:20px;
+      border-top:1px solid var(--line);
       display:flex;
       justify-content:space-between;
       gap:20px;
-      color:#8a979d;
-      font-size:.7rem;
+      color:#8c989d;
+      font-size:.69rem;
     }
 
     .floating{
@@ -855,9 +889,9 @@
       border-radius:999px;
       background:var(--blue);
       color:#fff;
-      font-size:.76rem;
+      font-size:.75rem;
       font-weight:800;
-      box-shadow:0 14px 34px rgba(7,103,247,.24);
+      box-shadow:0 14px 34px rgba(8,103,246,.24);
     }
 
     .reveal{opacity:0;transform:translateY(16px);transition:.65s ease}
@@ -868,14 +902,13 @@
         position:fixed;
         inset:126px 0 0;
         background:#fff;
-        display:flex;
         flex-direction:column;
         justify-content:center;
-        gap:25px;
+        gap:24px;
         opacity:0;
         visibility:hidden;
         transform:translateY(-8px);
-        transition:.22s;
+        transition:.22s ease;
       }
       nav.open{opacity:1;visibility:visible;transform:none}
       nav>a:not(.btn){font-family:"Manrope";font-size:1.5rem}
@@ -883,14 +916,15 @@
       .menu-btn.open span:first-child{transform:translateY(3px) rotate(45deg)}
       .menu-btn.open span:last-child{transform:translateY(-3px) rotate(-45deg)}
 
-      .split,.story-band,.faq-layout,.contact-shell,.identity-grid{grid-template-columns:1fr}
+      .identity-grid,.project-grid,.community-grid,.faq-layout,.contact-shell{grid-template-columns:1fr}
       .section-head,.experience-head{grid-template-columns:1fr;gap:18px}
       .section-head p,.experience-head p{justify-self:start}
       .levels{grid-template-columns:repeat(2,1fr)}
       .levels .level:last-child{grid-column:1/-1}
       .experience-grid{grid-template-columns:1fr 1fr}
+      .spaces-grid{grid-template-columns:1fr}
+      .space-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
       .team-grid{grid-template-columns:repeat(2,1fr)}
-      .spaces-grid{grid-template-columns:1fr 1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
       .footer-grid>div:first-child{grid-column:1/-1}
     }
@@ -898,23 +932,25 @@
     @media(max-width:680px){
       .container{width:min(calc(100% - 28px),var(--max))}
       .section{padding:78px 0}
-      .announcement{font-size:.66rem}
+      .section-tight{padding:36px 0}
+      .announcement{font-size:.65rem}
       .nav{min-height:72px}
-      .brand img{width:170px}
+      .brand img{width:168px}
       nav{inset:110px 0 0}
 
       .hero{padding-top:22px}
-      .hero-card{min-height:690px;border-radius:24px}
-      .hero-content{min-height:690px;padding:54px 24px 42px}
-      .hero h1{font-size:clamp(3rem,15vw,4.5rem)}
+      .hero-card{min-height:700px;border-radius:24px}
+      .hero-content{min-height:700px;padding:52px 23px 40px}
+      .hero h1{font-size:clamp(3rem,15vw,4.45rem)}
       .hero-lead{font-size:.92rem}
-      .hero-badge{width:100px;height:100px;right:16px;top:16px}
-      .hero-badge strong{font-size:1.45rem}
-      .hero-badge span{font-size:.52rem}
-      .hero-dots{left:20px;top:20px}
+      .hero-badge{width:98px;height:98px;right:14px;top:14px}
+      .hero-badge strong{font-size:1.42rem}
+      .hero-badge span{font-size:.49rem}
       .hero-card::before{
-        background:
-          linear-gradient(90deg,rgba(0,82,203,.88) 0%,rgba(0,94,225,.68) 55%,rgba(0,94,225,.18) 100%);
+        background:linear-gradient(90deg,
+          rgba(0,78,193,.90) 0%,
+          rgba(0,92,220,.73) 53%,
+          rgba(0,92,220,.20) 100%);
       }
 
       .proof{grid-template-columns:1fr 1fr}
@@ -922,21 +958,25 @@
       .proof-item:nth-child(2){border-right:0}
       .proof-item:nth-child(3),.proof-item:nth-child(4){border-top:1px solid var(--line)}
 
-      .photo-card{min-height:420px}
-      .levels,.experience-grid,.team-grid{grid-template-columns:1fr}
-      .identity-copy{padding:0}
-      .identity-grid{padding:42px 22px 24px;gap:20px}
       .identity-card{border-radius:24px}
+      .identity-grid{padding:40px 22px 24px;gap:22px}
+      .identity-copy{padding-left:0}
+      .identity-copy h2{font-size:2.25rem}
       .identity-art img{max-width:100%}
-      .levels .level:last-child{grid-column:auto}
-      .level{min-height:240px}
-      .experience-wrap{padding:42px 22px;border-radius:26px}
 
-      .spaces-grid{grid-template-columns:1fr;grid-template-rows:none}
-      .space,.space:first-child{height:300px;grid-row:auto}
-      .story-photo{min-height:380px}
-      .gallery-grid{grid-template-columns:1fr}
-      .gallery-item{aspect-ratio:16/10}
+      .editorial-photo{min-height:420px}
+      .levels,.experience-grid,.team-grid{grid-template-columns:1fr}
+      .levels .level:last-child{grid-column:auto}
+      .level{min-height:238px}
+
+      .experience-shell{padding:42px 22px;border-radius:26px}
+      .space-main{min-height:380px}
+      .space-side{grid-template-columns:1fr}
+      .space-card{min-height:300px}
+
+      .community-photo{min-height:380px}
+      .memory-grid{grid-template-columns:1fr}
+      .memory-card{aspect-ratio:16/10}
 
       .contact-info,.contact-form{padding:34px 23px}
       .form-grid{grid-template-columns:1fr}
@@ -964,7 +1004,7 @@
 
   <header>
     <div class="container nav">
-      <a href="#inicio" class="brand" aria-label="Ukika inicio">
+      <a class="brand" href="#inicio" aria-label="Ukika inicio">
         <img src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
       </a>
 
@@ -975,7 +1015,7 @@
         <a href="#equipo">Equipo</a>
         <a href="#preguntas">Preguntas</a>
         <a href="#contacto">Contacto</a>
-        <a href="#contacto" class="btn btn-primary">Consultar matrícula</a>
+        <a class="btn btn-primary" href="#contacto">Consultar matrícula</a>
       </nav>
 
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -988,19 +1028,19 @@
     <section class="hero" id="inicio">
       <div class="container">
         <div class="hero-card reveal">
+          <!-- FOTO 1/7: aparece únicamente aquí -->
           <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio del Jardín Infantil Ukika">
-          <div class="hero-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
           <div class="hero-content">
-            <div class="kicker">Educación parvularia en Vitacura</div>
+            <div class="eyebrow">Educación parvularia en Vitacura</div>
             <h1>Crecer con confianza.<br>Aprender con curiosidad.</h1>
             <p class="hero-lead">
               Acompañamos los primeros años de niños y niñas en un entorno afectivo, estimulante y seguro,
               donde el juego, la autonomía y los aprendizajes significativos son parte de cada día.
             </p>
             <div class="hero-actions">
-              <a href="#contacto" class="btn btn-white">Conocer proceso de matrícula</a>
-              <a href="#proyecto" class="btn btn-outline">Conocer Ukika</a>
+              <a class="btn btn-light" href="#contacto">Conocer proceso de matrícula</a>
+              <a class="btn btn-outline" href="#proyecto" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28)">Conocer Ukika</a>
             </div>
           </div>
 
@@ -1019,13 +1059,12 @@
       </div>
     </section>
 
-
-    <section class="identity-section" id="identidad">
+    <section class="section-tight" id="identidad">
       <div class="container">
         <div class="identity-card reveal">
           <div class="identity-grid">
             <div class="identity-copy">
-              <div class="kicker">Identidad Ukika</div>
+              <div class="eyebrow">Identidad Ukika</div>
               <h2>Crecer, hacer amigos y aprender con el corazón.</h2>
               <p>
                 Una identidad construida en torno a la infancia, la cercanía y el desarrollo integral,
@@ -1036,8 +1075,10 @@
                 <span class="identity-badge"><span class="identity-dot"></span>Autorización normativa JUNJI</span>
               </div>
             </div>
+
             <div class="identity-art">
-              <img src="assets/ilustracion_ukika.gif" alt="Ilustración institucional de Ukika">
+              <!-- ILUSTRACIÓN ORIGINAL: sin filtros ni recortes -->
+              <img src="assets/ilustracion_ukika.gif" alt="Ilustración institucional original de Ukika">
             </div>
           </div>
         </div>
@@ -1045,14 +1086,15 @@
     </section>
 
     <section class="section" id="proyecto">
-      <div class="container split">
-        <div class="photo-card reveal">
-          <img src="jardin_patio_mejorada.png" alt="Espacios exteriores del Jardín Infantil Ukika">
-          <span class="photo-label">Un entorno para explorar</span>
+      <div class="container project-grid">
+        <div class="editorial-photo reveal">
+          <!-- FOTO 2/7: aparece únicamente aquí -->
+          <img src="jardin_patio_mejorada.png" alt="Espacio exterior del Jardín Infantil Ukika">
+          <span class="photo-caption">Un entorno para explorar</span>
         </div>
 
-        <div class="split-copy reveal">
-          <div class="kicker">Proyecto educativo</div>
+        <div class="project-copy reveal">
+          <div class="eyebrow">Proyecto educativo</div>
           <h2>Cada infancia tiene su propio ritmo.</h2>
           <p>
             En Ukika buscamos favorecer aprendizajes relevantes y significativos, resguardando el bienestar
@@ -1061,24 +1103,24 @@
 
           <div class="principles">
             <div class="principle">
-              <span class="principle-index">01</span>
+              <span class="principle-number">01</span>
               <div>
                 <h3>Bienestar primero</h3>
                 <p>Ambientes afectivos, estimulantes y seguros que permiten explorar con confianza.</p>
               </div>
             </div>
             <div class="principle">
-              <span class="principle-index">02</span>
+              <span class="principle-number">02</span>
               <div>
                 <h3>Aprender haciendo</h3>
                 <p>Experiencias concretas donde niños y niñas participan, sienten, piensan y descubren.</p>
               </div>
             </div>
             <div class="principle">
-              <span class="principle-index">03</span>
+              <span class="principle-number">03</span>
               <div>
                 <h3>Familia y jardín</h3>
-                <p>Una relación cercana que permite compartir avances, necesidades y nuevas etapas.</p>
+                <p>Una relación cercana para compartir avances, necesidades y nuevas etapas.</p>
               </div>
             </div>
           </div>
@@ -1090,18 +1132,18 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">Niveles</div>
+            <div class="eyebrow">Niveles</div>
             <h2>Un acompañamiento distinto para cada etapa.</h2>
           </div>
           <p>
-            La propuesta se organiza desde Sala Cuna Menor hasta Transición, adaptando experiencias,
+            La propuesta se organiza desde Sala Cuna Menor hasta Transición, ajustando experiencias,
             rutinas y desafíos al momento de desarrollo de cada grupo.
           </p>
         </div>
 
         <div class="levels">
           <article class="level reveal">
-            <span class="level-index">01</span>
+            <span class="level-number">01</span>
             <div>
               <h3>Sala Cuna Menor</h3>
               <p>Vínculo, seguridad, estimulación y primeras experiencias de exploración.</p>
@@ -1109,7 +1151,7 @@
             </div>
           </article>
           <article class="level reveal">
-            <span class="level-index">02</span>
+            <span class="level-number">02</span>
             <div>
               <h3>Sala Cuna Mayor</h3>
               <p>Movimiento, lenguaje inicial, autonomía y descubrimiento del entorno.</p>
@@ -1117,7 +1159,7 @@
             </div>
           </article>
           <article class="level reveal">
-            <span class="level-index">03</span>
+            <span class="level-number">03</span>
             <div>
               <h3>Medio Menor</h3>
               <p>Juego, comunicación, experiencias sensoriales y autonomía progresiva.</p>
@@ -1125,7 +1167,7 @@
             </div>
           </article>
           <article class="level reveal">
-            <span class="level-index">04</span>
+            <span class="level-number">04</span>
             <div>
               <h3>Medio Mayor</h3>
               <p>Curiosidad, expresión, convivencia y participación en experiencias guiadas.</p>
@@ -1133,7 +1175,7 @@
             </div>
           </article>
           <article class="level reveal">
-            <span class="level-index">05</span>
+            <span class="level-number">05</span>
             <div>
               <h3>Transición</h3>
               <p>Habilidades, confianza y autonomía para avanzar hacia nuevas etapas.</p>
@@ -1146,31 +1188,31 @@
 
     <section class="section" id="experiencia">
       <div class="container">
-        <div class="experience-wrap reveal">
+        <div class="experience-shell reveal">
           <div class="experience-head">
             <div>
-              <div class="kicker">Experiencia Ukika</div>
+              <div class="eyebrow">Experiencia Ukika</div>
               <h2>Mucho más que una sala de clases.</h2>
             </div>
             <p>
-              El trabajo pedagógico se complementa con experiencias que fortalecen el lenguaje, el movimiento,
-              la autonomía, la convivencia y la relación con el entorno.
+              El trabajo pedagógico se complementa con experiencias que fortalecen el lenguaje,
+              el movimiento, la autonomía, la convivencia y la relación con el entorno.
             </p>
           </div>
 
           <div class="experience-grid">
             <article class="experience-card">
-              <div class="experience-icon">EN</div>
+              <div class="experience-symbol">EN</div>
               <h3>Inglés cotidiano</h3>
               <p>Familiarización con el idioma mediante canciones, vocabulario, instrucciones y actividades.</p>
             </article>
             <article class="experience-card">
-              <div class="experience-icon">PM</div>
+              <div class="experience-symbol">PM</div>
               <h3>Psicomotricidad</h3>
               <p>Experiencias corporales orientadas al movimiento, coordinación y conocimiento del propio cuerpo.</p>
             </article>
             <article class="experience-card">
-              <div class="experience-icon">♥</div>
+              <div class="experience-symbol">♥</div>
               <h3>Acompañamiento familiar</h3>
               <p>Comunicación cercana, entrevistas e instancias de seguimiento durante cada etapa.</p>
             </article>
@@ -1183,57 +1225,81 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">Espacios</div>
-            <h2>Ambientes pensados desde la escala de los niños.</h2>
+            <div class="eyebrow">Vida en Ukika</div>
+            <h2>Espacios y momentos que forman parte de cada día.</h2>
           </div>
           <p>
-            Juego, movimiento y autonomía requieren espacios claros, seguros y preparados para las rutinas de cada nivel.
+            Esta selección utiliza fotografías distintas entre sí para mostrar diferentes dimensiones
+            de la experiencia, evitando repetir imágenes a lo largo del sitio.
           </p>
         </div>
 
         <div class="spaces-grid">
-          <div class="space reveal">
-            <img src="jardin_patio4_mejorada.png" alt="Patio principal del Jardín Infantil Ukika">
-            <span>Patio y juego al aire libre</span>
-          </div>
-          <div class="space reveal">
-            <img src="jardin_patio_mejorada.png" alt="Espacios exteriores de Ukika">
-            <span>Exploración y movimiento</span>
-          </div>
-          <div class="space reveal">
+          <div class="space-main reveal">
+            <!-- FOTO 3/7: aparece únicamente aquí -->
             <img src="jardin_bano_mejorada.png" alt="Dependencias interiores del Jardín Infantil Ukika">
-            <span>Autonomía cotidiana</span>
+            <span class="space-label">Autonomía cotidiana</span>
+          </div>
+
+          <div class="space-side">
+            <div class="space-card reveal">
+              <!-- FOTO 4/7: aparece únicamente aquí -->
+              <img src="crono_01_mejorada.png" alt="Actividad de niños en Ukika">
+              <span class="space-label">Aprender compartiendo</span>
+            </div>
+            <div class="space-card reveal">
+              <!-- FOTO 5/7: aparece únicamente aquí -->
+              <img src="crono_06_mejorada.png" alt="Momento de la comunidad Ukika">
+              <span class="space-label">Experiencias que se recuerdan</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="historia">
+    <section class="section section-soft" id="comunidad">
       <div class="container">
-        <div class="story-band">
-          <div class="story-photo reveal">
-            <img src="egreso_fot1_mejorada.png" alt="Comunidad educativa Ukika">
+        <div class="community-grid">
+          <div class="community-photo reveal">
+            <!-- FOTO 6/7: aparece únicamente aquí -->
+            <img src="egreso_fot1_mejorada.png" alt="Comunidad educativa de Ukika">
           </div>
-          <div class="story-copy reveal">
-            <div class="kicker">Una comunidad que crece</div>
-            <h2>Los primeros años dejan una huella que acompaña mucho tiempo.</h2>
+
+          <div class="community-copy reveal">
+            <div class="eyebrow">Comunidad</div>
+            <h2>Una etapa que también se construye en los vínculos.</h2>
             <p>
-              Ukika ha acompañado generaciones de niños, niñas y familias desde 1988.
-              La trayectoria del jardín se construye en las experiencias cotidianas, los vínculos y las etapas que se comparten.
+              Desde 1988, Ukika ha acompañado a niños, niñas y familias durante una etapa especialmente
+              significativa de su desarrollo. La trayectoria del jardín se construye en las relaciones,
+              experiencias y recuerdos que se forman cada día.
             </p>
-            <div class="story-chips">
-              <span class="story-chip">Desde 1988</span>
-              <span class="story-chip">Vitacura</span>
-              <span class="story-chip">Sala Cuna</span>
-              <span class="story-chip">Jardín Infantil</span>
+            <div class="community-meta">
+              <span class="chip">Desde 1988</span>
+              <span class="chip">Vitacura</span>
+              <span class="chip">Sala Cuna</span>
+              <span class="chip">Jardín Infantil</span>
             </div>
           </div>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item reveal"><img src="crono_01_mejorada.png" alt="Momento de la historia de Ukika"></div>
-          <div class="gallery-item reveal"><img src="crono_06_mejorada.png" alt="Momento de la historia de Ukika"></div>
-          <div class="gallery-item reveal"><img src="crono_07_mejorada.png" alt="Momento de la historia de Ukika"></div>
+        <div class="memory-grid">
+          <div class="memory-card reveal">
+            <!-- FOTO 7/7: aparece únicamente aquí -->
+            <img src="crono_07_mejorada.png" alt="Recuerdo de la comunidad Ukika">
+          </div>
+          <div class="memory-card reveal" style="display:grid;place-items:center;background:#fff;border:1px solid var(--line);padding:32px;">
+            <div style="max-width:280px;text-align:center;">
+              <div class="eyebrow" style="justify-content:center">Trayectoria</div>
+              <h3 style="font-size:1.6rem;margin-top:14px">Más de tres décadas acompañando infancias.</h3>
+              <p style="font-size:.86rem;margin-top:12px">Una historia que sigue creciendo junto a nuevas familias.</p>
+            </div>
+          </div>
+          <div class="memory-card reveal" style="display:grid;place-items:center;background:var(--blue);color:#fff;padding:32px;">
+            <div style="max-width:280px;text-align:center;">
+              <div style="font-family:Manrope;font-size:3.4rem;font-weight:800;line-height:1">1988</div>
+              <p style="color:rgba(255,255,255,.78);font-size:.88rem;margin-top:10px">Año de inicio de la trayectoria educativa de Ukika.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1242,11 +1308,12 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="kicker">Nuestro equipo</div>
+            <div class="eyebrow">Nuestro equipo</div>
             <h2>Personas que acompañan cada etapa.</h2>
           </div>
           <p>
-            Esta sección queda preparada para incorporar más adelante los nombres, cargos y fotografías reales del equipo Ukika.
+            La estructura queda preparada para incorporar posteriormente los nombres, cargos y fotografías reales
+            del equipo, sin necesidad de rediseñar la sección.
           </p>
         </div>
 
@@ -1286,7 +1353,7 @@
             <div class="team-body">
               <span class="team-role">Acompañamiento</span>
               <h3>Técnicos en Párvulos</h3>
-              <p>Apoyo diario en las rutinas, cuidado y experiencias pedagógicas de niños y niñas.</p>
+              <p>Apoyo cotidiano en rutinas, cuidado y experiencias pedagógicas de niños y niñas.</p>
             </div>
           </article>
 
@@ -1309,7 +1376,7 @@
     <section class="section section-soft" id="preguntas">
       <div class="container faq-layout">
         <div class="faq-intro reveal">
-          <div class="kicker">Información práctica</div>
+          <div class="eyebrow">Información práctica</div>
           <h2>Lo esencial, fácil de encontrar.</h2>
         </div>
 
@@ -1338,7 +1405,7 @@
       <div class="container">
         <div class="contact-shell reveal">
           <div class="contact-info">
-            <div class="kicker">Contacto</div>
+            <div class="eyebrow">Contacto</div>
             <h2>Conversemos sobre la etapa que viene.</h2>
             <p>Consulta por niveles, disponibilidad, matrícula y funcionamiento del jardín.</p>
 
@@ -1394,7 +1461,7 @@
               </div>
             </div>
 
-            <p class="form-note">Esta versión abre la aplicación de correo. Más adelante se puede conectar a un formulario real o WhatsApp.</p>
+            <p class="form-note">Esta versión abre la aplicación de correo. Posteriormente se puede conectar a WhatsApp o a un formulario real.</p>
             <button class="btn btn-primary" type="submit">Preparar consulta</button>
             <div class="success" id="success">Consulta preparada. Se abrirá tu aplicación de correo.</div>
           </form>
@@ -1407,6 +1474,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
+          <!-- LOGO ORIGINAL: se conserva sin filtros -->
           <img class="footer-logo" src="assets/index_logo.gif" alt="Ukika">
           <p class="footer-copy">
             Sala Cuna y Jardín Infantil en Vitacura, con una propuesta centrada en el bienestar,
@@ -1473,6 +1541,7 @@
         }
       });
     }, {threshold:.08});
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     document.getElementById('contactForm').addEventListener('submit', event => {
@@ -1488,6 +1557,7 @@ Nivel: ${data.get('nivel')}
 Mensaje:
 ${data.get('mensaje')}`
       );
+
       document.getElementById('success').style.display = 'block';
       setTimeout(() => {
         window.location.href = `mailto:info@ukika.cl?subject=${subject}&body=${body}`;
