@@ -1,3 +1,5 @@
+export const config = { runtime: "edge" };
+
 /**
  * Formulario público de Ukika.
  * Requiere RESEND_API_KEY, CONTACT_FROM_EMAIL y CONTACT_TO_EMAIL en Vercel.
@@ -25,8 +27,7 @@ function field(value, max) {
   return typeof value === 'string' ? value.trim().slice(0, max + 1) : '';
 }
 
-export default {
-  async fetch(request) {
+export default async function handler(request) {
     if (request.method !== 'POST') {
       return json(405, { error: 'Método no permitido.' }, { Allow: 'POST' });
     }
@@ -126,5 +127,4 @@ export default {
       console.error('Servicio de correo: error de conexión');
       return json(502, { error: 'No se pudo conectar con el servicio de correo. Inténtalo nuevamente.' });
     }
-  }
-};
+}
