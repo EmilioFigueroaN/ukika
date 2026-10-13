@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sala Cuna y Jardín Infantil Ukika en Vitacura. Educación parvularia desde 1988.">
   <meta name="theme-color" content="#ffffff">
-  <title>Ukika — Sala Cuna & Jardín Infantil</title>
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Ukika — Sala Cuna y Jardín Infantil en Vitacura">
+  <meta property="og:description" content="Conoce el proyecto educativo, los niveles y los espacios de Ukika. Consulta por matrículas y agenda una visita.">
+  <meta name="color-scheme" content="light">
+  <title>Jardín Infantil y Sala Cuna en Vitacura | Ukika</title>
+  <link rel="preload" as="image" href="jardin_patio4_mejorada.png" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +54,13 @@
       overflow-x:hidden;
     }
     body.menu-open{overflow:hidden}
+    :focus-visible{outline:3px solid #0867f6;outline-offset:4px}
+    .skip-link{position:absolute;top:-70px;left:15px;background:#fff;color:#0867f6;padding:12px 18px;z-index:100;border-radius:10px}
+    .skip-link:focus{top:12px}
+    .form-status{font-size:.82rem;margin-top:15px;font-weight:700}
+    .form-status.is-success{color:#117c37}
+    .form-status.is-error{color:#b42318}
+    button:disabled{opacity:.6;cursor:wait}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
@@ -996,6 +1010,7 @@
 </head>
 
 <body>
+  <a href="#inicio" class="skip-link">Saltar al contenido</a>
   <div class="announcement">
     <span>¿Buscas Sala Cuna o Jardín Infantil en Vitacura?</span>
     <a href="#contacto">Consultar disponibilidad</a>
@@ -1029,7 +1044,7 @@
       <div class="container">
         <div class="hero-card reveal">
           <!-- FOTO 1/7: aparece únicamente aquí -->
-          <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio del Jardín Infantil Ukika">
+          <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio del Jardín Infantil Ukika" fetchpriority="high" decoding="async">
 
           <div class="hero-content">
             <div class="eyebrow">Educación parvularia en Vitacura</div>
@@ -1089,7 +1104,7 @@
       <div class="container project-grid">
         <div class="editorial-photo reveal">
           <!-- FOTO 2/7: aparece únicamente aquí -->
-          <img src="jardin_patio_mejorada.png" alt="Espacio exterior del Jardín Infantil Ukika">
+          <img loading="lazy" decoding="async" src="jardin_patio_mejorada.png" alt="Espacio exterior del Jardín Infantil Ukika">
           <span class="photo-caption">Un entorno para explorar</span>
         </div>
 
@@ -1237,19 +1252,19 @@
         <div class="spaces-grid">
           <div class="space-main reveal">
             <!-- FOTO 3/7: aparece únicamente aquí -->
-            <img src="jardin_bano_mejorada.png" alt="Dependencias interiores del Jardín Infantil Ukika">
+            <img loading="lazy" decoding="async" src="jardin_bano_mejorada.png" alt="Dependencias interiores del Jardín Infantil Ukika">
             <span class="space-label">Autonomía cotidiana</span>
           </div>
 
           <div class="space-side">
             <div class="space-card reveal">
               <!-- FOTO 4/7: aparece únicamente aquí -->
-              <img src="crono_01_mejorada.png" alt="Actividad de niños en Ukika">
+              <img loading="lazy" decoding="async" src="crono_01_mejorada.png" alt="Actividad de niños en Ukika">
               <span class="space-label">Aprender compartiendo</span>
             </div>
             <div class="space-card reveal">
               <!-- FOTO 5/7: aparece únicamente aquí -->
-              <img src="crono_06_mejorada.png" alt="Momento de la comunidad Ukika">
+              <img loading="lazy" decoding="async" src="crono_06_mejorada.png" alt="Momento de la comunidad Ukika">
               <span class="space-label">Experiencias que se recuerdan</span>
             </div>
           </div>
@@ -1262,7 +1277,7 @@
         <div class="community-grid">
           <div class="community-photo reveal">
             <!-- FOTO 6/7: aparece únicamente aquí -->
-            <img src="egreso_fot1_mejorada.png" alt="Comunidad educativa de Ukika">
+            <img loading="lazy" decoding="async" src="egreso_fot1_mejorada.png" alt="Comunidad educativa de Ukika">
           </div>
 
           <div class="community-copy reveal">
@@ -1285,7 +1300,7 @@
         <div class="memory-grid">
           <div class="memory-card reveal">
             <!-- FOTO 7/7: aparece únicamente aquí -->
-            <img src="crono_07_mejorada.png" alt="Recuerdo de la comunidad Ukika">
+            <img loading="lazy" decoding="async" src="crono_07_mejorada.png" alt="Recuerdo de la comunidad Ukika">
           </div>
           <div class="memory-card reveal" style="display:grid;place-items:center;background:#fff;border:1px solid var(--line);padding:32px;">
             <div style="max-width:280px;text-align:center;">
@@ -1428,10 +1443,11 @@
           <form class="contact-form" id="contactForm">
             <div class="form-head">
               <h3>Solicitar información</h3>
-              <p>Completa tus datos para preparar una consulta al jardín.</p>
+              <p>Completa tus datos y enviaremos tu consulta directamente al jardín.</p>
             </div>
 
             <div class="form-grid">
+              <div class="field full"><label for="motivo">¿Qué necesitas?</label><select id="motivo" name="motivo"><option>Consulta de matrícula</option><option>Solicitar una visita</option></select></div>
               <div class="field">
                 <label for="nombre">Nombre</label>
                 <input id="nombre" name="nombre" required placeholder="Nombre del apoderado">
@@ -1457,13 +1473,15 @@
               </div>
               <div class="field full">
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas saber..."></textarea>
+                <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="2000" placeholder="Cuéntanos qué necesitas saber..."></textarea>
               </div>
             </div>
 
-            <p class="form-note">Esta versión abre la aplicación de correo. Posteriormente se puede conectar a WhatsApp o a un formulario real.</p>
-            <button class="btn btn-primary" type="submit">Preparar consulta</button>
-            <div class="success" id="success">Consulta preparada. Se abrirá tu aplicación de correo.</div>
+            <div class="field full" style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">No completar</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-weight:500;font-size:.76rem;margin-top:14px"><input type="checkbox" name="consent" required style="width:auto;margin-top:4px;flex-shrink:0"><span>Autorizo el uso de mis datos para responder esta consulta. Consulta el <a href="privacidad.html" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">aviso de privacidad</a>.</span></label>
+            <p class="form-note">Usaremos tus datos únicamente para responder a tu solicitud. También puedes escribir a <a href="mailto:info@ukika.cl" style="color:var(--blue);text-decoration:underline">info@ukika.cl</a>.</p>
+            <button class="btn btn-primary" id="contactSubmit" type="submit">Enviar consulta</button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1507,64 +1525,6 @@
 
   <a class="floating" href="#contacto">Consultar matrícula</a>
 
-  <script>
-    const nav = document.getElementById('nav');
-    const menuBtn = document.getElementById('menuBtn');
-
-    menuBtn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuBtn.classList.toggle('open', open);
-      menuBtn.setAttribute('aria-expanded', String(open));
-      document.body.classList.toggle('menu-open', open);
-    });
-
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuBtn.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded','false');
-        document.body.classList.remove('menu-open');
-      });
-    });
-
-    document.querySelectorAll('.faq-q').forEach(button => {
-      button.addEventListener('click', () => {
-        button.closest('.faq-item').classList.toggle('open');
-      });
-    });
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold:.08});
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    document.getElementById('contactForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const subject = encodeURIComponent('Consulta de matrícula — Ukika');
-      const body = encodeURIComponent(
-`Nombre: ${data.get('nombre')}
-Teléfono: ${data.get('telefono')}
-Correo: ${data.get('correo')}
-Nivel: ${data.get('nivel')}
-
-Mensaje:
-${data.get('mensaje')}`
-      );
-
-      document.getElementById('success').style.display = 'block';
-      setTimeout(() => {
-        window.location.href = `mailto:info@ukika.cl?subject=${subject}&body=${body}`;
-      }, 180);
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="app.js" defer></script>
 </body>
 </html>
