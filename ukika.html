@@ -160,6 +160,34 @@
       color:#6b7b83;
       white-space:nowrap;
     }
+
+    .nav-contact-link{
+      display:inline-flex;
+      align-items:center;
+      color:#6b7b83;
+      transition:color .18s ease;
+    }
+    .nav-contact-link:hover{
+      color:var(--blue);
+    }
+    .nav-right .btn-yellow{
+      min-width:142px;
+      min-height:52px;
+      padding:0 20px;
+      text-align:center;
+      line-height:1.15;
+      white-space:normal;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .footer-row a{
+      color:#fff;
+      opacity:.92;
+      transition:opacity .18s ease;
+    }
+    .footer-row a:hover{opacity:1}
+
     .menu-btn{
       display:none;
       width:44px;height:44px;
@@ -1023,8 +1051,8 @@
 
       <div class="nav-right">
         <div class="nav-meta">
-          <span>☎ 22 224 1129</span>
-          <span>✉ info@ukika.cl</span>
+          <a class="nav-contact-link" href="tel:+56222241129" aria-label="Llamar a Ukika al 22 224 1129">☎ 22 224 1129</a>
+          <a class="nav-contact-link" href="mailto:info@ukika.cl" aria-label="Enviar correo a info@ukika.cl">✉ info@ukika.cl</a>
         </div>
         <a class="btn btn-yellow" href="#contacto">Agenda una visita</a>
         <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
@@ -1433,8 +1461,8 @@
     </div>
     <div class="footer-row">
       <span>Los Dragones N.º 9932 · Vitacura</span>
-      <span>22 224 1129</span>
-      <span>info@ukika.cl</span>
+      <a href="tel:+56222241129">22 224 1129</a>
+      <a href="mailto:info@ukika.cl">info@ukika.cl</a>
       <span>Santiago · Chile</span>
     </div>
   </footer>
