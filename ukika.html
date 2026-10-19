@@ -992,69 +992,166 @@
       *,*:before,*:after{transition:none!important}
       .reveal{opacity:1;transform:none}
     }
+  
+    /* ===== HOME inspirada en el mockup entregado ===== */
+    header{background:rgba(255,255,255,.97);box-shadow:0 1px 0 rgba(25,56,75,.06)}
+    .pdf-nav{min-height:104px;grid-template-columns:auto 1fr auto;gap:20px}
+    .pdf-brand-wrap{display:flex;align-items:center;gap:12px;min-width:0;position:relative;z-index:60}
+    .pdf-brand-wrap .brand img{width:170px}
+    .pdf-brand-illustration{width:86px;height:54px;object-fit:contain;object-position:center}
+    .pdf-nav nav{gap:18px}
+    .pdf-nav nav a{font-size:.70rem;font-weight:700;color:#394f58}
+    .pdf-nav-actions{display:flex;align-items:center;gap:12px;position:relative;z-index:60}
+    .pdf-contact-mini{display:flex;gap:11px;color:#6f7e85;font-size:.61rem;font-weight:700;white-space:nowrap}
+    .pdf-yellow-btn{background:#f4c934;color:#18384b;box-shadow:none;min-height:42px;padding:0 17px;font-size:.72rem}
+    .pdf-yellow-btn:hover{background:#efc122}
+
+    .pdf-hero{padding:28px 0 0}
+    .pdf-hero-card{display:grid;grid-template-columns:.43fr .57fr;min-height:520px;border-radius:30px;overflow:hidden;background:#fbf8ef;border:1px solid #eee9df;box-shadow:0 18px 48px rgba(38,64,77,.08)}
+    .pdf-hero-copy{padding:54px 48px 46px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+    .pdf-hero-copy::after{content:"";position:absolute;right:-28px;top:0;bottom:0;width:62px;background:#fbf8ef;border-radius:0 48% 48% 0 / 0 14% 14% 0;z-index:-1}
+    .pdf-hero-copy h1{font-size:clamp(2.75rem,4.6vw,4.75rem);line-height:1.03;color:#19384b;margin-top:13px;max-width:570px}
+    .pdf-hero-copy h1 span{color:#ef3434}
+    .pdf-hero-copy>p{font-size:.91rem;line-height:1.65;max-width:520px;margin-top:18px}
+    .pdf-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .pdf-outline-btn{background:#fff;border-color:#d8e0e4;color:#19384b}
+    .pdf-mini-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:29px}
+    .pdf-mini-trust>div{display:flex;align-items:center;gap:7px;min-width:0}
+    .pdf-mini-trust b{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:#fff;border:1px solid #eee8dd;color:#0868f7;font-size:.7rem;flex:0 0 auto}
+    .pdf-mini-trust span{font-size:.56rem;line-height:1.25;color:#5b6d75;font-weight:700}
+    .pdf-hero-photo{position:relative;min-height:520px;overflow:hidden}
+    .pdf-hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .pdf-hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,248,239,.12),transparent 20%)}
+
+    .pdf-feature-strip{display:grid;grid-template-columns:repeat(5,1fr);margin-top:28px;border:1px solid #e6ecef;border-radius:22px;overflow:hidden;background:#fff}
+    .pdf-feature-strip article{padding:20px 17px;display:grid;grid-template-columns:38px 1fr;gap:11px;border-right:1px solid #e6ecef;align-items:start}
+    .pdf-feature-strip article:last-child{border-right:0}
+    .pdf-feature-strip i{width:36px;height:36px;border-radius:12px;background:#f1f6ff;color:#0868f7;display:grid;place-items:center;font-style:normal;font-weight:900}
+    .pdf-feature-strip article:nth-child(2) i{background:#f8f2ff;color:#9564c8}
+    .pdf-feature-strip article:nth-child(3) i{background:#fff6dc;color:#d79517}
+    .pdf-feature-strip article:nth-child(4) i{background:#fff0ef;color:#ef3434}
+    .pdf-feature-strip article:nth-child(5) i{background:#eef9fb;color:#258daf}
+    .pdf-feature-strip h3{font-size:.82rem;letter-spacing:-.02em}
+    .pdf-feature-strip p{font-size:.65rem;line-height:1.42;margin-top:4px}
+
+    /* El bloque de identidad se integra como pieza institucional del mockup */
+    #identidad{padding-top:72px}
+    .identity-card{box-shadow:none;background:#fff;border-color:#e7ecef}
+    .identity-card::before{height:4px}
+
+    /* Mantener las secciones inferiores más livianas y editoriales */
+    .section{padding:94px 0}
+    .section-soft{background:#fafbfb}
+    .experience-shell{box-shadow:none}
+    .contact-shell{box-shadow:0 16px 44px rgba(31,57,71,.07)}
+
+    @media(max-width:1180px){
+      .pdf-contact-mini{display:none}
+      .pdf-nav nav{gap:14px}
+      .pdf-nav nav a{font-size:.66rem}
+      .pdf-brand-illustration{display:none}
+    }
+    @media(max-width:1050px){
+      .pdf-nav{grid-template-columns:auto auto}
+      .pdf-nav nav{position:fixed;inset:105px 0 0;background:#fff;flex-direction:column;justify-content:center;gap:24px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s}
+      .pdf-nav nav.open{opacity:1;visibility:visible;transform:none}
+      .pdf-nav nav a{font-family:"Manrope";font-size:1.35rem}
+      .pdf-nav-actions{justify-self:end}
+      .pdf-nav-actions>.btn{display:none}
+      .menu-btn{display:block}
+      .pdf-hero-card{grid-template-columns:1fr}
+      .pdf-hero-copy::after{display:none}
+      .pdf-hero-photo{min-height:420px}
+      .pdf-feature-strip{grid-template-columns:repeat(2,1fr)}
+      .pdf-feature-strip article{border-bottom:1px solid #e6ecef}
+      .pdf-feature-strip article:nth-child(even){border-right:0}
+      .pdf-feature-strip article:last-child{grid-column:1/-1;border-bottom:0}
+    }
+    @media(max-width:680px){
+      .pdf-nav{min-height:76px}
+      .pdf-brand-wrap .brand img{width:156px}
+      .pdf-nav nav{inset:77px 0 0}
+      .pdf-hero{padding-top:14px}
+      .pdf-hero-card{border-radius:22px}
+      .pdf-hero-copy{padding:38px 24px 30px}
+      .pdf-hero-copy h1{font-size:clamp(2.7rem,13vw,4rem)}
+      .pdf-mini-trust{grid-template-columns:1fr 1fr}
+      .pdf-hero-photo{min-height:325px}
+      .pdf-feature-strip{grid-template-columns:1fr}
+      .pdf-feature-strip article,.pdf-feature-strip article:nth-child(even){border-right:0;border-bottom:1px solid #e6ecef}
+      .pdf-feature-strip article:last-child{grid-column:auto;border-bottom:0}
+    }
+
   </style>
 </head>
 
 <body>
-  <div class="announcement">
-    <span>¿Buscas Sala Cuna o Jardín Infantil en Vitacura?</span>
-    <a href="#contacto">Consultar disponibilidad</a>
-  </div>
-  <div class="color-line" aria-hidden="true"></div>
-
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Ukika inicio">
-        <img src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
-      </a>
+<header>
+    <div class="container nav pdf-nav">
+      <div class="pdf-brand-wrap">
+        <a class="brand" href="#inicio" aria-label="Ukika inicio">
+          <img src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
+        </a>
+        <img class="pdf-brand-illustration" src="assets/ilustracion_ukika.gif" alt="" aria-hidden="true">
+      </div>
 
       <nav id="nav">
-        <a href="#proyecto">Proyecto</a>
-        <a href="#niveles">Niveles</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#preguntas">Preguntas</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#identidad">Conócenos</a>
+        <a href="#niveles">Sala Cuna</a>
+        <a href="#niveles">Jardín Infantil</a>
+        <a href="#experiencia">Vida en Ukika</a>
+        <a href="#preguntas">Información práctica</a>
+        <a href="#contacto">Admisión</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="#contacto">Consultar matrícula</a>
       </nav>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span>
-      </button>
+      <div class="pdf-nav-actions">
+        <div class="pdf-contact-mini">
+          <span>☎ 22 224 1129</span>
+          <span>✉ info@ukika.cl</span>
+        </div>
+        <a class="btn pdf-yellow-btn" href="#contacto">Agenda una visita</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="pdf-hero" id="inicio">
       <div class="container">
-        <div class="hero-card reveal">
-          <!-- FOTO 1/7: aparece únicamente aquí -->
-          <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio del Jardín Infantil Ukika">
-
-          <div class="hero-content">
-            <div class="eyebrow">Educación parvularia en Vitacura</div>
-            <h1>Crecer con confianza.<br>Aprender con curiosidad.</h1>
-            <p class="hero-lead">
-              Acompañamos los primeros años de niños y niñas en un entorno afectivo, estimulante y seguro,
-              donde el juego, la autonomía y los aprendizajes significativos son parte de cada día.
+        <div class="pdf-hero-card reveal">
+          <div class="pdf-hero-copy">
+            <div class="eyebrow">Bienvenidos a Ukika</div>
+            <h1>Donde crecen, descubren y aprenden con el <span>corazón</span></h1>
+            <p>
+              En Ukika acompañamos a cada niño y niña en sus primeros años, respetando su individualidad
+              y ofreciéndole un ambiente cálido, afectivo y estimulante para aprender, jugar y desarrollarse.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-light" href="#contacto">Conocer proceso de matrícula</a>
-              <a class="btn btn-outline" href="#proyecto" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28)">Conocer Ukika</a>
+            <div class="pdf-hero-actions">
+              <a class="btn btn-primary" href="#identidad">Conoce nuestro jardín</a>
+              <a class="btn pdf-outline-btn" href="#contacto">Agenda una visita</a>
+            </div>
+            <div class="pdf-mini-trust">
+              <div><b>▦</b><span>Desde 1988<br>Acompañando a las familias</span></div>
+              <div><b>✓</b><span>Autorización<br>Normativa JUNJI</span></div>
+              <div><b>♙</b><span>Equipo profesional<br>comprometido</span></div>
+              <div><b>♡</b><span>Afecto, seguridad<br>y respeto</span></div>
             </div>
           </div>
-
-          <div class="hero-badge">
-            <strong>1988</strong>
-            <span>Acompañando<br>infancias</span>
+          <div class="pdf-hero-photo">
+            <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio de Ukika">
           </div>
         </div>
 
-        <div class="proof">
-          <div class="proof-item"><strong>Desde 1988</strong><span>Trayectoria educativa</span></div>
-          <div class="proof-item"><strong>Sala Cuna</strong><span>Desde los 84 días</span></div>
-          <div class="proof-item"><strong>Hasta 19:00</strong><span>Jornada completa</span></div>
-          <div class="proof-item"><strong>Vitacura</strong><span>Los Dragones 9932</span></div>
+        <div class="pdf-feature-strip reveal">
+          <article><i>♡</i><div><h3>Cuidado y afecto</h3><p>Un ambiente cálido y seguro donde cada niño se siente acompañado.</p></div></article>
+          <article><i>✦</i><div><h3>Aprendizajes significativos</h3><p>Experiencias concretas para descubrir, explorar y aprender haciendo.</p></div></article>
+          <article><i>○</i><div><h3>Desarrollo integral</h3><p>Desarrollo intelectual, motor, emocional y social en cada etapa.</p></div></article>
+          <article><i>◎</i><div><h3>Familia y jardín</h3><p>Una relación cercana y complementaria con las familias.</p></div></article>
+          <article><i>◇</i><div><h3>Equipo profesional</h3><p>Educadoras y asistentes que acompañan el bienestar infantil.</p></div></article>
         </div>
       </div>
     </section>
