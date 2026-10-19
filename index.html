@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sala Cuna y Jardín Infantil Ukika en Vitacura. Educación parvularia desde 1988.">
+  <meta name="description" content="Ukika Sala Cuna y Jardín Infantil en Vitacura.">
   <meta name="theme-color" content="#ffffff">
-  <title>Ukika — Sala Cuna & Jardín Infantil</title>
+  <title>Ukika | Sala Cuna & Jardín Infantil</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +13,27 @@
 
   <style>
     :root{
-      --blue:#0867f6;
-      --red:#ff1616;
-      --green:#0fc83d;
-      --yellow:#ffd31a;
-      --orange:#ff7c1a;
-
-      --ink:#263941;
-      --text:#566970;
-      --muted:#7a8a90;
-      --line:#e8edf0;
-      --soft:#f7f9fa;
-      --blue-soft:#f2f7ff;
+      --blue:#1167f2;
+      --blue-dark:#0c54c6;
+      --red:#ef4a4a;
+      --green:#4fa143;
+      --green-dark:#2f8130;
+      --yellow:#f3cb42;
+      --orange:#f19541;
+      --ink:#223d4e;
+      --text:#61727a;
+      --muted:#88969d;
+      --line:#e6ecef;
+      --soft:#f7fafb;
+      --cream:#faf7ef;
       --white:#fff;
 
-      --max:1240px;
-      --radius-xl:34px;
-      --radius-lg:26px;
-      --radius-md:18px;
-      --shadow:0 30px 80px rgba(31,57,71,.10);
-      --shadow-sm:0 14px 38px rgba(31,57,71,.075);
+      --max:1260px;
+      --r-xl:30px;
+      --r-lg:24px;
+      --r-md:18px;
+      --shadow:0 26px 70px rgba(31,53,67,.10);
+      --shadow-sm:0 12px 34px rgba(31,53,67,.07);
     }
 
     *{box-sizing:border-box}
@@ -42,31 +43,31 @@
       background:#fff;
       color:var(--ink);
       font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      line-height:1.58;
+      line-height:1.55;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
     body.menu-open{overflow:hidden}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
+    button,input,textarea,select{font:inherit}
     button{color:inherit}
-    ::selection{background:#ffe98b;color:var(--ink)}
+    ::selection{background:#ffe381;color:var(--ink)}
 
     .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
-    .section{padding:118px 0}
+    .section{padding:92px 0}
     .section-soft{background:var(--soft)}
-    .section-tight{padding:58px 0}
+    .section-tight{padding:48px 0}
 
     h1,h2,h3,h4{
       margin:0;
       font-family:"Manrope",sans-serif;
-      letter-spacing:-.045em;
-      line-height:1.04;
+      line-height:1.05;
+      letter-spacing:-.04em;
     }
-    h1{font-size:clamp(3.4rem,6.5vw,6.5rem);font-weight:700}
-    h2{font-size:clamp(2.35rem,4.5vw,4rem);font-weight:700}
-    h3{font-size:1.3rem;font-weight:700}
+    h1{font-size:clamp(3rem,5.8vw,5.4rem);font-weight:800}
+    h2{font-size:clamp(2.15rem,4vw,3.5rem);font-weight:800}
+    h3{font-size:1.14rem;font-weight:800}
     p{margin:0;color:var(--text)}
 
     .eyebrow{
@@ -74,917 +75,700 @@
       align-items:center;
       gap:10px;
       color:var(--blue);
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.16em;
+      font-size:.7rem;
       text-transform:uppercase;
+      letter-spacing:.15em;
+      font-weight:800;
     }
     .eyebrow::before{
       content:"";
-      width:28px;height:2px;border-radius:99px;
-      background:currentColor;
+      width:24px;height:2px;border-radius:99px;background:currentColor;
     }
 
     .btn{
-      min-height:50px;
-      padding:0 22px;
+      min-height:46px;
+      padding:0 18px;
       border-radius:999px;
       border:1px solid transparent;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:9px;
-      font-size:.9rem;
+      gap:8px;
+      font-size:.82rem;
       font-weight:800;
       cursor:pointer;
       transition:.2s ease;
     }
     .btn:hover{transform:translateY(-2px)}
-    .btn-primary{
-      background:var(--blue);
-      color:#fff;
-      box-shadow:0 12px 28px rgba(8,103,246,.20);
-    }
-    .btn-primary:hover{background:#0058d9}
-    .btn-light{
-      background:#fff;
-      color:var(--ink);
-      border-color:rgba(255,255,255,.35);
-    }
-    .btn-outline{
-      background:#fff;
-      border-color:var(--line);
-      color:var(--ink);
-    }
+    .btn-blue{background:var(--blue);color:#fff;box-shadow:0 10px 22px rgba(17,103,242,.18)}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-yellow{background:var(--yellow);color:var(--ink)}
+    .btn-white{background:#fff;color:var(--ink);border-color:var(--line)}
+    .btn-red{background:var(--red);color:#fff}
+    .btn-green{background:var(--green);color:#fff}
 
-    /* TOP */
-    .announcement{
-      min-height:34px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:7px 16px;
-      font-size:.72rem;
-      font-weight:700;
-      color:#52636a;
-      background:#fff;
-      text-align:center;
-    }
-    .announcement a{
-      color:var(--blue);
-      text-decoration:underline;
-      text-underline-offset:3px;
-    }
-    .color-line{
-      height:4px;
-      background:linear-gradient(90deg,
-        var(--red) 0 20%,
-        var(--green) 20% 40%,
-        var(--blue) 40% 60%,
-        var(--yellow) 60% 80%,
-        var(--orange) 80% 100%);
-    }
-
+    /* Header */
     header{
       position:sticky;
       top:0;
-      z-index:50;
-      background:rgba(255,255,255,.94);
+      z-index:60;
+      background:rgba(255,255,255,.96);
       backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(232,237,240,.8);
+      border-bottom:1px solid rgba(230,236,239,.9);
     }
     .nav{
-      min-height:88px;
-      display:flex;
+      min-height:92px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:22px;
       align-items:center;
-      justify-content:space-between;
-      gap:30px;
     }
-    .brand{
+    .brand-group{
       display:flex;
       align-items:center;
+      gap:14px;
+      min-width:0;
       position:relative;
-      z-index:60;
+      z-index:70;
     }
-    .brand img{
-      width:202px;
-      height:auto;
-      object-fit:contain;
-    }
+    .brand-group img.logo{width:170px;height:auto}
+    .brand-group img.draw{width:96px;height:58px;object-fit:contain}
     nav{
       display:flex;
       align-items:center;
-      gap:27px;
+      justify-content:center;
+      gap:22px;
     }
-    nav>a:not(.btn){
-      font-size:.84rem;
+    nav a{
+      font-size:.77rem;
       font-weight:700;
-      color:#42585f;
-      transition:.18s ease;
+      color:#435761;
+      white-space:nowrap;
     }
-    nav>a:not(.btn):hover{color:var(--blue)}
-
+    nav a:hover{color:var(--blue)}
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      justify-self:end;
+    }
+    .nav-meta{
+      display:flex;
+      gap:13px;
+      font-size:.66rem;
+      font-weight:700;
+      color:#6b7b83;
+      white-space:nowrap;
+    }
     .menu-btn{
       display:none;
       width:44px;height:44px;
+      border-radius:50%;
       border:1px solid var(--line);
       background:#fff;
-      border-radius:50%;
       position:relative;
-      z-index:60;
+      z-index:70;
     }
     .menu-btn span{
-      display:block;
       width:18px;height:2px;
+      display:block;
       margin:4px auto;
-      border-radius:99px;
       background:var(--ink);
+      border-radius:99px;
       transition:.2s;
     }
 
-    /* HERO */
-    .hero{padding:42px 0 32px}
-    .hero-card{
-      min-height:690px;
-      border-radius:var(--radius-xl);
-      overflow:hidden;
+    /* Hero */
+    .hero{padding:28px 0 22px}
+    .hero-shell{
+      display:grid;
+      grid-template-columns:.40fr .60fr;
+      min-height:500px;
+      align-items:stretch;
+      gap:0;
+    }
+    .hero-copy{
       position:relative;
-      isolation:isolate;
-      box-shadow:var(--shadow);
-      background:#0b61db;
-    }
-    .hero-card>img{
-      position:absolute;
-      inset:0;
-      width:100%;height:100%;
-      object-fit:cover;
-      object-position:center center;
-      z-index:-3;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:-2;
-      background:
-        linear-gradient(90deg,
-          rgba(0,77,190,.94) 0%,
-          rgba(0,91,220,.82) 27%,
-          rgba(0,95,224,.58) 48%,
-          rgba(0,95,224,.18) 72%,
-          rgba(0,95,224,0) 100%);
-    }
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:-1;
-      background:
-        linear-gradient(0deg,rgba(16,39,69,.34) 0%,rgba(16,39,69,.06) 45%,transparent 67%);
-    }
-    .hero-content{
-      min-height:690px;
-      padding:80px 70px 62px;
-      color:#fff;
+      z-index:2;
+      background:var(--cream);
+      border-radius:28px 0 0 28px;
+      padding:50px 40px 34px 46px;
       display:flex;
       flex-direction:column;
-      justify-content:flex-end;
-      max-width:770px;
-    }
-    .hero .eyebrow{color:#fff}
-    .hero h1{margin-top:17px}
-    .hero-lead{
-      max-width:605px;
-      margin:25px 0 31px;
-      color:rgba(255,255,255,.88);
-      font-size:1.04rem;
-    }
-    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
-    .hero-badge{
-      position:absolute;
-      right:34px;
-      top:34px;
-      width:150px;height:150px;
-      border-radius:50%;
-      background:var(--yellow);
-      color:var(--ink);
-      display:flex;
-      align-items:center;
       justify-content:center;
-      flex-direction:column;
-      text-align:center;
-      box-shadow:0 18px 45px rgba(30,46,58,.16);
-      transform:rotate(5deg);
+      box-shadow:var(--shadow-sm);
+      border:1px solid #efe8d8;
+      border-right:0;
     }
-    .hero-badge strong{
-      font-family:"Manrope";
-      font-size:1.95rem;
-      line-height:1;
-      font-weight:800;
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      right:-70px;
+      top:0;
+      bottom:0;
+      width:140px;
+      background:var(--cream);
+      border-top-right-radius:90px;
+      border-bottom-right-radius:90px;
+      z-index:-1;
+      border-top:1px solid #efe8d8;
+      border-right:1px solid #efe8d8;
+      border-bottom:1px solid #efe8d8;
     }
-    .hero-badge span{
-      margin-top:7px;
-      font-size:.64rem;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      line-height:1.35;
+    .hero h1{
+      margin-top:16px;
+      max-width:500px;
+      color:#233d50;
     }
-
-    /* PROOF */
-    .proof{
+    .hero h1 .accent{color:#e2b118}
+    .hero-lead{
+      margin-top:20px;
+      max-width:470px;
+      font-size:.95rem;
+      line-height:1.62;
+    }
+    .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+    .hero-trust{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      border-bottom:1px solid var(--line);
-      margin-top:32px;
+      gap:14px;
+      margin-top:26px;
     }
-    .proof-item{
-      padding:24px 25px;
-      border-right:1px solid var(--line);
-    }
-    .proof-item:first-child{padding-left:0}
-    .proof-item:last-child{border-right:0}
-    .proof-item strong{
-      display:block;
-      font-family:"Manrope";
-      font-size:1.07rem;
-      font-weight:800;
-    }
-    .proof-item span{font-size:.77rem;color:var(--muted)}
-    .proof-item:nth-child(1) strong{color:var(--red)}
-    .proof-item:nth-child(2) strong{color:var(--green)}
-    .proof-item:nth-child(3) strong{color:var(--orange)}
-    .proof-item:nth-child(4) strong{color:var(--blue)}
-
-    /* IDENTITY */
-    .identity-card{
-      border:1px solid #dfe7ed;
-      border-radius:38px;
-      background:#fbfcfd;
-      box-shadow:var(--shadow-sm);
-      overflow:hidden;
-      position:relative;
-    }
-    .identity-card::before{
-      content:"";
-      position:absolute;
-      inset:0 0 auto 0;
-      height:5px;
-      background:linear-gradient(90deg,
-        var(--red) 0 20%,
-        var(--green) 20% 40%,
-        var(--blue) 40% 60%,
-        var(--yellow) 60% 80%,
-        var(--orange) 80% 100%);
-    }
-    .identity-grid{
-      display:grid;
-      grid-template-columns:.86fr 1.14fr;
-      gap:45px;
-      align-items:center;
-      padding:58px 48px 46px;
-    }
-    .identity-copy{padding-left:20px}
-    .identity-copy h2{margin-top:17px}
-    .identity-copy p{
-      max-width:520px;
-      margin-top:24px;
-      font-size:1rem;
-    }
-    .identity-badges{
+    .hero-trust-item{
       display:flex;
-      gap:11px;
-      flex-wrap:wrap;
-      margin-top:28px;
-    }
-    .identity-badge{
-      min-height:43px;
-      padding:0 15px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
       gap:8px;
-      font-size:.76rem;
-      font-weight:800;
-      background:#f1f6ff;
-      color:var(--blue);
-    }
-    .identity-badge:nth-child(2){
-      background:#fff8dd;
-      color:#957600;
-    }
-    .identity-dot{
-      width:8px;height:8px;
-      border-radius:50%;
-      background:currentColor;
-    }
-    .identity-art{
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      align-items:flex-start;
       min-width:0;
     }
-    .identity-art img{
-      width:100%;
-      max-width:820px;
-      height:auto;
-      object-fit:contain;
+    .hero-trust-icon{
+      width:28px;height:28px;
+      border-radius:10px;
+      display:grid;place-items:center;
+      border:1px solid #e7e0d0;
+      background:#fff;
+      color:#d0a025;
+      flex:0 0 auto;
+      font-size:.74rem;
+      font-weight:900;
+    }
+    .hero-trust-item:nth-child(1) .hero-trust-icon{color:#4da443}
+    .hero-trust-item:nth-child(2) .hero-trust-icon{color:#8e73c8}
+    .hero-trust-item:nth-child(3) .hero-trust-icon{color:#f08e3a}
+    .hero-trust-item:nth-child(4) .hero-trust-icon{color:#35a1c9}
+    .hero-trust-text{
+      font-size:.61rem;
+      font-weight:700;
+      line-height:1.28;
+      color:#5f6f77;
     }
 
-    /* GENERIC HEAD */
-    .section-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:72px;
-      align-items:end;
-      margin-bottom:56px;
-    }
-    .section-head h2{margin-top:14px}
-    .section-head p{
-      max-width:620px;
-      justify-self:end;
-      font-size:1.02rem;
-    }
-
-    /* PROJECT */
-    .project-grid{
-      display:grid;
-      grid-template-columns:1.03fr .97fr;
-      gap:76px;
-      align-items:center;
-    }
-    .editorial-photo{
-      min-height:585px;
+    .hero-photo{
       position:relative;
-      border-radius:30px;
+      min-height:500px;
+      border-radius:0 28px 28px 0;
       overflow:hidden;
-      background:#edf2f4;
       box-shadow:var(--shadow-sm);
+      border:1px solid var(--line);
+      border-left:0;
     }
-    .editorial-photo img{
+    .hero-photo img{
       position:absolute;
       inset:0;
       width:100%;height:100%;
       object-fit:cover;
     }
-    .editorial-photo::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(0deg,rgba(23,47,60,.18),transparent 43%);
-    }
-    .photo-caption{
-      position:absolute;
-      z-index:2;
-      left:20px;
-      bottom:20px;
-      padding:9px 13px;
-      border-radius:999px;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(10px);
-      color:var(--ink);
-      font-size:.72rem;
-      font-weight:800;
-    }
-    .project-copy h2{margin:14px 0 24px}
-    .project-copy>p{font-size:1.02rem}
-    .principles{margin-top:34px}
-    .principle{
-      display:grid;
-      grid-template-columns:38px 1fr;
-      gap:15px;
-      padding:18px 0;
-      border-bottom:1px solid var(--line);
-    }
-    .principle:last-child{border-bottom:0}
-    .principle-number{
-      width:34px;height:34px;
-      border-radius:50%;
-      display:grid;place-items:center;
-      background:var(--blue-soft);
-      color:var(--blue);
-      font-size:.72rem;
-      font-weight:800;
-    }
-    .principle:nth-child(2) .principle-number{background:#fff9d8;color:#8c7000}
-    .principle:nth-child(3) .principle-number{background:#effcf2;color:#078f29}
-    .principle p{font-size:.85rem;margin-top:4px}
 
-    /* LEVELS */
-    .levels{
+    /* Special values row */
+    .values{padding-top:24px}
+    .values-grid{
       display:grid;
       grid-template-columns:repeat(5,1fr);
-      gap:14px;
+      gap:16px;
     }
-    .level{
-      min-height:308px;
-      padding:24px 21px;
-      border:1px solid var(--line);
-      border-top-width:4px;
-      border-radius:24px;
-      background:#fff;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition:.22s ease;
+    .value{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:12px;
+      align-items:flex-start;
+      padding:20px 0 0;
     }
-    .level:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
-    .level:nth-child(1){border-top-color:var(--blue)}
-    .level:nth-child(2){border-top-color:var(--green)}
-    .level:nth-child(3){border-top-color:var(--yellow)}
-    .level:nth-child(4){border-top-color:var(--orange)}
-    .level:nth-child(5){border-top-color:var(--red)}
-    .level-number{
+    .value-icon{
       width:38px;height:38px;
       border-radius:50%;
+      border:2px solid currentColor;
       display:grid;place-items:center;
-      background:var(--soft);
-      font-size:.73rem;
-      font-weight:800;
-    }
-    .level p{font-size:.83rem;margin-top:9px}
-    .level-age{
-      display:block;
-      margin-top:15px;
-      color:var(--blue);
-      font-size:.7rem;
-      font-weight:800;
-    }
-
-    /* EXPERIENCE */
-    .experience-shell{
-      border-radius:34px;
-      background:#0b61e6;
-      color:#fff;
-      padding:64px;
-      position:relative;
-      overflow:hidden;
-    }
-    .experience-shell::after{
-      content:"";
-      position:absolute;
-      width:430px;height:430px;
-      border-radius:50%;
-      border:70px solid rgba(255,255,255,.05);
-      right:-170px;
-      bottom:-200px;
-    }
-    .experience-head{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:60px;
-      align-items:end;
-      margin-bottom:44px;
-      position:relative;
-      z-index:2;
-    }
-    .experience-head .eyebrow{color:#fff}
-    .experience-head h2{margin-top:14px}
-    .experience-head p{
-      color:rgba(255,255,255,.77);
-      max-width:570px;
-      justify-self:end;
-    }
-    .experience-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      position:relative;
-      z-index:2;
-    }
-    .experience-card{
-      min-height:248px;
-      padding:27px;
-      border:1px solid rgba(255,255,255,.17);
-      border-radius:24px;
-      background:rgba(255,255,255,.065);
-      backdrop-filter:blur(8px);
-    }
-    .experience-symbol{
-      width:50px;height:50px;
-      display:grid;place-items:center;
-      border-radius:16px;
+      font-weight:900;
       background:#fff;
-      color:var(--blue);
-      font-family:"Manrope";
-      font-weight:800;
-      margin-bottom:42px;
     }
-    .experience-card p{
-      color:rgba(255,255,255,.74);
-      font-size:.87rem;
-      margin-top:8px;
+    .value:nth-child(1){color:#78b748}
+    .value:nth-child(2){color:#9c76c9}
+    .value:nth-child(3){color:#d79d29}
+    .value:nth-child(4){color:#ee6f7f}
+    .value:nth-child(5){color:#5e93d1}
+    .value h3{
+      font-size:.9rem;
+      color:#314852;
+      letter-spacing:-.01em;
+      margin-top:2px;
+    }
+    .value p{
+      margin-top:5px;
+      font-size:.71rem;
+      line-height:1.45;
     }
 
-    /* SPACES - unique photos only */
-    .spaces-grid{
+    /* Stages section with center image distribution mimic */
+    .stages-shell{
       display:grid;
-      grid-template-columns:1.16fr .84fr;
+      grid-template-columns:1fr 320px 1fr;
       gap:18px;
       align-items:stretch;
     }
-    .space-main{
-      min-height:575px;
-      border-radius:28px;
-      overflow:hidden;
-      position:relative;
+    .stage-box{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      padding:26px 24px;
       box-shadow:var(--shadow-sm);
+      min-height:350px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
-    .space-main img,.space-side img{
+    .stage-box.red h2{color:var(--red)}
+    .stage-box.green h2{color:var(--green-dark)}
+    .stage-box h2{
+      font-size:2rem;
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    .stage-box h3{
+      font-size:1rem;
+      margin-top:8px;
+      color:#304650;
+    }
+    .stage-box p{
+      margin-top:8px;
+      font-size:.8rem;
+      line-height:1.55;
+    }
+    .stage-levels{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:18px;
+    }
+    .stage-level{
+      padding:13px 12px;
+      border-radius:16px;
+      background:#fafbfc;
+      border:1px solid var(--line);
+    }
+    .stage-level strong{
+      display:block;
+      font-size:.76rem;
+      color:#314651;
+    }
+    .stage-level span{
+      display:block;
+      font-size:.68rem;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .stage-actions{margin-top:18px}
+    .stage-photo-card{
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow-sm);
+      min-height:350px;
+      border:1px solid var(--line);
+      background:#f1f4f6;
+    }
+    .stage-photo-card img{
+      position:absolute;
+      inset:0;
       width:100%;height:100%;
       object-fit:cover;
     }
-    .space-side{
+
+    /* Learning + spaces */
+    .split-head{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:70px;
+      align-items:end;
+      margin-bottom:42px;
+    }
+    .split-head h2{margin-top:13px}
+    .split-head p{
+      justify-self:end;
+      max-width:610px;
+      font-size:.96rem;
+    }
+
+    .learning-grid{
+      display:grid;
+      grid-template-columns:.98fr 1.02fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .photo-large{
+      min-height:430px;
+      position:relative;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#f0f4f6;
+      box-shadow:var(--shadow-sm);
+    }
+    .photo-large img,.photo-small img{
+      position:absolute;inset:0;
+      width:100%;height:100%;object-fit:cover;
+    }
+    .photo-small{
+      min-height:206px;
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#f0f4f6;
+      box-shadow:var(--shadow-sm);
+    }
+    .photo-column{
       display:grid;
       grid-template-rows:1fr 1fr;
       gap:18px;
     }
-    .space-card{
-      min-height:278px;
-      border-radius:26px;
-      overflow:hidden;
-      position:relative;
-      background:#edf2f5;
+    .learning-copy{
+      border:1px solid var(--line);
+      border-radius:25px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+      padding:34px 30px;
+      min-height:430px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
-    .space-main::after,.space-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(0deg,rgba(20,44,58,.34),transparent 45%);
+    .learning-copy h2{margin:14px 0 18px}
+    .learning-copy p{font-size:.95rem}
+    .learning-list{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:23px;
     }
-    .space-label{
-      position:absolute;
-      z-index:2;
-      left:18px;
-      bottom:16px;
-      color:#fff;
-      font-size:.8rem;
-      font-weight:800;
-      text-shadow:0 2px 12px rgba(0,0,0,.24);
+    .learning-pill{
+      padding:14px 12px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:#fafbfc;
+    }
+    .learning-pill strong{
+      display:block;
+      font-size:.78rem;
+      color:#304650;
+    }
+    .learning-pill span{
+      display:block;
+      margin-top:3px;
+      font-size:.67rem;
+      color:var(--muted);
     }
 
-    /* COMMUNITY */
-    .community-grid{
+    /* Cards */
+    .section-head{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:56px;
-      align-items:center;
+      gap:66px;
+      align-items:end;
+      margin-bottom:42px;
     }
-    .community-photo{
-      min-height:500px;
-      border-radius:28px;
-      overflow:hidden;
-      position:relative;
-      box-shadow:var(--shadow-sm);
-      background:#edf2f4;
-    }
-    .community-photo img{
-      position:absolute;inset:0;
-      width:100%;height:100%;
-      object-fit:cover;
-    }
-    .community-copy h2{margin:14px 0 22px}
-    .community-copy p{font-size:1rem}
-    .community-meta{
-      margin-top:26px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .chip{
-      padding:9px 13px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-size:.72rem;
-      font-weight:800;
-    }
+    .section-head h2{margin-top:12px}
+    .section-head p{justify-self:end;max-width:610px;font-size:.96rem}
 
-    /* MEMORY STRIP: chronos each exactly once */
-    .memory-grid{
-      margin-top:46px;
+    .triples{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
-    .memory-card{
-      aspect-ratio:4/3;
-      border-radius:22px;
-      overflow:hidden;
-      background:#eef2f4;
+    .triple{
+      padding:26px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:#fff;
       box-shadow:var(--shadow-sm);
+      min-height:220px;
     }
-    .memory-card img{
-      width:100%;height:100%;
-      object-fit:cover;
+    .triple-icon{
+      width:46px;height:46px;
+      border-radius:15px;
+      display:grid;place-items:center;
+      font-family:"Manrope";
+      font-weight:900;
+      margin-bottom:32px;
+      background:#f1f6ff;
+      color:var(--blue);
+    }
+    .triple:nth-child(2) .triple-icon{background:#fff8de;color:#b98a16}
+    .triple:nth-child(3) .triple-icon{background:#eff9f0;color:var(--green-dark)}
+    .triple p{margin-top:8px;font-size:.8rem}
+
+    .spaces-grid{
+      display:grid;
+      grid-template-columns:1.06fr .94fr;
+      gap:18px;
+    }
+    .spaces-right{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:18px;
+    }
+    .overlay-label{
+      position:absolute;
+      left:16px;
+      bottom:14px;
+      z-index:2;
+      color:#fff;
+      font-size:.8rem;
+      font-weight:800;
+      text-shadow:0 2px 10px rgba(0,0,0,.25);
+    }
+    .photo-large::after,.photo-small::after,.stage-photo-card::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(0deg,rgba(26,45,56,.34),transparent 45%);
     }
 
-    /* TEAM */
-    .team-grid{
+    /* Info & trust */
+    .info-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
-    .team-card{
+    .info-card{
+      padding:26px;
       border:1px solid var(--line);
       border-radius:24px;
       background:#fff;
-      overflow:hidden;
-      transition:.22s ease;
-    }
-    .team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
-    .team-art{
-      height:205px;
-      display:grid;
-      place-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .team-card:nth-child(1) .team-art{background:#f2f7ff}
-    .team-card:nth-child(2) .team-art{background:#f1fff4}
-    .team-card:nth-child(3) .team-art{background:#fffbea}
-    .team-card:nth-child(4) .team-art{background:#fff4ed}
-    .team-art::after{
-      content:"";
-      position:absolute;
-      width:210px;height:210px;
-      border-radius:50%;
-      bottom:-150px;
-    }
-    .team-card:nth-child(1) .team-art::after{background:var(--blue)}
-    .team-card:nth-child(2) .team-art::after{background:var(--green)}
-    .team-card:nth-child(3) .team-art::after{background:var(--yellow)}
-    .team-card:nth-child(4) .team-art::after{background:var(--orange)}
-    .avatar{
-      width:92px;height:92px;
-      border-radius:50%;
-      background:#fff;
-      display:grid;
-      place-items:center;
-      z-index:2;
-      box-shadow:0 12px 30px rgba(36,61,75,.10);
-    }
-    .avatar svg{width:52px;height:52px;stroke:#718087}
-    .team-body{padding:21px}
-    .team-role{
-      display:block;
-      margin-bottom:8px;
-      font-size:.64rem;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--blue);
-    }
-    .team-card:nth-child(2) .team-role{color:#098f2a}
-    .team-card:nth-child(3) .team-role{color:#957600}
-    .team-card:nth-child(4) .team-role{color:var(--orange)}
-    .team-body p{font-size:.81rem;margin-top:8px}
-
-    /* FAQ */
-    .faq-layout{
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:70px;
-    }
-    .faq-intro h2{margin-top:14px}
-    .faq-list{border-top:1px solid var(--line)}
-    .faq-item{border-bottom:1px solid var(--line)}
-    .faq-q{
-      width:100%;
-      padding:23px 0;
-      border:0;
-      background:none;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      text-align:left;
-      font-weight:800;
-      cursor:pointer;
-    }
-    .faq-plus{
-      width:30px;height:30px;
-      border:1px solid var(--line);
-      border-radius:50%;
-      display:grid;place-items:center;
-      flex:0 0 auto;
-      transition:.2s;
-    }
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
-    .faq-a p{padding:0 44px 22px 0;font-size:.89rem}
-    .faq-item.open .faq-a{max-height:190px}
-    .faq-item.open .faq-plus{
-      transform:rotate(45deg);
-      background:var(--blue-soft);
-      color:var(--blue);
-    }
-
-    /* CONTACT */
-    .contact-shell{
-      display:grid;
-      grid-template-columns:.86fr 1.14fr;
-      border-radius:32px;
-      overflow:hidden;
-      border:1px solid var(--line);
       box-shadow:var(--shadow-sm);
     }
-    .contact-info{
-      padding:54px;
-      background:var(--blue);
-      color:#fff;
-    }
-    .contact-info .eyebrow{color:#fff}
-    .contact-info h2{margin:14px 0 20px}
-    .contact-info>p{color:rgba(255,255,255,.78)}
-    .contact-links{margin-top:34px}
-    .contact-link{
+    .info-card small{
       display:block;
-      padding:16px 0;
-      border-bottom:1px solid rgba(255,255,255,.17);
-    }
-    .contact-link:last-child{border-bottom:0}
-    .contact-link small{
-      display:block;
-      font-size:.61rem;
-      font-weight:700;
-      letter-spacing:.1em;
       text-transform:uppercase;
-      color:rgba(255,255,255,.62);
+      letter-spacing:.1em;
+      font-size:.62rem;
+      font-weight:800;
+      color:var(--blue);
     }
-    .contact-link strong{display:block;margin-top:3px;font-size:.9rem}
+    .info-card strong{
+      display:block;
+      margin-top:8px;
+      font-family:"Manrope";
+      font-size:1.2rem;
+      color:#233d50;
+    }
+    .info-card p{margin-top:7px;font-size:.78rem}
 
-    .contact-form{padding:54px;background:#fff}
-    .form-head{margin-bottom:25px}
-    .form-head h3{font-size:1.6rem}
-    .form-head p{margin-top:7px;font-size:.84rem}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .field{display:grid;gap:7px}
-    .field.full{grid-column:1/-1}
-    label{font-size:.72rem;font-weight:800;color:#53666e}
-    input,select,textarea{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:13px;
-      background:#fafcfd;
-      padding:13px 14px;
-      outline:none;
-      color:var(--ink);
-    }
-    textarea{min-height:118px;resize:vertical}
-    input:focus,select:focus,textarea:focus{
-      border-color:#a1bef5;
-      box-shadow:0 0 0 3px rgba(8,103,246,.07);
-    }
-    .form-note{font-size:.67rem;margin:12px 0 17px}
-    .success{
-      display:none;
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:12px;
-      background:#effaf2;
-      color:#11822d;
-      font-size:.8rem;
-      font-weight:700;
-    }
-
-    /* FOOTER */
-    footer{
-      padding:52px 0 24px;
-      border-top:4px solid var(--blue);
-      background:#fff;
-    }
-    .footer-grid{
+    .trust-banner{
       display:grid;
-      grid-template-columns:1.25fr .75fr .75fr;
-      gap:50px;
-      padding-bottom:38px;
+      grid-template-columns:1fr 260px;
+      gap:18px;
+      align-items:center;
+      padding:34px;
+      border-radius:26px;
+      background:#fff8dd;
+      border:1px solid #f1e3a6;
+      box-shadow:var(--shadow-sm);
     }
-    .footer-logo{width:215px}
-    .footer-copy{max-width:380px;margin-top:14px;font-size:.82rem}
-    footer h4{
-      margin:0 0 13px;
-      font-size:.74rem;
+    .trust-banner h2{
+      margin:12px 0 12px;
+      font-size:2rem;
+    }
+    .trust-badge{
+      min-height:180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      border-radius:22px;
+      background:#fff;
+      border:1px solid #eddfaa;
+    }
+    .trust-badge strong{
+      font-family:"Manrope";
+      font-size:3rem;
+      line-height:1;
+      color:var(--blue);
+    }
+    .trust-badge span{
+      margin-top:8px;
+      font-size:.72rem;
+      font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
-    }
-    footer a{display:block;margin:7px 0;color:var(--muted);font-size:.82rem}
-    footer a:hover{color:var(--blue)}
-    .footer-bottom{
-      padding-top:20px;
-      border-top:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      color:#8c989d;
-      font-size:.69rem;
+      color:#6b787f;
     }
 
-    .floating{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      z-index:45;
-      padding:12px 17px;
-      border-radius:999px;
-      background:var(--blue);
+    /* Close */
+    .close-card{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .close-copy{
+      min-height:360px;
+      padding:38px 34px;
+      border-radius:26px;
+      background:#2f8c31;
       color:#fff;
-      font-size:.75rem;
-      font-weight:800;
-      box-shadow:0 14px 34px rgba(8,103,246,.24);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      box-shadow:var(--shadow-sm);
+    }
+    .close-copy .eyebrow{color:#fff}
+    .close-copy h2{margin:14px 0 16px}
+    .close-copy p{color:rgba(255,255,255,.86)}
+    .close-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+    .close-quote{
+      margin-top:20px;
+      font-size:.8rem;
+      color:rgba(255,255,255,.74);
+      font-style:italic;
+    }
+    .close-side{
+      min-height:360px;
+      border-radius:26px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      box-shadow:var(--shadow-sm);
+    }
+    .close-side-inner{max-width:320px}
+    .close-side strong{
+      display:block;
+      font-family:"Manrope";
+      font-size:2.5rem;
+      line-height:1;
+      color:var(--blue);
+    }
+    .close-side p{
+      margin-top:12px;
+      font-size:.88rem;
     }
 
-    .reveal{opacity:0;transform:translateY(16px);transition:.65s ease}
+    /* Footer */
+    footer{
+      margin-top:78px;
+      padding:28px 0 0;
+      background:#fff;
+    }
+    .footer-wave{
+      height:34px;
+      background:var(--green);
+      border-top-left-radius:40px;
+      border-top-right-radius:40px;
+    }
+    .footer-row{
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+      padding:14px 16px 20px;
+      font-size:.72rem;
+      font-weight:700;
+    }
+
+    .reveal{opacity:0;transform:translateY(14px);transition:.65s ease}
     .reveal.visible{opacity:1;transform:none}
 
-    @media(max-width:1050px){
+    @media(max-width:1100px){
+      .nav{grid-template-columns:auto auto}
       nav{
         position:fixed;
-        inset:126px 0 0;
+        inset:93px 0 0;
         background:#fff;
         flex-direction:column;
         justify-content:center;
-        gap:24px;
+        gap:22px;
         opacity:0;
         visibility:hidden;
         transform:translateY(-8px);
-        transition:.22s ease;
+        transition:.22s;
       }
       nav.open{opacity:1;visibility:visible;transform:none}
-      nav>a:not(.btn){font-family:"Manrope";font-size:1.5rem}
+      nav a{font-family:"Manrope";font-size:1.4rem}
+      .nav-meta,.nav-right>.btn-yellow{display:none}
       .menu-btn{display:block}
+
       .menu-btn.open span:first-child{transform:translateY(3px) rotate(45deg)}
       .menu-btn.open span:last-child{transform:translateY(-3px) rotate(-45deg)}
 
-      .identity-grid,.project-grid,.community-grid,.faq-layout,.contact-shell{grid-template-columns:1fr}
-      .section-head,.experience-head{grid-template-columns:1fr;gap:18px}
-      .section-head p,.experience-head p{justify-self:start}
-      .levels{grid-template-columns:repeat(2,1fr)}
-      .levels .level:last-child{grid-column:1/-1}
-      .experience-grid{grid-template-columns:1fr 1fr}
+      .hero-shell,
+      .split-head,
+      .section-head,
+      .learning-grid,
+      .trust-banner,
+      .close-card{grid-template-columns:1fr}
+      .hero-copy,.hero-photo{border-radius:26px}
+      .hero-copy::after{display:none}
+      .hero-trust{grid-template-columns:1fr 1fr}
+      .values-grid{grid-template-columns:1fr 1fr}
+      .stages-shell{grid-template-columns:1fr}
+      .stage-photo-card{min-height:300px}
+      .triples{grid-template-columns:1fr 1fr}
       .spaces-grid{grid-template-columns:1fr}
-      .space-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-      .team-grid{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:1fr 1fr}
-      .footer-grid>div:first-child{grid-column:1/-1}
+      .spaces-right{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+      .info-grid{grid-template-columns:1fr}
     }
 
     @media(max-width:680px){
       .container{width:min(calc(100% - 28px),var(--max))}
-      .section{padding:78px 0}
-      .section-tight{padding:36px 0}
-      .announcement{font-size:.65rem}
-      .nav{min-height:72px}
-      .brand img{width:168px}
-      nav{inset:110px 0 0}
+      .section{padding:72px 0}
+      .section-tight{padding:34px 0}
+      .nav{min-height:76px}
+      .brand-group img.logo{width:152px}
+      .brand-group img.draw{display:none}
+      nav{inset:77px 0 0}
 
-      .hero{padding-top:22px}
-      .hero-card{min-height:700px;border-radius:24px}
-      .hero-content{min-height:700px;padding:52px 23px 40px}
-      .hero h1{font-size:clamp(3rem,15vw,4.45rem)}
-      .hero-lead{font-size:.92rem}
-      .hero-badge{width:98px;height:98px;right:14px;top:14px}
-      .hero-badge strong{font-size:1.42rem}
-      .hero-badge span{font-size:.49rem}
-      .hero-card::before{
-        background:linear-gradient(90deg,
-          rgba(0,78,193,.90) 0%,
-          rgba(0,92,220,.73) 53%,
-          rgba(0,92,220,.20) 100%);
-      }
+      .hero{padding-top:14px}
+      .hero-copy{padding:34px 22px 28px}
+      .hero h1{font-size:clamp(2.6rem,14vw,3.9rem)}
+      .hero-trust{grid-template-columns:1fr}
+      .hero-photo{min-height:300px}
 
-      .proof{grid-template-columns:1fr 1fr}
-      .proof-item{padding:17px 12px}
-      .proof-item:nth-child(2){border-right:0}
-      .proof-item:nth-child(3),.proof-item:nth-child(4){border-top:1px solid var(--line)}
-
-      .identity-card{border-radius:24px}
-      .identity-grid{padding:40px 22px 24px;gap:22px}
-      .identity-copy{padding-left:0}
-      .identity-copy h2{font-size:2.25rem}
-      .identity-art img{max-width:100%}
-
-      .editorial-photo{min-height:420px}
-      .levels,.experience-grid,.team-grid{grid-template-columns:1fr}
-      .levels .level:last-child{grid-column:auto}
-      .level{min-height:238px}
-
-      .experience-shell{padding:42px 22px;border-radius:26px}
-      .space-main{min-height:380px}
-      .space-side{grid-template-columns:1fr}
-      .space-card{min-height:300px}
-
-      .community-photo{min-height:380px}
-      .memory-grid{grid-template-columns:1fr}
-      .memory-card{aspect-ratio:16/10}
-
-      .contact-info,.contact-form{padding:34px 23px}
-      .form-grid{grid-template-columns:1fr}
-      .field.full{grid-column:auto}
-      .footer-grid{grid-template-columns:1fr;gap:28px}
-      .footer-grid>div:first-child{grid-column:auto}
-      .footer-bottom{flex-direction:column}
-      .floating{right:14px;bottom:14px}
+      .values-grid{grid-template-columns:1fr}
+      .stage-levels,
+      .learning-list,
+      .triples,
+      .spaces-right{grid-template-columns:1fr}
+      .stage-box h2{font-size:1.8rem}
+      .learning-copy,
+      .close-copy,
+      .close-side{padding:28px 22px}
+      .trust-banner{padding:28px 22px}
+      .footer-row{gap:12px;flex-direction:column}
     }
 
     @media(prefers-reduced-motion:reduce){
@@ -992,126 +776,36 @@
       *,*:before,*:after{transition:none!important}
       .reveal{opacity:1;transform:none}
     }
-  
-    /* ===== HOME inspirada en el mockup entregado ===== */
-    header{background:rgba(255,255,255,.97);box-shadow:0 1px 0 rgba(25,56,75,.06)}
-    .pdf-nav{min-height:104px;grid-template-columns:auto 1fr auto;gap:20px}
-    .pdf-brand-wrap{display:flex;align-items:center;gap:12px;min-width:0;position:relative;z-index:60}
-    .pdf-brand-wrap .brand img{width:170px}
-    .pdf-brand-illustration{width:86px;height:54px;object-fit:contain;object-position:center}
-    .pdf-nav nav{gap:18px}
-    .pdf-nav nav a{font-size:.70rem;font-weight:700;color:#394f58}
-    .pdf-nav-actions{display:flex;align-items:center;gap:12px;position:relative;z-index:60}
-    .pdf-contact-mini{display:flex;gap:11px;color:#6f7e85;font-size:.61rem;font-weight:700;white-space:nowrap}
-    .pdf-yellow-btn{background:#f4c934;color:#18384b;box-shadow:none;min-height:42px;padding:0 17px;font-size:.72rem}
-    .pdf-yellow-btn:hover{background:#efc122}
-
-    .pdf-hero{padding:28px 0 0}
-    .pdf-hero-card{display:grid;grid-template-columns:.43fr .57fr;min-height:520px;border-radius:30px;overflow:hidden;background:#fbf8ef;border:1px solid #eee9df;box-shadow:0 18px 48px rgba(38,64,77,.08)}
-    .pdf-hero-copy{padding:54px 48px 46px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-    .pdf-hero-copy::after{content:"";position:absolute;right:-28px;top:0;bottom:0;width:62px;background:#fbf8ef;border-radius:0 48% 48% 0 / 0 14% 14% 0;z-index:-1}
-    .pdf-hero-copy h1{font-size:clamp(2.75rem,4.6vw,4.75rem);line-height:1.03;color:#19384b;margin-top:13px;max-width:570px}
-    .pdf-hero-copy h1 span{color:#ef3434}
-    .pdf-hero-copy>p{font-size:.91rem;line-height:1.65;max-width:520px;margin-top:18px}
-    .pdf-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-    .pdf-outline-btn{background:#fff;border-color:#d8e0e4;color:#19384b}
-    .pdf-mini-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:29px}
-    .pdf-mini-trust>div{display:flex;align-items:center;gap:7px;min-width:0}
-    .pdf-mini-trust b{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;background:#fff;border:1px solid #eee8dd;color:#0868f7;font-size:.7rem;flex:0 0 auto}
-    .pdf-mini-trust span{font-size:.56rem;line-height:1.25;color:#5b6d75;font-weight:700}
-    .pdf-hero-photo{position:relative;min-height:520px;overflow:hidden}
-    .pdf-hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-    .pdf-hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,248,239,.12),transparent 20%)}
-
-    .pdf-feature-strip{display:grid;grid-template-columns:repeat(5,1fr);margin-top:28px;border:1px solid #e6ecef;border-radius:22px;overflow:hidden;background:#fff}
-    .pdf-feature-strip article{padding:20px 17px;display:grid;grid-template-columns:38px 1fr;gap:11px;border-right:1px solid #e6ecef;align-items:start}
-    .pdf-feature-strip article:last-child{border-right:0}
-    .pdf-feature-strip i{width:36px;height:36px;border-radius:12px;background:#f1f6ff;color:#0868f7;display:grid;place-items:center;font-style:normal;font-weight:900}
-    .pdf-feature-strip article:nth-child(2) i{background:#f8f2ff;color:#9564c8}
-    .pdf-feature-strip article:nth-child(3) i{background:#fff6dc;color:#d79517}
-    .pdf-feature-strip article:nth-child(4) i{background:#fff0ef;color:#ef3434}
-    .pdf-feature-strip article:nth-child(5) i{background:#eef9fb;color:#258daf}
-    .pdf-feature-strip h3{font-size:.82rem;letter-spacing:-.02em}
-    .pdf-feature-strip p{font-size:.65rem;line-height:1.42;margin-top:4px}
-
-    /* El bloque de identidad se integra como pieza institucional del mockup */
-    #identidad{padding-top:72px}
-    .identity-card{box-shadow:none;background:#fff;border-color:#e7ecef}
-    .identity-card::before{height:4px}
-
-    /* Mantener las secciones inferiores más livianas y editoriales */
-    .section{padding:94px 0}
-    .section-soft{background:#fafbfb}
-    .experience-shell{box-shadow:none}
-    .contact-shell{box-shadow:0 16px 44px rgba(31,57,71,.07)}
-
-    @media(max-width:1180px){
-      .pdf-contact-mini{display:none}
-      .pdf-nav nav{gap:14px}
-      .pdf-nav nav a{font-size:.66rem}
-      .pdf-brand-illustration{display:none}
-    }
-    @media(max-width:1050px){
-      .pdf-nav{grid-template-columns:auto auto}
-      .pdf-nav nav{position:fixed;inset:105px 0 0;background:#fff;flex-direction:column;justify-content:center;gap:24px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s}
-      .pdf-nav nav.open{opacity:1;visibility:visible;transform:none}
-      .pdf-nav nav a{font-family:"Manrope";font-size:1.35rem}
-      .pdf-nav-actions{justify-self:end}
-      .pdf-nav-actions>.btn{display:none}
-      .menu-btn{display:block}
-      .pdf-hero-card{grid-template-columns:1fr}
-      .pdf-hero-copy::after{display:none}
-      .pdf-hero-photo{min-height:420px}
-      .pdf-feature-strip{grid-template-columns:repeat(2,1fr)}
-      .pdf-feature-strip article{border-bottom:1px solid #e6ecef}
-      .pdf-feature-strip article:nth-child(even){border-right:0}
-      .pdf-feature-strip article:last-child{grid-column:1/-1;border-bottom:0}
-    }
-    @media(max-width:680px){
-      .pdf-nav{min-height:76px}
-      .pdf-brand-wrap .brand img{width:156px}
-      .pdf-nav nav{inset:77px 0 0}
-      .pdf-hero{padding-top:14px}
-      .pdf-hero-card{border-radius:22px}
-      .pdf-hero-copy{padding:38px 24px 30px}
-      .pdf-hero-copy h1{font-size:clamp(2.7rem,13vw,4rem)}
-      .pdf-mini-trust{grid-template-columns:1fr 1fr}
-      .pdf-hero-photo{min-height:325px}
-      .pdf-feature-strip{grid-template-columns:1fr}
-      .pdf-feature-strip article,.pdf-feature-strip article:nth-child(even){border-right:0;border-bottom:1px solid #e6ecef}
-      .pdf-feature-strip article:last-child{grid-column:auto;border-bottom:0}
-    }
-
   </style>
 </head>
 
 <body>
-<header>
-    <div class="container nav pdf-nav">
-      <div class="pdf-brand-wrap">
-        <a class="brand" href="#inicio" aria-label="Ukika inicio">
-          <img src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
+  <header>
+    <div class="container nav">
+      <div class="brand-group">
+        <a href="#inicio" aria-label="Ukika inicio">
+          <img class="logo" src="assets/index_logo.gif" alt="Ukika Sala Cuna Jardín Infantil">
         </a>
-        <img class="pdf-brand-illustration" src="assets/ilustracion_ukika.gif" alt="" aria-hidden="true">
+        <img class="draw" src="assets/ilustracion_ukika.gif" alt="" aria-hidden="true">
       </div>
 
       <nav id="nav">
         <a href="#inicio">Inicio</a>
-        <a href="#identidad">Conócenos</a>
-        <a href="#niveles">Sala Cuna</a>
-        <a href="#niveles">Jardín Infantil</a>
-        <a href="#experiencia">Vida en Ukika</a>
-        <a href="#preguntas">Información práctica</a>
-        <a href="#contacto">Admisión</a>
+        <a href="#conocenos">Conócenos</a>
+        <a href="#sala-cuna">Sala Cuna</a>
+        <a href="#jardin">Jardín Infantil</a>
+        <a href="#vida">Vida en Ukika</a>
+        <a href="#informacion">Información práctica</a>
+        <a href="#admision">Admisión</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <div class="pdf-nav-actions">
-        <div class="pdf-contact-mini">
+      <div class="nav-right">
+        <div class="nav-meta">
           <span>☎ 22 224 1129</span>
           <span>✉ info@ukika.cl</span>
         </div>
-        <a class="btn pdf-yellow-btn" href="#contacto">Agenda una visita</a>
+        <a class="btn btn-yellow" href="#contacto">Agenda una visita</a>
         <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span>
         </button>
@@ -1120,448 +814,352 @@
   </header>
 
   <main>
-    <section class="pdf-hero" id="inicio">
+    <section class="hero" id="inicio">
       <div class="container">
-        <div class="pdf-hero-card reveal">
-          <div class="pdf-hero-copy">
+        <div class="hero-shell">
+          <div class="hero-copy reveal">
             <div class="eyebrow">Bienvenidos a Ukika</div>
-            <h1>Donde crecen, descubren y aprenden con el <span>corazón</span></h1>
-            <p>
-              En Ukika acompañamos a cada niño y niña en sus primeros años, respetando su individualidad
-              y ofreciéndole un ambiente cálido, afectivo y estimulante para aprender, jugar y desarrollarse.
+            <h1>Donde sus niños crecen, hacen amigos, se desarrollan y aprenden con el <span class="accent">corazón</span></h1>
+            <p class="hero-lead">
+              Acompañamos a cada niño y niña en sus primeros años con afecto, respeto y experiencias
+              significativas que los ayudan a descubrir el mundo a su propio ritmo.
             </p>
-            <div class="pdf-hero-actions">
-              <a class="btn btn-primary" href="#identidad">Conoce nuestro jardín</a>
-              <a class="btn pdf-outline-btn" href="#contacto">Agenda una visita</a>
-            </div>
-            <div class="pdf-mini-trust">
-              <div><b>▦</b><span>Desde 1988<br>Acompañando a las familias</span></div>
-              <div><b>✓</b><span>Autorización<br>Normativa JUNJI</span></div>
-              <div><b>♙</b><span>Equipo profesional<br>comprometido</span></div>
-              <div><b>♡</b><span>Afecto, seguridad<br>y respeto</span></div>
-            </div>
-          </div>
-          <div class="pdf-hero-photo">
-            <img src="jardin_patio4_mejorada.png" alt="Niños jugando en el patio de Ukika">
-          </div>
-        </div>
 
-        <div class="pdf-feature-strip reveal">
-          <article><i>♡</i><div><h3>Cuidado y afecto</h3><p>Un ambiente cálido y seguro donde cada niño se siente acompañado.</p></div></article>
-          <article><i>✦</i><div><h3>Aprendizajes significativos</h3><p>Experiencias concretas para descubrir, explorar y aprender haciendo.</p></div></article>
-          <article><i>○</i><div><h3>Desarrollo integral</h3><p>Desarrollo intelectual, motor, emocional y social en cada etapa.</p></div></article>
-          <article><i>◎</i><div><h3>Familia y jardín</h3><p>Una relación cercana y complementaria con las familias.</p></div></article>
-          <article><i>◇</i><div><h3>Equipo profesional</h3><p>Educadoras y asistentes que acompañan el bienestar infantil.</p></div></article>
+            <div class="hero-actions">
+              <a class="btn btn-blue" href="#conocenos">Conoce nuestro jardín</a>
+              <a class="btn btn-white" href="#contacto">Agenda una visita</a>
+            </div>
+
+            <div class="hero-trust">
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✳</span>
+                <div class="hero-trust-text">Desde 1988<br>Acompañando a las familias</div>
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✓</span>
+                <div class="hero-trust-text">Autorización<br>JUNJI Folio N.º 874</div>
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">♙</span>
+                <div class="hero-trust-text">Equipo profesional<br>comprometido</div>
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">♡</span>
+                <div class="hero-trust-text">Afecto, seguridad<br>y respeto</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-photo reveal">
+            <img src="jardin_patio4_mejorada.png" alt="Niños jugando en Ukika">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-tight" id="identidad">
+    <section class="values" id="conocenos">
       <div class="container">
-        <div class="identity-card reveal">
-          <div class="identity-grid">
-            <div class="identity-copy">
-              <div class="eyebrow">Identidad Ukika</div>
-              <h2>Crecer, hacer amigos y aprender con el corazón.</h2>
-              <p>
-                Una identidad construida en torno a la infancia, la cercanía y el desarrollo integral,
-                acompañando a las familias desde los primeros años.
-              </p>
-              <div class="identity-badges">
-                <span class="identity-badge"><span class="identity-dot"></span>Desde 1988</span>
-                <span class="identity-badge"><span class="identity-dot"></span>Autorización normativa JUNJI</span>
-              </div>
+        <div class="values-grid reveal">
+          <article class="value">
+            <div class="value-icon">♡</div>
+            <div>
+              <h3>Cuidado y afecto</h3>
+              <p>Un ambiente cálido y seguro donde cada niño se siente acompañado y valorado.</p>
             </div>
-
-            <div class="identity-art">
-              <!-- ILUSTRACIÓN ORIGINAL: sin filtros ni recortes -->
-              <img src="assets/ilustracion_ukika.gif" alt="Ilustración institucional original de Ukika">
+          </article>
+          <article class="value">
+            <div class="value-icon">✦</div>
+            <div>
+              <h3>Aprendizajes significativos</h3>
+              <p>Experiencias concretas que invitan a descubrir, explorar y aprender haciendo.</p>
             </div>
-          </div>
+          </article>
+          <article class="value">
+            <div class="value-icon">○</div>
+            <div>
+              <h3>Desarrollo integral</h3>
+              <p>Desarrollo intelectual, motor, emocional y social en cada etapa.</p>
+            </div>
+          </article>
+          <article class="value">
+            <div class="value-icon">◉</div>
+            <div>
+              <h3>Familia y jardín</h3>
+              <p>Trabajo compartido con una relación cercana y complementaria con las familias.</p>
+            </div>
+          </article>
+          <article class="value">
+            <div class="value-icon">◇</div>
+            <div>
+              <h3>Equipo profesional</h3>
+              <p>Educadoras y asistentes que acompañan el desarrollo y bienestar infantil.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="proyecto">
-      <div class="container project-grid">
-        <div class="editorial-photo reveal">
-          <!-- FOTO 2/7: aparece únicamente aquí -->
-          <img src="jardin_patio_mejorada.png" alt="Espacio exterior del Jardín Infantil Ukika">
-          <span class="photo-caption">Un entorno para explorar</span>
+    <section class="section-tight">
+      <div class="container split-head">
+        <div class="reveal">
+          <div class="eyebrow">Presentación</div>
+          <h2>Más de tres décadas acompañando la infancia.</h2>
         </div>
-
-        <div class="project-copy reveal">
-          <div class="eyebrow">Proyecto educativo</div>
-          <h2>Cada infancia tiene su propio ritmo.</h2>
-          <p>
-            En Ukika buscamos favorecer aprendizajes relevantes y significativos, resguardando el bienestar
-            y el desarrollo integral de cada niño y niña, en colaboración permanente con sus familias.
-          </p>
-
-          <div class="principles">
-            <div class="principle">
-              <span class="principle-number">01</span>
-              <div>
-                <h3>Bienestar primero</h3>
-                <p>Ambientes afectivos, estimulantes y seguros que permiten explorar con confianza.</p>
-              </div>
-            </div>
-            <div class="principle">
-              <span class="principle-number">02</span>
-              <div>
-                <h3>Aprender haciendo</h3>
-                <p>Experiencias concretas donde niños y niñas participan, sienten, piensan y descubren.</p>
-              </div>
-            </div>
-            <div class="principle">
-              <span class="principle-number">03</span>
-              <div>
-                <h3>Familia y jardín</h3>
-                <p>Una relación cercana para compartir avances, necesidades y nuevas etapas.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="reveal">
+          Desde 1988, Ukika acompaña a niños y familias durante una etapa fundamental de sus vidas.
+          Nuestro proyecto educativo favorece aprendizajes relevantes y significativos, poniendo en el centro
+          el bienestar, el desarrollo integral y las características propias de cada niño y niña.
+        </p>
       </div>
     </section>
 
-    <section class="section section-soft" id="niveles">
-      <div class="container">
-        <div class="section-head reveal">
+    <section class="section-tight">
+      <div class="container stages-shell">
+        <article class="stage-box red reveal" id="sala-cuna">
           <div>
-            <div class="eyebrow">Niveles</div>
-            <h2>Un acompañamiento distinto para cada etapa.</h2>
-          </div>
-          <p>
-            La propuesta se organiza desde Sala Cuna Menor hasta Transición, ajustando experiencias,
-            rutinas y desafíos al momento de desarrollo de cada grupo.
-          </p>
-        </div>
-
-        <div class="levels">
-          <article class="level reveal">
-            <span class="level-number">01</span>
-            <div>
-              <h3>Sala Cuna Menor</h3>
-              <p>Vínculo, seguridad, estimulación y primeras experiencias de exploración.</p>
-              <span class="level-age">84 días — 12 meses</span>
-            </div>
-          </article>
-          <article class="level reveal">
-            <span class="level-number">02</span>
-            <div>
-              <h3>Sala Cuna Mayor</h3>
-              <p>Movimiento, lenguaje inicial, autonomía y descubrimiento del entorno.</p>
-              <span class="level-age">12 — 18 meses</span>
-            </div>
-          </article>
-          <article class="level reveal">
-            <span class="level-number">03</span>
-            <div>
-              <h3>Medio Menor</h3>
-              <p>Juego, comunicación, experiencias sensoriales y autonomía progresiva.</p>
-              <span class="level-age">1 año 6 meses — 2 años 6 meses</span>
-            </div>
-          </article>
-          <article class="level reveal">
-            <span class="level-number">04</span>
-            <div>
-              <h3>Medio Mayor</h3>
-              <p>Curiosidad, expresión, convivencia y participación en experiencias guiadas.</p>
-              <span class="level-age">2 años 6 meses — 3 años 6 meses</span>
-            </div>
-          </article>
-          <article class="level reveal">
-            <span class="level-number">05</span>
-            <div>
-              <h3>Transición</h3>
-              <p>Habilidades, confianza y autonomía para avanzar hacia nuevas etapas.</p>
-              <span class="level-age">Desde 3 años 6 meses</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experiencia">
-      <div class="container">
-        <div class="experience-shell reveal">
-          <div class="experience-head">
-            <div>
-              <div class="eyebrow">Experiencia Ukika</div>
-              <h2>Mucho más que una sala de clases.</h2>
-            </div>
+            <h2>Sala Cuna</h2>
+            <h3>Un comienzo lleno de cuidado y descubrimiento</h3>
             <p>
-              El trabajo pedagógico se complementa con experiencias que fortalecen el lenguaje,
-              el movimiento, la autonomía, la convivencia y la relación con el entorno.
+              Ambientes cálidos y estimulantes pensados para acompañar a los más pequeños
+              en sus primeras experiencias y favorecer su desarrollo integral.
             </p>
-          </div>
 
-          <div class="experience-grid">
-            <article class="experience-card">
-              <div class="experience-symbol">EN</div>
-              <h3>Inglés cotidiano</h3>
-              <p>Familiarización con el idioma mediante canciones, vocabulario, instrucciones y actividades.</p>
-            </article>
-            <article class="experience-card">
-              <div class="experience-symbol">PM</div>
-              <h3>Psicomotricidad</h3>
-              <p>Experiencias corporales orientadas al movimiento, coordinación y conocimiento del propio cuerpo.</p>
-            </article>
-            <article class="experience-card">
-              <div class="experience-symbol">♥</div>
-              <h3>Acompañamiento familiar</h3>
-              <p>Comunicación cercana, entrevistas e instancias de seguimiento durante cada etapa.</p>
-            </article>
+            <div class="stage-levels">
+              <div class="stage-level">
+                <strong>Sala Cuna Menor</strong>
+                <span>84 días a 12 meses</span>
+              </div>
+              <div class="stage-level">
+                <strong>Sala Cuna Mayor</strong>
+                <span>12 a 18 meses</span>
+              </div>
+            </div>
           </div>
+          <div class="stage-actions">
+            <a class="btn btn-red" href="#contacto">Conoce Sala Cuna</a>
+          </div>
+        </article>
+
+        <div class="stage-photo-card reveal">
+          <img src="jardin_bano_mejorada.png" alt="Espacio de Sala Cuna en Ukika">
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="espacios">
-      <div class="container">
-        <div class="section-head reveal">
+        <article class="stage-box green reveal" id="jardin">
           <div>
-            <div class="eyebrow">Vida en Ukika</div>
-            <h2>Espacios y momentos que forman parte de cada día.</h2>
-          </div>
-          <p>
-            Esta selección utiliza fotografías distintas entre sí para mostrar diferentes dimensiones
-            de la experiencia, evitando repetir imágenes a lo largo del sitio.
-          </p>
-        </div>
-
-        <div class="spaces-grid">
-          <div class="space-main reveal">
-            <!-- FOTO 3/7: aparece únicamente aquí -->
-            <img src="jardin_bano_mejorada.png" alt="Dependencias interiores del Jardín Infantil Ukika">
-            <span class="space-label">Autonomía cotidiana</span>
-          </div>
-
-          <div class="space-side">
-            <div class="space-card reveal">
-              <!-- FOTO 4/7: aparece únicamente aquí -->
-              <img src="crono_01_mejorada.png" alt="Actividad de niños en Ukika">
-              <span class="space-label">Aprender compartiendo</span>
-            </div>
-            <div class="space-card reveal">
-              <!-- FOTO 5/7: aparece únicamente aquí -->
-              <img src="crono_06_mejorada.png" alt="Momento de la comunidad Ukika">
-              <span class="space-label">Experiencias que se recuerdan</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="comunidad">
-      <div class="container">
-        <div class="community-grid">
-          <div class="community-photo reveal">
-            <!-- FOTO 6/7: aparece únicamente aquí -->
-            <img src="egreso_fot1_mejorada.png" alt="Comunidad educativa de Ukika">
-          </div>
-
-          <div class="community-copy reveal">
-            <div class="eyebrow">Comunidad</div>
-            <h2>Una etapa que también se construye en los vínculos.</h2>
+            <h2>Jardín Infantil</h2>
+            <h3>Aprender haciendo, jugando y explorando</h3>
             <p>
-              Desde 1988, Ukika ha acompañado a niños, niñas y familias durante una etapa especialmente
-              significativa de su desarrollo. La trayectoria del jardín se construye en las relaciones,
-              experiencias y recuerdos que se forman cada día.
+              Experiencias educativas que favorecen la autonomía, la convivencia,
+              la autoestima y aprendizajes significativos.
             </p>
-            <div class="community-meta">
-              <span class="chip">Desde 1988</span>
-              <span class="chip">Vitacura</span>
-              <span class="chip">Sala Cuna</span>
-              <span class="chip">Jardín Infantil</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="memory-grid">
-          <div class="memory-card reveal">
-            <!-- FOTO 7/7: aparece únicamente aquí -->
-            <img src="crono_07_mejorada.png" alt="Recuerdo de la comunidad Ukika">
-          </div>
-          <div class="memory-card reveal" style="display:grid;place-items:center;background:#fff;border:1px solid var(--line);padding:32px;">
-            <div style="max-width:280px;text-align:center;">
-              <div class="eyebrow" style="justify-content:center">Trayectoria</div>
-              <h3 style="font-size:1.6rem;margin-top:14px">Más de tres décadas acompañando infancias.</h3>
-              <p style="font-size:.86rem;margin-top:12px">Una historia que sigue creciendo junto a nuevas familias.</p>
+            <div class="stage-levels">
+              <div class="stage-level">
+                <strong>Medio Menor</strong>
+                <span>1 año 6 meses a 2 años 6 meses</span>
+              </div>
+              <div class="stage-level">
+                <strong>Medio Mayor</strong>
+                <span>2 años 6 meses a 3 años 6 meses</span>
+              </div>
+              <div class="stage-level" style="grid-column:1/-1">
+                <strong>Transición</strong>
+                <span>Desde 3 años 6 meses</span>
+              </div>
             </div>
           </div>
-          <div class="memory-card reveal" style="display:grid;place-items:center;background:var(--blue);color:#fff;padding:32px;">
-            <div style="max-width:280px;text-align:center;">
-              <div style="font-family:Manrope;font-size:3.4rem;font-weight:800;line-height:1">1988</div>
-              <p style="color:rgba(255,255,255,.78);font-size:.88rem;margin-top:10px">Año de inicio de la trayectoria educativa de Ukika.</p>
-            </div>
+          <div class="stage-actions">
+            <a class="btn btn-green" href="#contacto">Conoce Jardín Infantil</a>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="equipo">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Nuestro equipo</div>
-            <h2>Personas que acompañan cada etapa.</h2>
-          </div>
+    <section class="section" id="vida">
+      <div class="container section-head">
+        <div class="reveal">
+          <div class="eyebrow">Nuestra forma de aprender</div>
+          <h2>Experiencias que dejan huella.</h2>
+        </div>
+        <p class="reveal">
+          En Ukika buscamos que el aprendizaje esté conectado con experiencias reales y significativas.
+          El juego, la exploración y la participación forman parte de este proceso.
+        </p>
+      </div>
+
+      <div class="container learning-grid">
+        <div class="learning-copy reveal">
           <p>
-            La estructura queda preparada para incorporar posteriormente los nombres, cargos y fotografías reales
-            del equipo, sin necesidad de rediseñar la sección.
+            Las unidades educativas se enriquecen con actividades concretas, visitas de profesionales y
+            experiencias donde los propios niños pueden compartir lo aprendido. Aprender también significa
+            moverse, participar, experimentar y convivir con otros.
           </p>
+
+          <div class="learning-list">
+            <div class="learning-pill">
+              <strong>Explorar</strong>
+              <span>Descubrir el entorno</span>
+            </div>
+            <div class="learning-pill">
+              <strong>Participar</strong>
+              <span>Aprender haciendo</span>
+            </div>
+            <div class="learning-pill">
+              <strong>Compartir</strong>
+              <span>Crecer con otros</span>
+            </div>
+          </div>
+
+          <div style="margin-top:22px">
+            <a class="btn btn-blue" href="#contacto">Conoce nuestro proyecto educativo</a>
+          </div>
         </div>
 
-        <div class="team-grid">
-          <article class="team-card reveal">
-            <div class="team-art">
-              <div class="avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              </div>
-            </div>
-            <div class="team-body">
-              <span class="team-role">Dirección</span>
-              <h3>Equipo Directivo</h3>
-              <p>Coordinación del proyecto educativo y acompañamiento a las familias y al equipo pedagógico.</p>
-            </div>
-          </article>
-
-          <article class="team-card reveal">
-            <div class="team-art">
-              <div class="avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              </div>
-            </div>
-            <div class="team-body">
-              <span class="team-role">Pedagogía</span>
-              <h3>Educadoras de Párvulos</h3>
-              <p>Planificación y acompañamiento de las experiencias de aprendizaje de cada nivel.</p>
-            </div>
-          </article>
-
-          <article class="team-card reveal">
-            <div class="team-art">
-              <div class="avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              </div>
-            </div>
-            <div class="team-body">
-              <span class="team-role">Acompañamiento</span>
-              <h3>Técnicos en Párvulos</h3>
-              <p>Apoyo cotidiano en rutinas, cuidado y experiencias pedagógicas de niños y niñas.</p>
-            </div>
-          </article>
-
-          <article class="team-card reveal">
-            <div class="team-art">
-              <div class="avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              </div>
-            </div>
-            <div class="team-body">
-              <span class="team-role">Especialistas</span>
-              <h3>Profesionales de Apoyo</h3>
-              <p>Especialistas que complementan el trabajo educativo y distintas dimensiones del desarrollo infantil.</p>
-            </div>
-          </article>
+        <div class="photo-column">
+          <div class="photo-large reveal">
+            <img src="crono_01_mejorada.png" alt="Actividad educativa en Ukika">
+            <span class="overlay-label">Aprender participando</span>
+          </div>
+          <div class="photo-small reveal">
+            <img src="crono_06_mejorada.png" alt="Experiencia en la comunidad Ukika">
+            <span class="overlay-label">Experiencias significativas</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="preguntas">
-      <div class="container faq-layout">
-        <div class="faq-intro reveal">
+    <section class="section section-soft">
+      <div class="container section-head">
+        <div class="reveal">
+          <div class="eyebrow">Experiencias complementarias</div>
+          <h2>Desarrollo que se vive en distintos lenguajes.</h2>
+        </div>
+        <p class="reveal">
+          Inglés, psicomotricidad y autonomía complementan la experiencia diaria y enriquecen el desarrollo infantil.
+        </p>
+      </div>
+
+      <div class="container triples">
+        <article class="triple reveal">
+          <div class="triple-icon">EN</div>
+          <h3>Inglés</h3>
+          <p>Los niños se familiarizan con el idioma mediante saludos, instrucciones, vocabulario y canciones.</p>
+        </article>
+        <article class="triple reveal">
+          <div class="triple-icon">PM</div>
+          <h3>Psicomotricidad</h3>
+          <p>A través del movimiento se busca potenciar el conocimiento del propio cuerpo y distintas destrezas.</p>
+        </article>
+        <article class="triple reveal">
+          <div class="triple-icon">♥</div>
+          <h3>Autonomía y convivencia</h3>
+          <p>Las experiencias cotidianas fortalecen valores, autoestima, convivencia y autonomía.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-head">
+        <div class="reveal">
+          <div class="eyebrow">Espacios para crecer y explorar</div>
+          <h2>Un jardín pensado para los niños.</h2>
+        </div>
+        <p class="reveal">
+          Los espacios interiores y exteriores acompañan las distintas experiencias del día: aprender,
+          jugar, compartir, moverse y descubrir.
+        </p>
+      </div>
+
+      <div class="container spaces-grid">
+        <div class="photo-large reveal">
+          <img src="jardin_patio_mejorada.png" alt="Patio del jardín Ukika">
+          <span class="overlay-label">Patio y juego al aire libre</span>
+        </div>
+
+        <div class="spaces-right">
+          <div class="photo-small reveal">
+            <img src="crono_07_mejorada.png" alt="Momento de la comunidad Ukika">
+            <span class="overlay-label">Vida en comunidad</span>
+          </div>
+          <div class="photo-small reveal">
+            <img src="egreso_fot1_mejorada.png" alt="Comunidad educativa Ukika">
+            <span class="overlay-label">Experiencias que se recuerdan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="informacion">
+      <div class="container section-head">
+        <div class="reveal">
           <div class="eyebrow">Información práctica</div>
           <h2>Lo esencial, fácil de encontrar.</h2>
         </div>
+        <p class="reveal">
+          Horarios, ubicación y funcionamiento preparados para que luego puedas confirmar fácilmente los datos finales.
+        </p>
+      </div>
 
-        <div class="faq-list reveal">
-          <div class="faq-item open">
-            <button class="faq-q" type="button"><span>¿Cuál es el horario de funcionamiento?</span><span class="faq-plus">+</span></button>
-            <div class="faq-a"><p>La jornada de mañana funciona de 07:30 a 12:30 y la jornada completa de 07:30 a 19:00 horas.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button"><span>¿Desde qué edad reciben niños?</span><span class="faq-plus">+</span></button>
-            <div class="faq-a"><p>Sala Cuna Menor recibe niños y niñas desde los 84 días. Los niveles continúan hasta Transición.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button"><span>¿Dónde está ubicado Ukika?</span><span class="faq-plus">+</span></button>
-            <div class="faq-a"><p>En Los Dragones 9932, comuna de Vitacura, Santiago.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button"><span>¿Cómo consulto por matrícula?</span><span class="faq-plus">+</span></button>
-            <div class="faq-a"><p>Puedes llamar al jardín, escribir a info@ukika.cl o completar el formulario de contacto.</p></div>
-          </div>
+      <div class="container info-grid">
+        <article class="info-card reveal">
+          <small>Horarios</small>
+          <strong>Jornada mañana</strong>
+          <p>7:30 a 12:30 hrs.</p>
+          <strong style="font-size:1rem;margin-top:14px">Jornada completa</strong>
+          <p>7:30 a 19:00 hrs.</p>
+        </article>
+        <article class="info-card reveal">
+          <small>Matrículas</small>
+          <strong>Atención lunes a viernes</strong>
+          <p>8:00 a 10:00 hrs. Información sujeta a confirmación final.</p>
+        </article>
+        <article class="info-card reveal">
+          <small>Ubicación</small>
+          <strong>Los Dragones N.º 9932</strong>
+          <p>Vitacura, Santiago.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="admision">
+      <div class="container trust-banner reveal">
+        <div>
+          <div class="eyebrow">Confianza</div>
+          <h2>Autorización Normativa JUNJI</h2>
+          <p>
+            Ukika comunica contar con Autorización Normativa JUNJI, asociada al cumplimiento de los requisitos
+            para establecimientos de educación parvularia.
+          </p>
+        </div>
+        <div class="trust-badge">
+          <strong>874</strong>
+          <span>Folio informado</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="contact-shell reveal">
-          <div class="contact-info">
-            <div class="eyebrow">Contacto</div>
-            <h2>Conversemos sobre la etapa que viene.</h2>
-            <p>Consulta por niveles, disponibilidad, matrícula y funcionamiento del jardín.</p>
-
-            <div class="contact-links">
-              <a class="contact-link" href="https://www.google.com/maps/search/?api=1&query=Los+Dragones+9932+Vitacura+Chile" target="_blank" rel="noopener">
-                <small>Dirección</small>
-                <strong>Los Dragones 9932, Vitacura</strong>
-              </a>
-              <a class="contact-link" href="tel:+56222241129">
-                <small>Teléfono</small>
-                <strong>+56 2 2224 1129</strong>
-              </a>
-              <a class="contact-link" href="mailto:info@ukika.cl">
-                <small>Correo</small>
-                <strong>info@ukika.cl</strong>
-              </a>
-            </div>
+    <section class="section-tight" id="contacto">
+      <div class="container close-card">
+        <div class="close-copy reveal">
+          <div class="eyebrow">Cierre</div>
+          <h2>Conocer el lugar también es parte de elegir.</h2>
+          <p>
+            Elegir una sala cuna o jardín infantil es una decisión importante para cada familia.
+            Te invitamos a conocer Ukika, recorrer nuestros espacios y conversar con nuestro equipo.
+          </p>
+          <div class="close-actions">
+            <a class="btn btn-yellow" href="mailto:info@ukika.cl">Agenda una visita</a>
+            <a class="btn btn-white" href="tel:+56222241129">Contáctanos</a>
           </div>
+          <div class="close-quote">“Donde sus niños crecen, hacen amigos, se desarrollan y aprenden con el corazón.”</div>
+        </div>
 
-          <form class="contact-form" id="contactForm">
-            <div class="form-head">
-              <h3>Solicitar información</h3>
-              <p>Completa tus datos para preparar una consulta al jardín.</p>
-            </div>
-
-            <div class="form-grid">
-              <div class="field">
-                <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" required placeholder="Nombre del apoderado">
-              </div>
-              <div class="field">
-                <label for="telefono">Teléfono</label>
-                <input id="telefono" name="telefono" placeholder="+56 9...">
-              </div>
-              <div class="field">
-                <label for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" required placeholder="nombre@correo.cl">
-              </div>
-              <div class="field">
-                <label for="nivel">Nivel de interés</label>
-                <select id="nivel" name="nivel">
-                  <option>Aún no lo sé</option>
-                  <option>Sala Cuna Menor</option>
-                  <option>Sala Cuna Mayor</option>
-                  <option>Medio Menor</option>
-                  <option>Medio Mayor</option>
-                  <option>Transición</option>
-                </select>
-              </div>
-              <div class="field full">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas saber..."></textarea>
-              </div>
-            </div>
-
-            <p class="form-note">Esta versión abre la aplicación de correo. Posteriormente se puede conectar a WhatsApp o a un formulario real.</p>
-            <button class="btn btn-primary" type="submit">Preparar consulta</button>
-            <div class="success" id="success">Consulta preparada. Se abrirá tu aplicación de correo.</div>
-          </form>
+        <div class="close-side reveal">
+          <div class="close-side-inner">
+            <img src="assets/ilustracion_ukika.gif" alt="Ilustración Ukika" style="max-width:100%;max-height:180px;object-fit:contain;margin:0 auto 18px;">
+            <strong>Ukika</strong>
+            <p>Sala Cuna y Jardín Infantil en Vitacura, con una propuesta centrada en el bienestar y el desarrollo integral.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1569,40 +1167,15 @@
 
   <footer>
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <!-- LOGO ORIGINAL: se conserva sin filtros -->
-          <img class="footer-logo" src="assets/index_logo.gif" alt="Ukika">
-          <p class="footer-copy">
-            Sala Cuna y Jardín Infantil en Vitacura, con una propuesta centrada en el bienestar,
-            el desarrollo integral y los aprendizajes significativos.
-          </p>
-        </div>
-
-        <div>
-          <h4>Explorar</h4>
-          <a href="#proyecto">Proyecto educativo</a>
-          <a href="#niveles">Niveles</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#equipo">Equipo</a>
-        </div>
-
-        <div>
-          <h4>Contacto</h4>
-          <a href="tel:+56222241129">+56 2 2224 1129</a>
-          <a href="mailto:info@ukika.cl">info@ukika.cl</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Los+Dragones+9932+Vitacura+Chile" target="_blank" rel="noopener">Los Dragones 9932, Vitacura</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Sala Cuna Jardín Infantil Ukika.</span>
-        <span>Vitacura, Santiago de Chile.</span>
-      </div>
+      <div class="footer-wave"></div>
+    </div>
+    <div class="footer-row">
+      <span>Los Dragones N.º 9932 · Vitacura</span>
+      <span>22 224 1129</span>
+      <span>info@ukika.cl</span>
+      <span>Santiago · Chile</span>
     </div>
   </footer>
-
-  <a class="floating" href="#contacto">Consultar matrícula</a>
 
   <script>
     const nav = document.getElementById('nav');
@@ -1624,12 +1197,6 @@
       });
     });
 
-    document.querySelectorAll('.faq-q').forEach(button => {
-      button.addEventListener('click', () => {
-        button.closest('.faq-item').classList.toggle('open');
-      });
-    });
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -1640,28 +1207,6 @@
     }, {threshold:.08});
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    document.getElementById('contactForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const subject = encodeURIComponent('Consulta de matrícula — Ukika');
-      const body = encodeURIComponent(
-`Nombre: ${data.get('nombre')}
-Teléfono: ${data.get('telefono')}
-Correo: ${data.get('correo')}
-Nivel: ${data.get('nivel')}
-
-Mensaje:
-${data.get('mensaje')}`
-      );
-
-      document.getElementById('success').style.display = 'block';
-      setTimeout(() => {
-        window.location.href = `mailto:info@ukika.cl?subject=${subject}&body=${body}`;
-      }, 180);
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
