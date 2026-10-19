@@ -236,9 +236,9 @@
 
     .hero h1{
       margin-top:14px;
-      max-width:540px;
+      max-width:610px;
       color:#233d50;
-      font-size:clamp(2.75rem,3.75vw,4.05rem);
+      font-size:clamp(2.45rem,3.15vw,3.55rem);
       line-height:1.02;
       letter-spacing:-.05em;
       text-wrap:balance;
@@ -891,7 +891,7 @@
       font-weight:700;
     }
 
-    .reveal{opacity:0;transform:translateY(14px);transition:.65s ease}
+    .reveal{opacity:1;transform:none;transition:.45s ease}
     .reveal.visible{opacity:1;transform:none}
 
     @media(max-width:1100px){
@@ -958,7 +958,7 @@
       .identity-card{border-radius:24px}
       .identity-grid{padding:32px 20px 22px}
       .identity-copy h2{font-size:2rem}
-      .hero h1{font-size:clamp(2.55rem,12vw,3.6rem);line-height:1.03}
+      .hero h1{font-size:clamp(2.2rem,10.5vw,3.15rem);line-height:1.02}
       .hero-trust{grid-template-columns:1fr}
       .hero-photo{min-height:300px}
 
@@ -1031,7 +1031,11 @@
         <div class="hero-shell">
           <div class="hero-copy reveal">
             <div class="eyebrow">Bienvenidos a Ukika</div>
-            <h1>Donde crecen, descubren y aprenden con el <span class="accent">corazón</span></h1>
+            <h1>
+              Donde sus niños crecen,<br>
+              hacen amigos, se desarrollan<br>
+              y aprenden con el <span class="accent">corazón</span>
+            </h1>
             <p class="hero-lead">
               Acompañamos a cada niño y niña en sus primeros años, respetando su individualidad y ofreciendo
               un ambiente cálido, afectivo y estimulante para aprender, jugar y desarrollarse.
@@ -1447,16 +1451,22 @@
       });
     });
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold:.08});
+    // El contenido siempre queda visible. IntersectionObserver se usa solo como mejora progresiva.
+    const revealItems = document.querySelectorAll('.reveal');
+    revealItems.forEach(el => el.classList.add('visible'));
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.08});
+
+      revealItems.forEach(el => observer.observe(el));
+    }
   </script>
 </body>
 </html>
