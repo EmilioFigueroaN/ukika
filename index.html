@@ -399,6 +399,16 @@
       font-weight:900;
       background:#fff;
     }
+
+    .value-icon svg{
+      width:20px;
+      height:20px;
+      stroke:currentColor;
+      stroke-width:1.7;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
     .value:nth-child(1){color:var(--red)}
     .value:nth-child(2){color:var(--green)}
     .value:nth-child(3){color:var(--blue)}
@@ -1152,35 +1162,64 @@
       <div class="container">
         <div class="values-grid reveal">
           <article class="value">
-            <div class="value-icon">♡</div>
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20.8 4.7a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.8Z"/>
+              </svg>
+            </div>
             <div>
               <h3>Cuidado y afecto</h3>
               <p>Un ambiente cálido y seguro donde cada niño se siente acompañado y valorado.</p>
             </div>
           </article>
           <article class="value">
-            <div class="value-icon">✦</div>
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11a3 3 0 0 1 3 3v15a3 3 0 0 0-3-3H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/>
+                <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H14v15h3.5A2.5 2.5 0 0 1 20 20.5v-15Z"/>
+                <path d="M8 7h2M16 7h1.5"/>
+              </svg>
+            </div>
             <div>
               <h3>Aprendizajes significativos</h3>
               <p>Experiencias concretas que invitan a descubrir, explorar y aprender haciendo.</p>
             </div>
           </article>
           <article class="value">
-            <div class="value-icon">○</div>
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="6.2" r="2.4"/>
+                <path d="M12 9.5v5.2M8.3 12l3.7 2.7 3.7-2.7M12 14.7 8.8 20M12 14.7 15.2 20"/>
+                <path d="M5 8.5c1.4-3.5 4-5.3 7-5.3s5.6 1.8 7 5.3"/>
+              </svg>
+            </div>
             <div>
               <h3>Desarrollo integral</h3>
               <p>Desarrollo intelectual, motor, emocional y social en cada etapa.</p>
             </div>
           </article>
           <article class="value">
-            <div class="value-icon">◉</div>
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 11.5 12 5l8 6.5V20H4v-8.5Z"/>
+                <path d="M9.1 14.1c.8-1.1 2.4-1.3 3.3-.3.9-1 2.5-.8 3.3.3 1 1.4.6 3.2-.7 4.2L12.4 20l-2.6-1.7c-1.3-1-1.7-2.8-.7-4.2Z"/>
+              </svg>
+            </div>
             <div>
               <h3>Familia y jardín</h3>
               <p>Trabajo compartido con una relación cercana y complementaria con las familias.</p>
             </div>
           </article>
           <article class="value">
-            <div class="value-icon">◇</div>
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="7" r="2.5"/>
+                <circle cx="6.5" cy="9" r="2"/>
+                <circle cx="17.5" cy="9" r="2"/>
+                <path d="M7.8 20v-2.6A4.2 4.2 0 0 1 12 13.2a4.2 4.2 0 0 1 4.2 4.2V20"/>
+                <path d="M2.8 20v-1.8a3.4 3.4 0 0 1 3.4-3.4h1.2M21.2 20v-1.8a3.4 3.4 0 0 0-3.4-3.4h-1.2"/>
+              </svg>
+            </div>
             <div>
               <h3>Equipo profesional</h3>
               <p>Educadoras y asistentes que acompañan el desarrollo y bienestar infantil.</p>
