@@ -509,6 +509,12 @@
       max-width:500px;
     }
 
+
+    .identity-secondary{
+      margin-top:14px !important;
+      max-width:520px !important;
+    }
+
     .identity-art{
       display:flex;
       align-items:center;
@@ -600,17 +606,16 @@
 
     /* Learning + spaces */
     .split-head{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:70px;
-      align-items:end;
+      display:block;
       margin-bottom:42px;
     }
     .split-head h2{margin-top:13px}
     .split-head p{
-      justify-self:end;
-      max-width:610px;
+      max-width:720px;
+      margin-top:16px;
       font-size:.96rem;
+      line-height:1.65;
+      text-align:left;
     }
 
     .learning-grid{
@@ -724,14 +729,20 @@
 
     /* Cards */
     .section-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:66px;
-      align-items:end;
+      display:block;
       margin-bottom:42px;
     }
-    .section-head h2{margin-top:12px}
-    .section-head p{justify-self:end;max-width:610px;font-size:.96rem}
+    .section-head h2{
+      margin-top:12px;
+      max-width:820px;
+    }
+    .section-head > p{
+      max-width:720px;
+      margin-top:16px;
+      font-size:.96rem;
+      line-height:1.65;
+      text-align:left;
+    }
 
     .triples{
       display:grid;
@@ -814,6 +825,43 @@
       height:100%;
       object-fit:cover;
       object-position:center;
+    }
+
+
+    .info-card-location{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:.42fr .58fr;
+      gap:24px;
+      align-items:stretch;
+      padding:0;
+      overflow:hidden;
+    }
+    .location-copy{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .location-link{
+      display:inline-flex;
+      margin-top:16px;
+      color:var(--blue);
+      font-size:.76rem;
+      font-weight:800;
+    }
+    .location-link:hover{text-decoration:underline}
+    .map-frame{
+      min-height:290px;
+      background:#edf2f4;
+    }
+    .map-frame iframe{
+      display:block;
+      width:100%;
+      height:100%;
+      min-height:290px;
+      border:0;
     }
 
     /* Info & trust */
@@ -1020,6 +1068,14 @@
       .spaces-right > .photo-small{min-height:250px}
       .spaces-right{grid-template-columns:1fr 1fr;grid-template-rows:auto}
       .info-grid{grid-template-columns:1fr}
+
+      .info-card-location{
+        grid-template-columns:1fr;
+      }
+      .map-frame,
+      .map-frame iframe{
+        min-height:260px;
+      }
     }
 
     @media(max-width:680px){
@@ -1059,6 +1115,10 @@
       .learning-main{min-height:340px;border-radius:22px}
       .learning-accent{position:relative;width:100%;right:auto;bottom:auto;min-height:220px;margin-top:14px;border-width:0;border-radius:22px;box-shadow:var(--shadow-sm)}
       .trust-banner{padding:28px 22px}
+
+      .location-copy{padding:24px 22px}
+      .map-frame,
+      .map-frame iframe{min-height:230px}
       .footer-row{gap:12px;flex-direction:column}
     }
 
@@ -1238,13 +1298,15 @@
           <div class="identity-grid">
             <div class="identity-copy">
               <div class="eyebrow">Identidad Ukika</div>
-              <h2>
-                Más de tres décadas<br>
-                acompañando la infancia.
-              </h2>
+              <h2>Más de tres décadas acompañando la infancia.</h2>
               <p>
-                Desde 1988, Ukika acompaña a niños y familias durante una etapa fundamental de sus vidas,
-                con una propuesta centrada en el afecto, la seguridad, la autonomía y el desarrollo integral.
+                Desde 1988, Ukika acompaña a niños, niñas y sus familias durante una etapa fundamental
+                de sus vidas, ofreciendo un entorno cálido, seguro y estimulante.
+              </p>
+              <p class="identity-secondary">
+                Nuestro proyecto educativo promueve aprendizajes significativos a través del afecto,
+                el respeto y la autonomía, reconociendo las características y necesidades de cada niño
+                y niña para favorecer su bienestar y desarrollo integral.
               </p>
               <div class="identity-tags">
                 <span class="identity-tag"><i></i>Desde 1988</span>
@@ -1258,22 +1320,7 @@
         </div>
       </div>
     </section>
-
-    <section class="section-tight">
-      <div class="container split-head">
-        <div class="reveal">
-          <div class="eyebrow">Presentación</div>
-          <h2>Más de tres décadas acompañando la infancia.</h2>
-        </div>
-        <p class="reveal">
-          Desde 1988, Ukika acompaña a niños y familias durante una etapa fundamental de sus vidas.
-          Nuestro proyecto educativo favorece aprendizajes relevantes y significativos, poniendo en el centro
-          el bienestar, el desarrollo integral y las características propias de cada niño y niña.
-        </p>
-      </div>
-    </section>
-
-    <section class="section-tight">
+<section class="section-tight">
       <div class="container stages-shell">
         <article class="stage-box red reveal" id="sala-cuna">
           <div>
@@ -1474,12 +1521,27 @@
         <article class="info-card reveal">
           <small>Matrículas</small>
           <strong>Atención lunes a viernes</strong>
-          <p>8:00 a 10:00 hrs. Información sujeta a confirmación final.</p>
+          <p>8:00 a 10:00 hrs.</p>
         </article>
-        <article class="info-card reveal">
-          <small>Ubicación</small>
-          <strong>Los Dragones N.º 9932</strong>
-          <p>Vitacura, Santiago.</p>
+        <article class="info-card info-card-location reveal">
+          <div class="location-copy">
+            <small>Ubicación</small>
+            <strong>Los Dragones N.º 9932</strong>
+            <p>Vitacura, Santiago.</p>
+            <a class="location-link"
+               href="https://www.google.com/maps/search/?api=1&query=Los+Dragones+9932+Vitacura+Chile"
+               target="_blank"
+               rel="noopener">Abrir en Google Maps →</a>
+          </div>
+          <div class="map-frame">
+            <iframe
+              title="Mapa de Ukika, Los Dragones 9932, Vitacura"
+              src="https://www.google.com/maps?q=Los+Dragones+9932,+Vitacura,+Chile&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
         </article>
       </div>
     </section>
