@@ -867,6 +867,103 @@
       border:0;
     }
 
+
+    .info-card-schedule{
+      grid-column:1 / -1;
+      padding:32px;
+    }
+    .info-card-schedule h3{
+      margin-top:8px;
+      font-size:1.45rem;
+      color:var(--ink);
+    }
+    .schedule-intro{
+      margin-top:10px;
+      max-width:760px;
+      font-size:.88rem;
+      line-height:1.6;
+    }
+    .schedule-list{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:24px;
+    }
+    .schedule-row{
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:12px;
+      align-items:start;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fbfcfd;
+    }
+    .schedule-row strong{
+      margin:0;
+      font-size:.9rem;
+      color:var(--ink);
+    }
+    .schedule-row p{
+      margin-top:5px;
+      font-size:.76rem;
+      line-height:1.5;
+    }
+    .schedule-icon{
+      width:40px;
+      height:40px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      border:1px solid currentColor;
+    }
+    .schedule-icon svg{
+      width:20px;
+      height:20px;
+      stroke:currentColor;
+      stroke-width:1.7;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .schedule-morning{
+      color:#b78d00;
+      background:rgba(243,203,66,.10);
+    }
+    .schedule-extended{
+      color:var(--blue);
+      background:rgba(17,103,242,.06);
+    }
+    .schedule-afternoon{
+      color:var(--orange);
+      background:rgba(241,149,65,.08);
+    }
+    .schedule-note{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:15px;
+      background:var(--cream);
+      border:1px solid #eee4d3;
+    }
+    .schedule-note-icon{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      flex:0 0 24px;
+      display:grid;
+      place-items:center;
+      background:var(--yellow);
+      color:var(--ink);
+      font-size:.72rem;
+      font-weight:900;
+    }
+    .schedule-note p{
+      font-size:.76rem;
+      line-height:1.55;
+    }
+
     /* Info & trust */
     .info-grid{
       display:grid;
@@ -1071,6 +1168,10 @@
       .spaces-right > .photo-small{min-height:250px}
       .spaces-right{grid-template-columns:1fr 1fr;grid-template-rows:auto}
       .info-grid{grid-template-columns:1fr}
+
+      .info-card-schedule{padding:24px 20px}
+      .schedule-list{grid-template-columns:1fr}
+      .schedule-row{padding:16px}
 
       .info-card-location{
         grid-template-columns:1fr;
@@ -1505,7 +1606,7 @@
 
       nav a:hover,
       nav a:focus-visible{
-        background:rgba(27,56,90,.07);
+        background:rgba(35,61,80,.07);
         color:#233d50;
       }
 
@@ -1940,17 +2041,69 @@
           <h2>Lo esencial, fácil de encontrar.</h2>
         </div>
         <p class="reveal">
-          Horarios, ubicación y funcionamiento preparados para que luego puedas confirmar fácilmente los datos finales.
+          Contamos con distintas alternativas de jornada para adaptarnos a las necesidades de cada familia.
+          Aquí puedes revisar horarios de atención, matrículas y ubicación del jardín.
         </p>
       </div>
 
       <div class="container info-grid">
-        <article class="info-card reveal">
-          <small>Horarios</small>
-          <strong>Jornada mañana</strong>
-          <p>7:30 a 12:30 hrs.</p>
-          <strong style="font-size:1rem;margin-top:14px">Jornada completa</strong>
-          <p>7:30 a 19:00 hrs.</p>
+        <article class="info-card info-card-schedule reveal">
+          <small>Horarios de atención</small>
+          <h3>Alternativas de jornada</h3>
+          <p class="schedule-intro">
+            Con el propósito de adaptarnos a las necesidades de cada familia, contamos con diferentes alternativas de jornada:
+          </p>
+
+          <div class="schedule-list">
+            <div class="schedule-row">
+              <div class="schedule-icon schedule-morning" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Jornada mañana</strong>
+                <p>De 8:00 a 12:30 hrs.</p>
+              </div>
+            </div>
+
+            <div class="schedule-row">
+              <div class="schedule-icon schedule-extended" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="8.5"></circle>
+                  <path d="M12 7.5V12l3 2"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Jornada extendida</strong>
+                <p>
+                  Desde las 8:00 hrs., con alternativas de salida a las
+                  13:00, 14:00, 15:00, 16:00, 17:00 o 18:00 hrs.
+                </p>
+              </div>
+            </div>
+
+            <div class="schedule-row">
+              <div class="schedule-icon schedule-afternoon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M19 15.5A7.5 7.5 0 0 1 8.5 5a7.5 7.5 0 1 0 10.5 10.5Z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Jornada tarde</strong>
+                <p>De 14:00 a 18:00 hrs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule-note">
+            <span class="schedule-note-icon" aria-hidden="true">i</span>
+            <p>
+              Las jornadas extendidas contemplan obligatoriamente el servicio de alimentación,
+              cuyo valor se cobra por separado.
+            </p>
+          </div>
         </article>
         <article class="info-card reveal">
           <small>Matrículas</small>
